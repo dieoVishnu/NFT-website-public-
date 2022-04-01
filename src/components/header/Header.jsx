@@ -1,18 +1,17 @@
-import React , { useRef , useState , useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import TopBar from './TopBar';
-import { Link , useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import logo from '../../assets/images/logo/logo_dark.png'
 import logo2x from '../../assets/images/logo/logo_dark@2x.png'
 import logolight from '../../assets/images/logo/logo.png'
 import logolight2x from '../../assets/images/logo/logo@2x.png'
 import menus from "../../pages/menu";
 import DarkMode from "./DarkMode"
-
 import icon from '../../assets/images/icon/connect-wallet.svg'
 
 const Header = () => {
     const { pathname } = useLocation();
-    const headerRef = useRef (null)
+    const headerRef = useRef(null)
     useEffect(() => {
         window.addEventListener('scroll', isSticky);
         return () => {
@@ -22,7 +21,7 @@ const Header = () => {
     const isSticky = (e) => {
         const header = document.querySelector('.js-header');
         const scrollTop = window.scrollY;
-        
+
         scrollTop >= 100 ? header.classList.add('is-fixed') : header.classList.remove('is-fixed');
         scrollTop >= 120 ? header.classList.add('is-small') : header.classList.remove('is-small');
     };
@@ -38,12 +37,13 @@ const Header = () => {
 
     const [activeIndex, setActiveIndex] = useState(null);
     const handleOnClick = index => {
-        setActiveIndex(index); 
+        setActiveIndex(index);
     };
 
     return <div>
-      <TopBar />
-      <header id="header_main" className="header_1 js-header" ref={headerRef}>
+
+        {/* <TopBar /> */}
+        <header id="header_main" className="header_1 js-header" ref={headerRef}>
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-12">
@@ -58,37 +58,43 @@ const Header = () => {
                                 </div>
                             </div>
                             <form className="form-search">
-                                <input type="text" placeholder="Search here" />
-                                <button><i className="far fa-search"></i></button>
+                                {/* <input type="text" placeholder="Search here" /> */}
+                                {/* <button><i className="far fa-search"></i></button> */}
                             </form>
 
                             <nav id="main-nav" className="main-nav" ref={menuLeft}>
                                 <ul id="menu-primary-menu" className="menu">
                                     {
-                                        menus.map((data,index) => (
-                                            <li key={index} onClick={()=> handleOnClick(index)} className={`menu-item menu-item-has-children ${activeIndex === index ? 'active' : ''} ` }   >
+                                        menus.map((data, index) => (
+                                            <li key={index} onClick={() => handleOnClick(index)} className={`menu-item menu-item-has-children ${activeIndex === index ? 'active' : ''} `}   >
                                                 <Link to="#">{data.name}</Link>
-                                                <ul className="sub-menu" >
+                                                {/* submenu */}
+                                                {/* <ul className="sub-menu" >
                                                     {
-                                                        data.namesub.map((submenu,index) => (
+                                                        data.namesub.map((submenu, index) => (
                                                             <li key={index} className={
                                                                 pathname === submenu.links
                                                                     ? "menu-item current-item"
                                                                     : "menu-item"
-                                                                }><Link to={submenu.links}>{submenu.sub}</Link></li>
+                                                            }><Link to={submenu.links}>{submenu.sub}</Link></li>
                                                         ))
                                                     }
-                                                </ul>
+                                                </ul> */}
                                             </li>
                                         ))
                                     }
+                                    <li><Link to="#" className="active"><i className="fab fa-facebook-f"></i></Link></li>
+                                    <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>
+                                    <li><Link to="#"><i className="fab fa-instagram"></i></Link></li>
+                                    <li><Link to="#"><i className="fab fa-dribbble"></i></Link></li>
+                                    <li><Link to="#"><i className="fab fa-linkedin-in"></i></Link></li>
                                 </ul>
                             </nav>
                             <div className="button-connect-wallet">
-                                <Link to="/connect-wallet" className="sc-button wallet  style-2">
+                                {/* <Link to="/connect-wallet" className="sc-button wallet  style-2">
                                     <img src={icon} alt="icon" />
                                     <span>Connect Wallet</span>
-                                </Link>
+                                </Link> */}
                             </div>
 
                             <DarkMode />
@@ -97,7 +103,7 @@ const Header = () => {
                 </div>
             </div>
         </header>
-  </div>;
+    </div>;
 };
 
 export default Header;

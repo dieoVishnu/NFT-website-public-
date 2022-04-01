@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
-import imgsun from '../../assets/images/icon/sun.png'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import imgsun from '../../assets/images/icon/sun.png';
 
 const DarkMode = () => {
     let clickedClass = "clicked"
@@ -8,6 +8,8 @@ const DarkMode = () => {
     const lightTheme = "light"
     const darkTheme = "is_dark"
     let theme
+
+    const [change, setChange] = useState()
 
     if (localStorage) {
         theme = localStorage.getItem("theme")
@@ -24,22 +26,27 @@ const DarkMode = () => {
             e.target.classList.remove(clickedClass)
             localStorage.setItem("theme", "light")
             theme = lightTheme
+            setChange(true)
         } else {
             body.classList.replace(lightTheme, darkTheme)
             e.target.classList.add(clickedClass)
             localStorage.setItem("theme", "is_dark")
             theme = darkTheme
+            setChange(false)
         }
     }
     return (
         <div className="mode_switcher">
-        <h6>Dark mode <strong>Available</strong></h6>
-        <Link to="#" 
-            onClick={e => switchTheme(e)}  >
-            <img src={imgsun} alt="" />
-        </Link>
+            {/* <h6>Dark mode <strong>Available</strong></h6> */}
+            <Link to="#"
+                onClick={e => switchTheme(e)}  >
+                <img src={imgsun} alt="" className={change ? 'knob active' : 'knob'} />
+                {/* <div className={change ? 'knob active' : 'knob'} /> */}
 
-    </div>
+
+            </Link>
+
+        </div>
     );
 }
 

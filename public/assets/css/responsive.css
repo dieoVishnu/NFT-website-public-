@@ -579,7 +579,12 @@
         width: 35px;
         height: 35px;
         min-width: 35px;
+        justify-content: center;
     }
+    .mode_switcher .knob.active{
+        left: 0;
+    }
+    
 
     .sc-product-item.style-7 {
         padding: 54px 15px 35px 15px;

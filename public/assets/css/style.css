@@ -1310,7 +1310,7 @@ a:focus {
 
 .header_1 #site-header-inner {
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 19px 0;
 }
 
@@ -1411,7 +1411,7 @@ a:focus {
 
 
 .main-nav>.menu>li.menu-item-has-children>a::after {
-    content    : '\f107';
+    /* content    : '\f107'; */
     font-family: 'Font Awesome 5 Pro';
     font-weight: 300;
     position: absolute;
@@ -2073,16 +2073,31 @@ a:focus {
   
   .mode_switcher a {
     background: linear-gradient(130.35deg, #6345ED 17.35%, #DC39FC 78.23%);;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
+    border-radius: 2em;
+    width: 90px;
+    height: 40px;
     min-width: 45px;
     font-size: 16px;
     margin-left: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
   }
+
+  .mode_switcher .knob {
+    position: relative;
+    width: 1.9em;
+    height: 1.9em;
+    /* background: #666;
+    border: 1px solid #ddd;
+    border-radius: 50%; */
+    left: 0em;
+    transition: left 0.3s ease-out;
+    
+  }
+  .mode_switcher .knob.active{
+    left: 3.5em;
+}  
   
   .is_dark .mode_switcher a {
     background:#343444;
