@@ -14,18 +14,20 @@ import Category from '../components/layouts/home/Category';
 import dataCategory from '../assets/fake-data/dataCategory'
 import Footer from '../components/footer/Footer';
 import { Newsletters } from '../components/layouts/home/Newsletters';
+import Slider03 from '../components/slider/Slider03';
 
 const Home01 = () => {
   return <div className='home-1'>
-      <Header />
-      <Slider01 data={dataSlider} />
-      <LiveAution data={dataLiveAution} />
-      <LatestCollections data={dataCollections} />
-      <BestSeller data={dataBestSeller} />
-      <TrendingCollections data={dataTrendingCollections} />
-      <Category data={dataCategory} />
-      <Newsletters />
-      <Footer />
+    <Header />
+    <Slider01 data={dataSlider} />
+    <Slider03 data={dataSlider} />
+    <LiveAution data={dataLiveAution} />
+    <LatestCollections data={dataCollections} />
+    <BestSeller data={dataBestSeller} />
+    <TrendingCollections data={dataTrendingCollections} />
+    <Category data={dataCategory} />
+    <Newsletters />
+    <Footer />
   </div>;
 };
 

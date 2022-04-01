@@ -1,28 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import { Navigation, Scrollbar, A11y   } from 'swiper';
+import { Navigation, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Slider01 = props => {
     const data = props.data
-    return  (
+    return (
         <section className="tf-slider slider">
             <Swiper
-                modules={[Navigation,  Scrollbar, A11y ]}
-                    spaceBetween={0}
-                    slidesPerView={1}
-                    navigation
-                    scrollbar={{ draggable: true }}
-                >
+                modules={[Navigation, Scrollbar, A11y]}
+                spaceBetween={0}
+                slidesPerView={1}
+                navigation
+                scrollbar={{ draggable: true }}
+            >
                 {
                     data.map((item, index) => (
                         <SwiperSlide key={index}>
                             <SliderItem item={item} />
                         </SwiperSlide>
-                        
+
                     ))
                 }
             </Swiper>
+
+
+
         </section>
     )
 };
@@ -54,7 +57,9 @@ const SliderItem = props => (
             </div>
         </div>
     </div>
-    
+
 )
+
+
 
 export default Slider01;
