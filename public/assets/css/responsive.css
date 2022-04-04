@@ -561,7 +561,10 @@
     .wg-themesflat-pagination {
         margin-top: 50px;
     }
-    
+    /* myswiper */
+    .mySwiper{
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 600px) {

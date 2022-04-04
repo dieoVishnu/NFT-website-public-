@@ -19,7 +19,7 @@ import Slider03 from '../components/slider/Slider03';
 const Home01 = () => {
   return <div className='home-1'>
     <Header />
-    <Slider01 data={dataSlider} />
+    {/* <Slider01 data={dataSlider} /> */}
     <Slider03 data={dataSlider} />
     <LiveAution data={dataLiveAution} />
     <LatestCollections data={dataCollections} />

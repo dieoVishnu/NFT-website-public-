@@ -2097,6 +2097,7 @@ blockquote .author::before {
     margin-bottom: 15px;
 }
 
+
 /* create item --------------
 -------------------------------- */
 .top-seller.tf-section {
@@ -2425,6 +2426,14 @@ blockquote .author::before {
 /* slider ---------------
 ---------------------------*/
 
+/* mySwiper */
+.mySwiper{
+    width: 40%;
+    z-index: 10;
+}
+
+/* end mySwiper */
+
 .tf-slider {
     background: var(--bg-slider);
     background-size: cover;
@@ -2441,9 +2450,9 @@ blockquote .author::before {
     z-index: -1;
 }
 
-/* .slider .swiper-slide.swiper-slide-active {
+.slider .swiper-slide.swiper-slide-active {
     overflow: hidden;
-} */
+}
 
 .slider .slider-item {
     background: var(--bg-slider);
@@ -2827,7 +2836,7 @@ blockquote .author::before {
 }
 .tf-slider .swiper-slide.swiper-slide-next ,
 .tf-slider .swiper-slide.swiper-slide-prev {
-    opacity: 0;
+    opacity: 1;
 }
 .tf-slider .swiper-slide.swiper-slide-active {
     opacity: 1;
