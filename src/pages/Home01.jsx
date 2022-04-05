@@ -16,6 +16,7 @@ import Footer from '../components/footer/Footer';
 import { Newsletters } from '../components/layouts/home/Newsletters';
 import Slider03 from '../components/slider/Slider03';
 import Gallery from '../components/layouts/home/Gallery';
+import Rareitems from '../components/layouts/home/Rareitems';
 
 const Home01 = () => {
   return <div className='home-1'>
@@ -27,8 +28,8 @@ const Home01 = () => {
     {/* <LatestCollections data={dataCollections} /> */}
     {/* <BestSeller data={dataBestSeller} /> */}
     {/* <TrendingCollections data={dataTrendingCollections} /> */}
-    <Category data={dataCategory} />
-    <Category data={dataCategory} />
+    {/* <Category data={dataCategory} /> */}
+    <Rareitems data={dataCategory} />
     <Newsletters />
     <Footer />
   </div>;

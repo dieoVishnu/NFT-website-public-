@@ -1033,9 +1033,9 @@ blockquote .author::before {
 /* Product Item 
 ---------------------------------- */
 .sc-product-item {
-    background-color: var(--color-3);
+    /* background-color: var(--color-3); */
     padding         : 49px 23px 37px;
-    border          : 1px solid var(--border-color-1);
+    /* border          : 1px solid var(--border-color-1); */
     box-sizing      : border-box;
     border-radius   : 20px;
 }
@@ -3046,6 +3046,7 @@ blockquote .author::before {
     margin-right : auto;
     width        : 1350px;
     max-width    : 100%;
+    margin-top: 30px;
 }
 
 .is_dark .category-inner,

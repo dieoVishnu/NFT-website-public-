@@ -1,0 +1,15 @@
+
+
+
+/* product rare */
+
+.bg-section{
+    position: relative;
+
+}
+.bg-section .bg-section-inside{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

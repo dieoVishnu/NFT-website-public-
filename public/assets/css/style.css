@@ -6,6 +6,7 @@
 */
 @import "ntfs.css";
 @import "shortcodes.css";
+@import "mystyle.css";
 @import "responsive.css";
 @import "animate.css";
 @import "font-awesome.css";
@@ -847,7 +848,7 @@ h6 a {
 }
 
 .tf-category.tf-section {
-    padding: 0 0 100px 0;
+    padding: 100px 0 100px 0;
 }
 
 .mg-bt-0 {
