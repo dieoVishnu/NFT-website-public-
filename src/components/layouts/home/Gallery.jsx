@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import Countdown from "react-countdown";
 
-const LiveAution = props => {
+const Gallery = props => {
     const data = props.data;
     return (
         <section className="tf-live-auctions tf-section bg-color-1">
@@ -17,7 +17,7 @@ const LiveAution = props => {
                                 <div className="inner">
                                     <div className="group">
                                         <div className="icon"><i className="ripple"></i></div>
-                                        <h3>Live Auctions</h3>
+                                        <h3>Gallery</h3>
                                     </div>
                                     <p className="desc">Most popular gaming digital nft market place </p>
                                 </div>
@@ -74,18 +74,13 @@ const LiveAutionItem = props => (
             <div className="sc-product-item">
                 <div className="product-img">
                     <img src={props.item.img} alt="Bidzen" />
-                    <div className="countdown">
-                        <Countdown date={Date.now() + 500000000}>
-                            <span>You are good to go!</span>
-                        </Countdown>
-                    </div>
                     <Link to="/connect-wallet"
-                        className="sc-button style letter"><span>Place Bid</span></Link>
+                        className="sc-button style letter"><span>Buy</span></Link>
                     <label>{props.item.tags}</label>
                 </div>
                 <div className="product-content">
                     <h5 className="title"><Link to="/item-details">"{props.item.title}"</Link> </h5>
-                    <div className="product-author flex">
+                    {/* <div className="product-author flex">
                         <div className="avatar">
                             <img src={props.item.imgAuthor} alt="Bidzen" />
                         </div>
@@ -93,7 +88,7 @@ const LiveAutionItem = props => (
                             <div className="author-name"><Link to="/authors">{props.item.name}</Link></div>
                             <span>Creator</span>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="product-price">
                         <div className="title">Current Bid</div>
                         <div className="price">
@@ -107,4 +102,4 @@ const LiveAutionItem = props => (
     </div>
 )
 
-export default LiveAution;
+export default Gallery;
