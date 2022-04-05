@@ -63,6 +63,8 @@
     --color-11          : #fff;
     --border-color-2    : rgba(99, 69, 237, 0.12);
     --bg-newletter         : #F9F9F9;
+    /* gradint */
+    --bg-gradint-color-my: linear-gradient(to right, #009fff, #ec2f4b);;
 }
 
 .is_dark {
@@ -93,6 +95,10 @@
     --border-color-2    : rgba(255, 255, 255, 0.12);
     --bg-newletter: #222232;
 }
+
+
+
+
 
 /* PreLoad
 -------------------------------------------------------------- */
@@ -506,7 +512,8 @@ blockquote .author::before {
 ----------------------------*/
 .new-letter-inner {
     position       : relative;
-    background     : linear-gradient(132.71deg, #6345ED 18.12%, #DC39FC 81.74%);
+    /* background     : linear-gradient(132.71deg, #6345ED 18.12%, #DC39FC 81.74%); */
+    background     : var(--bg-gradint-color-my);
     border-radius  : 30px;
     padding        : 23px 45px 0px 68px;
     justify-content: space-between;
@@ -2428,7 +2435,7 @@ blockquote .author::before {
 
 /* mySwiper */
 .mySwiper{
-    width: 30% !important;
+    width: 40% !important;
 }
 .mySwiper .swiper{
     overflow: visible;
