@@ -17,6 +17,7 @@ import { Newsletters } from '../components/layouts/home/Newsletters';
 import Slider03 from '../components/slider/Slider03';
 import Gallery from '../components/layouts/home/Gallery';
 import Rareitems from '../components/layouts/home/Rareitems';
+import { PurchaseOpensea } from '../components/layouts/home/PurchaseOpensea';
 
 const Home01 = () => {
   return <div className='home-1'>
@@ -30,7 +31,8 @@ const Home01 = () => {
     {/* <TrendingCollections data={dataTrendingCollections} /> */}
     {/* <Category data={dataCategory} /> */}
     <Rareitems data={dataCategory} />
-    <Newsletters />
+    {/* <Newsletters /> */}
+    <PurchaseOpensea />
     <Footer />
   </div>;
 };

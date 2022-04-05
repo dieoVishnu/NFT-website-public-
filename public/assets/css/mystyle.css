@@ -13,3 +13,10 @@
     height: 100%;
     object-fit: cover;
 }
+
+
+/* OPENSEA BUY SECTION */   
+
+.button-link-purchase .style-3{
+    height: 9rem;
+}
