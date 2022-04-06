@@ -49,12 +49,12 @@ const ItemDetails = () => {
                     <div className="col-md-12">
                         <div className="page-title-inner flex">
                             <div className="page-title-heading">
-                                <h2 className="heading">Auctions Details</h2>
+                                <h2 className="heading">Product Details</h2>
                             </div>
                             <div className="breadcrumbs">
                                 <ul>
                                     <li><Link to="/">Home</Link></li>
-                                    <li>Auctions Details</li>
+                                    <li>Product Details</li>
                                 </ul>
                             </div>
                         </div>

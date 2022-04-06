@@ -2,7 +2,7 @@
 import axios from "../assets/axios"
 import { useState,useEffect } from "react"
 
-const useData = ()=>{
+const useData = (category)=>{
 
     const [data, setData] = useState([])
   
@@ -10,7 +10,7 @@ const useData = ()=>{
 
     const handeleFentch = async (e)=>{
         try{
-            const res = await axios.get('/imi_api/listPosts?category=0')
+            const res = await axios.get('/imi_api/listPosts?category='+category)
             setData(res.data.data)
         }
         catch(error){
