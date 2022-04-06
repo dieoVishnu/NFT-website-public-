@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/header/Header';
-import  Newsletters from '../components/layouts/Newsletters';
+// import  Newsletters from '../components/layouts/Newsletters';
+import  {Newsletters} from '../components/layouts/home/Newsletters';
 import Footer from '../components/footer/Footer';
 
 import img1 from '../assets/images/background/img-login.jpg'

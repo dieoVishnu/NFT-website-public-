@@ -1,7 +1,7 @@
 const menus = [
     {
         id: 1,
-        name: 'About',
+        name: 'SPORTS COLLECTION',
         namesub: [
             {
                 id: 1,
@@ -49,7 +49,7 @@ const menus = [
     // },
     {
         id: 3,
-        name: 'Gallery',
+        name: 'CLASSIC CARS',
         namesub: [
             {
                 id: 1,
@@ -96,7 +96,7 @@ const menus = [
     // },
     {
         id: 4,
-        name: 'Contact',
+        name: 'NFT',
         namesub: [
             {
                 id: 1,
