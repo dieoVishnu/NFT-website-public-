@@ -42,7 +42,7 @@ const Header = () => {
 
     return <div>
 
-        {/* <TopBar /> */}
+        <TopBar />
         <header id="header_main" className="header_1 js-header" ref={headerRef}>
             <div className="container-fluid">
                 <div className="row">
@@ -53,7 +53,7 @@ const Header = () => {
                                 <div id="site-logo-inner">
                                     <Link to="/" rel="home" className="main-logo">
                                         {/* <img id="logo_header" className='logo-dark' src={logo} srcSet={logo2x} alt="nft-gaming" /> */}
-                                        KOOGI KOALAS
+                                        Imoodini
                                         {/* <img id="logo_header" className='logo-light' src={logolight} srcSet={logolight2x} alt="nft-gaming" /> */}
                                     </Link>
                                 </div>
@@ -84,18 +84,18 @@ const Header = () => {
                                             </li>
                                         ))
                                     }
-                                    <li><Link to="#" className="active"><i className="fab fa-facebook-f"></i></Link></li>
+                                    {/* <li><Link to="#" className="active"><i className="fab fa-facebook-f"></i></Link></li>
                                     <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>
                                     <li><Link to="#"><i className="fab fa-instagram"></i></Link></li>
                                     <li><Link to="#"><i className="fab fa-dribbble"></i></Link></li>
-                                    <li><Link to="#"><i className="fab fa-linkedin-in"></i></Link></li>
+                                    <li><Link to="#"><i className="fab fa-linkedin-in"></i></Link></li> */}
                                 </ul>
                             </nav>
                             <div className="button-connect-wallet">
-                                {/* <Link to="/connect-wallet" className="sc-button wallet  style-2">
+                                <Link to="/connect-wallet" className="sc-button wallet  style-2">
                                     <img src={icon} alt="icon" />
-                                    <span>Connect Wallet</span>
-                                </Link> */}
+                                    <span>Log in</span>
+                                </Link>
                             </div>
 
                             <DarkMode />

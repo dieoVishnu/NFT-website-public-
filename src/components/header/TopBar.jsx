@@ -54,12 +54,12 @@ const TopBar = () => {
                             </div>
                         </div>
                         <div className="topbar-right flex">
-                            <span>New Product Coming Soon</span>
-                            <div className="countdown">
+                            {/* <span>New Product Coming Soon</span> */}
+                            {/* <div className="countdown">
                                 <Countdown date={Date.now() + 500000000}>
                                     <span>You are good to go!</span>
                                 </Countdown>
-                            </div>
+                            </div> */}
                             <ul className="socical-icon flex">
                                 <li><Link to="#" className="active"><i className="fab fa-facebook-f"></i></Link></li>
                                 <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>

@@ -9,15 +9,16 @@ import Gallery from '../components/layouts/home/Gallery';
 import Rareitems from '../components/layouts/home/Rareitems';
 import { PurchaseOpensea } from '../components/layouts/home/PurchaseOpensea';
 import Slider01 from '../components/slider/Slider01';
-// import LiveAution from '../components/layouts/home/LiveAution';
-// import LatestCollections from '../components/layouts/home/LatestCollections';
-// import dataCollections from '../assets/fake-data/dataCollections'
-// import BestSeller from '../components/layouts/home/BestSeller';
-// import dataBestSeller from '../assets/fake-data/dataBestSeller'
-// import TrendingCollections from '../components/layouts/home/TrendingCollections';
-// import dataTrendingCollections from '../assets/fake-data/dataTrendingCollections'
-// import Category from '../components/layouts/home/Category';
-// import { Newsletters } from '../components/layouts/home/Newsletters';
+import LiveAution from '../components/layouts/home/LiveAution';
+import LatestCollections from '../components/layouts/home/LatestCollections';
+import dataCollections from '../assets/fake-data/dataCollections'
+import BestSeller from '../components/layouts/home/BestSeller';
+import dataBestSeller from '../assets/fake-data/dataBestSeller'
+import TrendingCollections from '../components/layouts/home/TrendingCollections';
+import dataTrendingCollections from '../assets/fake-data/dataTrendingCollections'
+import Category from '../components/layouts/home/Category';
+import { Newsletters } from '../components/layouts/home/Newsletters';
+import Test from '../components/test/Test';
 
 const Home01 = () => {
   return <div className='home-1'>
@@ -28,11 +29,11 @@ const Home01 = () => {
     <Gallery data={dataLiveAution} />
     {/* <LatestCollections data={dataCollections} /> */}
     {/* <BestSeller data={dataBestSeller} /> */}
-    {/* <TrendingCollections data={dataTrendingCollections} /> */}
+    <TrendingCollections data={dataTrendingCollections} />
     {/* <Category data={dataCategory} /> */}
-    <Rareitems data={dataCategory} />
-    {/* <Newsletters /> */}
-    <PurchaseOpensea />
+    {/* <Rareitems data={dataCategory} /> */}
+    <Newsletters />
+    {/* <PurchaseOpensea /> */}
     <Footer />
   </div>;
 };

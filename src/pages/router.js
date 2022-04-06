@@ -13,6 +13,7 @@ import CreateItem from './CreateItem'
 import Login from './Login'
 import Register from './Register'
 import Contact from './Contact'
+import Test from "../components/test/Test";
 
 const routes = [
     { path: '/', component: <Home01 />},
@@ -29,7 +30,8 @@ const routes = [
     { path: '/create-item', component: <CreateItem />},
     { path: '/login', component: <Login />},
     { path: '/register', component: <Register />},
-    { path: '/contact', component: <Contact />}
+    { path: '/contact', component: <Contact />},
+    { path: '/test', component: <Test />}
 ]
 
 export default routes;

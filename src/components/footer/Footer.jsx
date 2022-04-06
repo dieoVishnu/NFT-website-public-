@@ -1,4 +1,4 @@
-import React , { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import img1 from '../../assets/images/post/post-recent-new-4.jpg'
 import img2 from '../../assets/images/post/post-recent-new-5.jpg'
@@ -92,27 +92,27 @@ const Footer = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     const scrollToTop = () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     };
-  
+
     useEffect(() => {
-      const toggleVisibility = () => {
-        if (window.pageYOffset > 500) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      };
-  
-      window.addEventListener("scroll", toggleVisibility);
-  
-      return () => window.removeEventListener("scroll", toggleVisibility);
+        const toggleVisibility = () => {
+            if (window.pageYOffset > 500) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
+            }
+        };
+
+        window.addEventListener("scroll", toggleVisibility);
+
+        return () => window.removeEventListener("scroll", toggleVisibility);
     }, []);
-  return (
-      <div>
+    return (
+        <div>
             <footer id="footer" className="clearfix bg-style">
                 <div className="container">
                     <div className="row">
@@ -120,8 +120,9 @@ const Footer = () => {
                             <div className="widget widget-logo">
                                 <div className="logo-footer" id="logo-footer">
                                     <Link to="/">
-                                        <img id="logo_footer" src={logo} alt="nft-gaming"
-                                            srcSet={logo2x} />
+                                        {/* <img id="logo_footer" src={logo} alt="nft-gaming"
+                                        srcSet={logo2x} /> */}
+                                        DIVINE NFTS
                                     </Link>
                                 </div>
                                 <p className="sub-widget-logo">Sed ut perspiciatis unde omnis iste natus error sit voluptate
@@ -129,7 +130,7 @@ const Footer = () => {
                                 <div className="widget-social">
                                     <ul>
                                         {
-                                            dataSocial.map((item,index)=> (
+                                            dataSocial.map((item, index) => (
                                                 <li key={index}><Link to="#"><i className={item.icon}></i></Link></li>
                                             ))
                                         }
@@ -142,7 +143,7 @@ const Footer = () => {
                                 <h5 className="title-widget">Marketplace</h5>
                                 <ul>
                                     {
-                                        dataLinkMarket.map((item,index)=> (
+                                        dataLinkMarket.map((item, index) => (
                                             <li key={index}><Link to={item.link}>{item.title}</Link></li>
                                         ))
                                     }
@@ -154,7 +155,7 @@ const Footer = () => {
                                 <h5 className="title-widget">Supports</h5>
                                 <ul>
                                     {
-                                        dataSupport.map((item,index)=> (
+                                        dataSupport.map((item, index) => (
                                             <li key={index}><Link to={item.link}>{item.title}</Link></li>
                                         ))
                                     }
@@ -166,7 +167,7 @@ const Footer = () => {
                                 <h5 className="title-widget">News & Post</h5>
                                 <ul className="post-new">
                                     {
-                                        dataRecent.map((item,index)=> (
+                                        dataRecent.map((item, index) => (
                                             <li key={index}>
                                                 <div className="post-img">
                                                     <img src={item.img} alt="Post New" />
@@ -174,7 +175,7 @@ const Footer = () => {
                                                 <div className="post-content">
                                                     <h6 className="title"><Link to="/blog-details">{item.title}</Link></h6>
                                                     <Link to="/blog-details" className="post-date"><i
-                                                            className="far fa-calendar-week"></i> {item.time}</Link>
+                                                        className="far fa-calendar-week"></i> {item.time}</Link>
                                                 </div>
                                             </li>
                                         ))
@@ -194,11 +195,11 @@ const Footer = () => {
                 </div>
             </div>
             {
-                isVisible && 
-                <Link onClick={scrollToTop}  to='#' id="scroll-top"></Link>
+                isVisible &&
+                <Link onClick={scrollToTop} to='#' id="scroll-top"></Link>
             }
-      </div>
-  );
+        </div>
+    );
 };
 
 export default Footer;
