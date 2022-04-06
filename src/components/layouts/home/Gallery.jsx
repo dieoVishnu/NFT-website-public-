@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import Countdown from "react-countdown";
+import useData from '../../../customhook/useData';
 
 const Gallery = props => {
+    const [databse, setDatabse] = useState([])
     const data = props.data;
+    const imoodiniData = useData()
+    console.log("this is",imoodiniData)
+    
     return (
         <section className="tf-live-auctions tf-section bg-color-1">
             <div className="container">
@@ -17,7 +22,7 @@ const Gallery = props => {
                                 <div className="inner">
                                     <div className="group">
                                         <div className="icon"><i className="ripple"></i></div>
-                                        <h3>Gallery</h3>
+                                        <h3>Featured Product</h3>
                                     </div>
                                     <p className="desc">Most popular gaming digital nft market place </p>
                                 </div>
@@ -50,9 +55,9 @@ const Gallery = props => {
                                     scrollbar={{ draggable: true }}
                                 >
                                     {
-                                        data.map((item, index) => (
+                                        imoodiniData.map((item, index) => (
                                             <SwiperSlide key={index}>
-                                                <LiveAutionItem item={item} />
+                                                <LiveAutionItem item={item} datas={props.data} />
                                             </SwiperSlide>
                                         ))
                                     }
@@ -73,13 +78,15 @@ const LiveAutionItem = props => (
         <div className="slider-item">
             <div className="sc-product-item">
                 <div className="product-img">
-                    <img src={props.item.img} alt="Bidzen" />
+                    
+                    {/* <img src={props.item.ad_cover_image} alt="Bidzen" /> */}
+                    <img src={props.datas[0].img} alt="Bidzen" />
                     <Link to="/connect-wallet"
                         className="sc-button style letter"><span>Buy</span></Link>
-                    <label>{props.item.tags}</label>
+                    <label>{props.item.ad_category}</label>
                 </div>
                 <div className="product-content">
-                    <h5 className="title"><Link to="/item-details">"{props.item.title}"</Link> </h5>
+                    <h5 className="title"><Link to="/item-details">"{props.item.ad_title}"</Link> </h5>
                     {/* <div className="product-author flex">
                         <div className="avatar">
                             <img src={props.item.imgAuthor} alt="Bidzen" />
@@ -90,10 +97,10 @@ const LiveAutionItem = props => (
                         </div>
                     </div> */}
                     <div className="product-price">
-                        <div className="title">Current Bid</div>
+                        <div className="title">Price</div>
                         <div className="price">
-                            <span>{props.item.price}</span>
-                            <span>= {props.item.priceChange}</span>
+                            <span>{props.item.ad_price}</span>
+                            {/* <span>= {props.item.priceChange}</span> */}
                         </div>
                     </div>
                 </div>
