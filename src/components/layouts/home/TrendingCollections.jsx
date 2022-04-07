@@ -32,7 +32,7 @@ const TrendingCollections = props => {
                                             <label>{item.ad_category}</label>
                                         </div>
                                         <div className="product-content">
-                                            <h5 className="title"><Link to={`/item-detailsCars/${item.ad_slug}/${item.ad_category}`}>{item.ad_title}</Link> </h5>
+                                            <h5 className="title"><Link to={`/blog-details/${item.ad_slug}/${item.ad_category}`}>{item.ad_title}</Link> </h5>
                                             {/* <div className="product-author flex">
                                                 <div className="avatar">
                                                     <img src={item.imgAuthor} alt="Bidzen" />

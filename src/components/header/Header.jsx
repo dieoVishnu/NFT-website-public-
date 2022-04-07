@@ -79,7 +79,7 @@ const Header = () => {
                                     {
                                         menus.map((data, index) => (
                                             <li key={index} onClick={() => handleOnClick(index)} className={`menu-item menu-item-has-children ${activeIndex === index ? 'active' : ''} `}   >
-                                                <Link to="#">{data.name}</Link>
+                                                <Link to={`/blog/${data.tag}`} onClick={() => {window.location.href=`/blog/${data.tag}`}}>{data.name}</Link>
                                                 {/* submenu */}
                                                 {/* <ul className="sub-menu" >
                                                     {

@@ -1,5 +1,5 @@
-import React , { useState } from 'react';
-import { Link } from 'react-router-dom'
+import React , { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom'
 import Header from '../components/header/Header';
 import  Newsletters from '../components/layouts/Newsletters';
 import Footer from '../components/footer/Footer';
@@ -14,41 +14,63 @@ import avt from '../assets/images/avatar/avt-12.jpg'
 import avt1 from '../assets/images/avatar/avt-13.jpg'
 import avt2 from '../assets/images/avatar/avt-14.jpg'
 import avt3 from '../assets/images/avatar/avt-15.jpg'
+import useSingelpost from '../customhook/useSingelpost';
 
 
 const BlogDetails = () => {
-    const [dataCategory] = useState(
+
+    // fentch data
+    // const [path,setPath] = useState()
+    const location = useLocation()
+    const path1 = location.pathname.split("/")[2]
+    const path2 = location.pathname.split("/")[3]
+    console.log(path2,path1)
+    
+
+    const imoodiniData = useSingelpost(path1,path2)
+
+    console.log(imoodiniData)
+
+    const dataCategory = 
         [
             {
-                name: 'Bitcoin',
-                count: '5'
+                name: 'Model',
+                count: 'ad_make'
             },
             {
-                name: 'Blockchain',
-                count: '8'
+                name: 'Year',
+                count: 'adyear'
             },
             {
-                name: 'NFT',
-                count: '3'
+                name: 'Odometer',
+                count: 'ad_kms' 
             },
             {
-                name: 'Cryptocurrency',
-                count: '2'
+                name: 'Door',
+                count: 'ad_doors' 
             },
             {
-                name: 'ICO',
-                count: '4'
+                name: 'Transmition',
+                count: 'ad_transmission' 
             },
             {
-                name: 'News',
-                count: '5'
+                name: 'Fuel',
+                count: 'ad_fuel' 
             },
             {
-                name: 'Uncategorized',
-                count: '2'
+                name: 'color',
+                count: 'ad_color' 
+            },
+            {
+                name: 'condition',
+                count: 'adcondition' 
+            },
+            {
+                name: 'location',
+                count: 'adlocation' 
             },
         ]
-    )
+
     const [dataRecent] = useState(
         [
             {
@@ -134,7 +156,9 @@ const BlogDetails = () => {
 
   return <div>
     <Header />
-    <section className="fl-page-title">
+    {imoodiniData ? 
+    <>
+        <section className="fl-page-title">
         <div className="overlay"></div>
         <div className="container">
             <div className="row">
@@ -175,22 +199,10 @@ const BlogDetails = () => {
                             </div>
                         </div>
                         <div className="post-content">
-                            <h1 className="post-title">Ultimate Digital Clean-Up Checklist Are You Prepared For New
-                                Year E-Commerce Platforms An Overview Most Common</h1>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                                veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                                voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
-                                porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-                                velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
-                                magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
-                                exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-                                consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit
-                                esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-                                voluptas nulla pariatur</p>
+                            <h1 className="post-title">{imoodiniData.data.ad_title}</h1>
+                            <p>{imoodiniData.data.ad_details}</p>
                         </div>
-                        <blockquote className="block-quote">
+                        {/* <blockquote className="block-quote">
                             <h4>Roll Out New Features Without Hurting Loyal Users Unicode Character Sets The
                                 Ultim An Overview UX Design Deliverables</h4>
                             <div className="author">John B. Thomas</div>
@@ -200,9 +212,9 @@ const BlogDetails = () => {
                                 adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
                                 dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
                                 exercitationem ullam corporis suscipit laboriosam</p>
-                        </div>
+                        </div> */}
                     </article>
-                    <div className="post-details">
+                    {/* <div className="post-details">
                         <div className="details-left">
                             <div className="wg-title style-2">
                                 Popular Tags
@@ -228,8 +240,8 @@ const BlogDetails = () => {
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                    <div className="post-author style-2">
+                    </div> */}
+                    {/* <div className="post-author style-2">
                         <div className="avatar">
                             <img src={avt} alt="Bidzen" />
                         </div>
@@ -248,8 +260,8 @@ const BlogDetails = () => {
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                    <div className="widget item widget-post style-2">
+                    </div> */}
+                    {/* <div className="widget item widget-post style-2">
                         <div className="wg-title style-2">
                             Related News
                         </div>
@@ -269,8 +281,8 @@ const BlogDetails = () => {
                                 ))
                             }
                         </ul>
-                    </div>
-                    <div className="widget item wg-comments">
+                    </div> */}
+                    {/* <div className="widget item wg-comments">
                         <div className="wg-title">
                             People Comments
                         </div>
@@ -293,8 +305,8 @@ const BlogDetails = () => {
                                 ))
                             }
                         </ul>
-                    </div>
-                    <div className="wg-post-comments">
+                    </div> */}
+                    {/* <div className="wg-post-comments">
                         <div className="wg-title">
                             Leave a Reply
                         </div>
@@ -319,17 +331,17 @@ const BlogDetails = () => {
                             <button name="submit" type="submit" id="comment-reply"
                                 className="sc-button style letter style-2"><span>Send Reply</span> </button>
                         </form>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="col-lg-4 col-md-12">
                     <aside className="side-bar">
-                        <div className="widget wg-search">
+                        {/* <div className="widget wg-search">
                             <form action="#" method="get" role="search" className="search-form">
                                 <input type="search" className="search-field" placeholder="Search" name="s"
                                     title="Search for" required />
                                 <button className="search search-submit" type="submit" title="Search"></button>
                             </form>
-                        </div>
+                        </div> */}
                         <div className="widget item wg-category">
                             <div className="wg-title">
                                 Category
@@ -337,12 +349,12 @@ const BlogDetails = () => {
                             <ul>
                                 {
                                     dataCategory.map((item,index)=> (
-                                        <li key={index}><Link to="#"><span>{item.name}</span><span>({item.count})</span></Link></li>
+                                        <li key={index}><Link to="#"><span>{item.name}</span><span>{imoodiniData ? imoodiniData.data[item.count] : null}</span></Link></li>
                                     ))
                                 }
                             </ul>
                         </div>
-                        <div className="widget item widget-post style-3">
+                        {/* <div className="widget item widget-post style-3">
                             <div className="wg-title">
                                 Recent News
                             </div>
@@ -362,24 +374,50 @@ const BlogDetails = () => {
                                     ))
                                 }
                             </ul>
-                        </div>
+                        </div> */}
                         <div className="widget item wg-tags">
                             <div className="wg-title">
-                                Popular Tags
+                                {/* Popular Tags */}
                             </div>
                             <ul>
-                                {
+                                {/* {
                                     dataTags.map((item,index)=> (
                                         <li key={index} className={item.active}><Link to="#">{item.name}</Link></li>
                                     ))
-                                }
+                                } */}
                             </ul>
+                            <div className="author-item flex">
+                                    <div className="avatar">
+                                        <img src={avt1} alt="Bidzen" />
+                                    </div>
+                                    <div className="infor">
+                                        <div className="create">Owner By</div>
+                                        <h6><Link to="/authors">{imoodiniData.data.user_name}</Link> </h6>
+                                        {/* <div className="widget-social">
+                                            <ul>
+                                                <li><Link to="#" className="active"><i className="fab fa-facebook-f"></i></Link>
+                                                </li>
+                                                <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>
+                                                <li><Link to="#"><i className="fab fa-instagram"></i></Link></li>
+                                                <li><Link to="#"><i className="fab fa-linkedin-in"></i></Link></li>
+                                            </ul>
+                                        </div> */}
+                                    </div>
+                                </div>
                         </div>
+                        
                     </aside>
                 </div>
             </div>
         </div>
     </div>
+    </>
+    :
+    <>
+    lodding
+    </>
+    }
+
     <Newsletters />
     <Footer />
   </div>;

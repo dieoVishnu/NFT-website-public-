@@ -2,6 +2,7 @@ const menus = [
     {
         id: 1,
         name: 'SPORTS COLLECTION',
+        tag: '2',
         namesub: [
             {
                 id: 1,
@@ -50,6 +51,7 @@ const menus = [
     {
         id: 3,
         name: 'CLASSIC CARS',
+        tag: '1',
         namesub: [
             {
                 id: 1,

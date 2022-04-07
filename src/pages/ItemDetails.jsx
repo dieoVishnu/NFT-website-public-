@@ -97,7 +97,7 @@ const ItemDetails = () => {
                                 <p className="mg-bt-42">{imoodiniData.data.ad_details}</p>
                                 <div className="author-item">
                                     <div className="avatar">
-                                        {/* <img src={avt1} alt="Bidzen" /> */}
+                                        <img src={avt1} alt="Bidzen" />
                                     </div>
                                     <div className="infor">
                                         <div className="create">Owner By</div>
