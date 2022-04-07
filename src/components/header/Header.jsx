@@ -8,8 +8,9 @@ import logolight2x from '../../assets/images/logo/logo@2x.png'
 import menus from "../../pages/menu";
 import DarkMode from "./DarkMode"
 import icon from '../../assets/images/icon/connect-wallet.svg'
-
+import {useSelector} from "react-redux"
 const Header = () => {
+    const user = useSelector(state => state.user.token)
     const { pathname } = useLocation();
     const headerRef = useRef(null)
     useEffect(() => {
@@ -95,10 +96,18 @@ const Header = () => {
                                 </ul>
                             </nav>
                             <div className="button-connect-wallet">
+                                {user === 'null' || user === null ?
+                                 <Link to="/login" className="sc-button wallet  style-2">
+                                 <img src={icon} alt="icon" />
+                                 <span>Log in</span>
+                             </Link>
+                                :
                                 <Link to="/login" className="sc-button wallet  style-2">
-                                    <img src={icon} alt="icon" />
-                                    <span>Log in</span>
-                                </Link>
+                                <img src={icon} alt="icon" />
+                                <span>Log out</span>
+                            </Link>
+                                }
+                               
                             </div>
 
                             <DarkMode />
