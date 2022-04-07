@@ -23,10 +23,16 @@ export const userSlice = createSlice({
             state.token = null;
             state.isFenching = false;
             state.error = action.payload;
+        },
+        logOut: (state,action)=>{
+            state.token = null;
+            state.isFenching = false;
+            state.error = false
+            localStorage.setItem("token", JSON.stringify(state.token))
         }
     }
 })
 
 
-export const { loginRequest, loginSuccess, loginFaild} = userSlice.actions;
+export const { loginRequest, loginSuccess, loginFaild,logOut} = userSlice.actions;
 export default userSlice.reducer;

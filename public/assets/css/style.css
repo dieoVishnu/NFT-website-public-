@@ -1314,6 +1314,10 @@ a:focus {
   justify-content: space-evenly;
   /* padding: 19px 0; */
 }
+#center {
+  justify-content: center;
+  align-items: center;
+}
 
 /* logo  */
 .header_1 #site-logo {
