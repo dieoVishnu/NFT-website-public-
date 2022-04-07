@@ -8,7 +8,7 @@ import useData from '../../../customhook/useData';
 const Gallery = props => {
     const [databse, setDatabse] = useState([])
     const data = props.data;
-    const imoodiniData = useData(2)
+    const imoodiniData = useData(2,12)
     // console.log("this is",imoodiniData)
     
     return (

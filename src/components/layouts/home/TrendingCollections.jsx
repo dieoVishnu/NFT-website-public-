@@ -4,7 +4,7 @@ import useData from '../../../customhook/useData';
 
 const TrendingCollections = props => {
     const data = props.data
-    const imoodiniData = useData(1)
+    const imoodiniData = useData(1,12)
   return (
     <section className="tf-trendy-collections tf-section">
         <div className="container">

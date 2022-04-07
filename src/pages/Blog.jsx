@@ -7,15 +7,29 @@ import Footer from '../components/footer/Footer';
 import useData from '../customhook/useData';
 
 const Blog = () => {
+
+    // pagination
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postPerPage, setPostPerPage] = useState(9)
+    const [totalPageNumber, setTotalPageNumber ] = useState([])
+
     const location = useLocation()
     const path1 = location.pathname.split("/")[2]
-
-    const imoodiniData = useData(path1)
-    console.log(imoodiniData)
+    const imoodiniData = useData(path1,50)
 
     const [changeLink, setChangeLink] = useState({
         link:'s'
     })
+
+    // get current post
+    const indexOfLastPage = currentPage * postPerPage
+    const indexOfFirstPage = indexOfLastPage - postPerPage
+    const currentPost = imoodiniData.slice(indexOfFirstPage, indexOfLastPage)
+
+    const paginationIncrement = (value)=>{
+        setCurrentPage(value)
+    }
+
 
     useEffect(()=>{
         const handelCategory = ()=>{
@@ -31,8 +45,15 @@ const Blog = () => {
                 })
             }   
         }
+        const pagnum = []
+        for (let i = 0; i < Math.ceil(imoodiniData.length/postPerPage); i++){
+            pagnum.push(1+i)
+        }
+        setTotalPageNumber(pagnum)
+        console.log(pagnum)
+
         handelCategory()
-    },[path1])
+    },[path1,imoodiniData])
 
 
 
@@ -62,7 +83,7 @@ const Blog = () => {
         <div className="container">
             <div className="row">
                 {
-                    imoodiniData.map((item,index) => (
+                    currentPost.map((item,index) => (
                         <div key={index} className="col-lg-4 col-md-6">
                             <article className="sc-card-article">
                                 <div className="card-media">
@@ -90,12 +111,13 @@ const Blog = () => {
                 <div className="col-md-12">
                     <div className="wg-themesflat-pagination">
                         <ul>
-                            <li><Link to="#" className="page-numbers prev active"></Link></li>
-                            <li><Link to="#" className="page-numbers">01</Link></li>
-                            <li><Link to="#" className="page-numbers">02</Link></li>
-                            <li><Link to="#" className="page-numbers current">03</Link></li>
-                            <li><Link to="#" className="page-numbers">04</Link></li>
-                            <li><Link to="#" className="page-numbers next"></Link></li>
+                            <li><Link to="#" className="page-numbers prev active"  onClick={()=>setCurrentPage(currentPage-1)}></Link></li>
+                            {totalPageNumber.map((data, number)=>(
+                                
+                                <li><Link to="#" className="page-numbers" onClick={()=>paginationIncrement(number+1)}>{number+1}</Link></li>
+                            ))}
+
+                            <li><Link to="#" className="page-numbers next" onClick={()=>setCurrentPage(currentPage+1)}></Link></li>
                         </ul>
                     </div>
                 </div>
