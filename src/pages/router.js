@@ -14,6 +14,7 @@ import Login from './Login'
 import Register from './Register'
 import Contact from './Contact'
 import Test from "../components/test/Test";
+import ItemDetailsCars from "./ItemDetailsCars";
 
 const routes = [
     { path: '/', component: <Home01 />},
@@ -22,7 +23,8 @@ const routes = [
     { path: '/explore-02', component: <Explore02 />},
     { path: '/creator', component: <Creator />},
     { path: '/item', component: <Item />},
-    { path: '/item-details', component: <ItemDetails />},
+    { path: '/item-details/:id/:id', component: <ItemDetails />},
+    { path: '/item-detailsCars/:id/:id', component: <ItemDetailsCars />},
     { path: '/blog', component: <Blog />},
     { path: '/blog-details', component: <BlogDetails />},
     { path: '/authors', component: <Authors />},

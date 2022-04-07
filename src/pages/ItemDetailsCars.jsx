@@ -18,7 +18,7 @@ import avt2 from '../assets/images/avatar/avt-6.jpg'
 import avt3 from '../assets/images/avatar/avt-3.jpg'
 import useSingelpost from '../customhook/useSingelpost';
 
-const ItemDetails = () => {
+const ItemDetailsCars = () => {
     const [dataHistory] = useState(
         [
             {
@@ -242,4 +242,4 @@ const ItemDetails = () => {
   </div>;
 };
 
-export default ItemDetails;
+export default ItemDetailsCars;

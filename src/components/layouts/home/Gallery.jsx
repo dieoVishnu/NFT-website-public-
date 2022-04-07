@@ -9,7 +9,7 @@ const Gallery = props => {
     const [databse, setDatabse] = useState([])
     const data = props.data;
     const imoodiniData = useData(2)
-    console.log("this is",imoodiniData)
+    // console.log("this is",imoodiniData)
     
     return (
         <section className="tf-live-auctions tf-section bg-color-1">
@@ -86,7 +86,7 @@ const LiveAutionItem = props => (
                     <label>{props.item.ad_category}</label>
                 </div>
                 <div className="product-content">
-                    <h5 className="title"><Link to="/item-details">"{props.item.ad_title}"</Link> </h5>
+                    <h5 className="title"><Link to={`/item-details/${props.item.ad_slug}/${props.item.ad_category}`}>"{props.item.ad_title}"</Link> </h5>
                     {/* <div className="product-author flex">
                         <div className="avatar">
                             <img src={props.item.imgAuthor} alt="Bidzen" />
