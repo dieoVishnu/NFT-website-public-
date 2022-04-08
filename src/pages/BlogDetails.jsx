@@ -354,57 +354,45 @@ const BlogDetails = () => {
                                 }
                             </ul>
                         </div>
-                        {/* <div className="widget item widget-post style-3">
+                        <div className="widget item widget-post style-3">
                             <div className="wg-title">
                                 Recent News
                             </div>
                             <ul className="post-new">
-                                {
-                                    dataRecent.map((item,index)=> (
-                                        <li key={index}>
-                                            <div className="post-img">
-                                                <img src={item.img} alt="Post New" />
+                               
+                                        <li>
+                                            <div className="avatar">
+                                                <img src={avt1} alt="Post New" />
                                             </div>
                                             <div className="post-content">
-                                                <Link to="/blog-details" className="post-date"><i
-                                                        className="far fa-calendar-week"></i>{item.time}</Link>
-                                                <h6 className="title"><Link to="/blog-details">{item.title}</Link></h6>
+                                                <Link to="/blog-details" className="post-date">
+                                                    {/* <i className="fa fa-dot"></i> */}
+                                                    Owner By</Link>
+                                                <h6 className="title"><Link to="/blog-details">{imoodiniData.data.user_name}</Link></h6>
                                             </div>
                                         </li>
-                                    ))
-                                }
+                                    
+                                <div className='pt-5'>
+                                <Link to={`/contact/${imoodiniData.data.ad_id}/${imoodiniData.data.ad_title}`}
+                                    className="sc-button style letter style-2 style-item-details"><span>Contact us</span>
+                                </Link>
+                                </div>
                             </ul>
-                        </div> */}
-                        <div className="widget item wg-tags">
+                        </div>
+                        {/* <div className="widget item wg-tags">
                             <div className="wg-title">
-                                {/* Popular Tags */}
+                                Popular Tags
                             </div>
                             <ul>
-                                {/* {
+                                {
                                     dataTags.map((item,index)=> (
                                         <li key={index} className={item.active}><Link to="#">{item.name}</Link></li>
                                     ))
-                                } */}
+                                }
                             </ul>
-                            <div className="author-item flex">
-                                    <div className="avatar">
-                                        <img src={avt1} alt="Bidzen" />
-                                    </div>
-                                    <div className="infor">
-                                        <div className="create">Owner By</div>
-                                        <h6><Link to="/authors">{imoodiniData.data.user_name}</Link> </h6>
-                                        {/* <div className="widget-social">
-                                            <ul>
-                                                <li><Link to="#" className="active"><i className="fab fa-facebook-f"></i></Link>
-                                                </li>
-                                                <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>
-                                                <li><Link to="#"><i className="fab fa-instagram"></i></Link></li>
-                                                <li><Link to="#"><i className="fab fa-linkedin-in"></i></Link></li>
-                                            </ul>
-                                        </div> */}
-                                    </div>
-                                </div>
-                        </div>
+                                
+                        </div> */}
+                            
                         
                     </aside>
                 </div>

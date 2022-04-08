@@ -1076,11 +1076,6 @@ a:focus {
   padding: 6px 0;
 }
 
-.topbar-inner {
-  justify-content: space-between;
-  align-items: center;
-}
-
 /* menu options */
 /* .dropdown {
     width: 100%;

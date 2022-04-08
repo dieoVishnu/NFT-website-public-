@@ -3142,7 +3142,15 @@ blockquote .author::before {
   display: flex;
   align-items: center;
 }
+
 .item-details-page .author-item .avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 21px;
+}
+.avatar {
   width: 70px;
   height: 70px;
   border-radius: 50%;
