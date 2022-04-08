@@ -8,7 +8,7 @@ import axios from '../assets/axios';
 import img1 from '../assets/images/background/img-login.jpg'
 import {useDispatch} from "react-redux";
 import { loginFaild, loginSuccess } from '../redux/auth';
-
+import GoogleLogin from 'react-google-login'
 
 const Login = () => {
     const [data, setData] = useState()
@@ -40,6 +40,12 @@ const Login = () => {
         catch(error){
             console.log('this is error',error)
         }
+    }
+
+    // google auth
+
+    const handelLogin = (googledata)=>{
+        console.log(googledata)
     }
 
   return <div>
@@ -91,13 +97,25 @@ const Login = () => {
                             </form>
                             <div className="other-login">
                                 <div className="text">Or</div>
-                                <div className="widget-social">
-                                    <ul>
+                                <div className="widget-social flex " id='center'>
+                                    {/* <ul>
                                         <li><Link to="#" className="active"><i className="fab fa-facebook-f"></i></Link>
                                         </li>
                                         <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>
+                                        
                                         <li><Link to="#"><i className="fab fa-google-plus-g"></i></Link></li>
-                                    </ul>
+                                    </ul> */}
+                                    <div>
+                                    <GoogleLogin 
+                                    clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                                    onSuccess={handelLogin}
+                                    onFailure={handelLogin}
+                                    cookiePolicy={'single_host_origin'}
+                                    >
+
+                                    </GoogleLogin>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
