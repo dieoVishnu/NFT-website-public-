@@ -4,6 +4,8 @@ session_start();
 include('../imi_configuration/D3sS0L4aToR.php');
 include('../imi_configuration/app_indicator.php');
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 $ZaWarud0 = "Q2fUSbJGmc5VTheVe9gb6nHY84uqYg";
@@ -14,8 +16,8 @@ $p = null;
 $error = 0;
 $myObj = new \stdClass();
 
-$usname = $_POST['email'];
-$uspass = $_POST['login_pasp'];
+$usname = $_GET['email'];
+$uspass = $_GET['login_pasp'];
 
 $usname = strtolower($usname);
 
@@ -69,7 +71,7 @@ try {
 
 $conn = null;
 
-$myObj->api = "user-portal";
+$myObj->api = "user-portal1";
 $myObj->status = $error;
 $myObj->response = $resp;
 $myObj->data = $p;

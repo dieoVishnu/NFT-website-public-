@@ -5,6 +5,8 @@ include('../imi_configuration/app_indicator.php');
 include('../imi_includes/imi_config.php');
 
 header("Content-Type: application/json; charset=UTF-8");
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: *');
 
 //Initialize variables with defaul values
 $search_term = null;
