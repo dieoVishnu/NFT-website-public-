@@ -18,7 +18,6 @@ const Login = () => {
 
     const handeleFentch = async (e)=>{
         e.preventDefault()
-        console.log("good",email,pass)
         try{
             const res = await axios.get('imi_api/portal-login',{
                 params: {

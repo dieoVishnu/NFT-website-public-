@@ -50,7 +50,6 @@ const ItemDetails = () => {
     
 
     const imoodiniData = useSingelpost(path1,path2)
-    
 
   return <div className='item-details'>
         <Header />
@@ -147,7 +146,7 @@ const ItemDetails = () => {
                                     </div>
                                     <div className="pagi">1 Of 9</div>
                                 </div> */}
-                                <Link to="/connect-wallet"
+                                <Link to={`/contact/${imoodiniData.data.ad_id}/${imoodiniData.data.ad_title}`}
                                     className="sc-button style letter style-2 style-item-details"><span>Contact us</span>
                                 </Link>
                                 <div className="flat-tabs themesflat-tabs">
@@ -243,3 +242,6 @@ const ItemDetails = () => {
 };
 
 export default ItemDetails;
+
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d464.5379865223107!2d55.28109850974789!3d25.186086876696038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f683a83e528df%3A0xf9c17edb93ae3854!2sInner%20Circle%20Bay%20Business%20Center!5e0!3m2!1sen!2sae!4v1649397367195!5m2!1sen!2sae" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

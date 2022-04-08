@@ -33,6 +33,7 @@ const routes = [
     { path: '/login', component: <Login />},
     { path: '/register', component: <Register />},
     { path: '/contact', component: <Contact />},
+    { path: '/contact/:id/:id', component: <Contact />},
     { path: '/test', component: <Test />}
 ]
 
