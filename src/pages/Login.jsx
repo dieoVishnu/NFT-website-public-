@@ -44,10 +44,44 @@ const Login = () => {
 
     // google auth
 
-    const handelLogin = (googledata)=>{
-        console.log(googledata)
-    }
+    const handelLogin = (goole)=>{
+        console.log(goole.profileObj.name)
 
+        const PostLogin = async()=>{
+            try{
+                const res = await axios.post('imi_api/gooleAuth/signup',{
+                    email: goole.profileObj.email,
+                    familyName: goole.profileObj.familyName,
+                    givenName: goole.profileObj.givenName,
+                    googleId: goole.profileObj.googleId,
+                    imageUrl: goole.profileObj.imageUrl,
+                    name: goole.profileObj.name,
+                })
+                if(res.data.data === null || res.data.data === "null"){
+                    // dispatch(loginFaild(res.data.data))
+                    console.log('faild')
+                }
+                else{
+                    dispatch(loginSuccess({ email: goole.profileObj.email,
+                        familyName: goole.profileObj.familyName,
+                        givenName: goole.profileObj.givenName,
+                        googleId: goole.profileObj.googleId,
+                        imageUrl: goole.profileObj.imageUrl,
+                        name: goole.profileObj.name}))
+                    // setData(res.data.data)
+                    console.log(res)
+                    // res.data && window.location.replace('/')
+                }
+                
+            }
+            catch(error){
+                console.log('this is error',error)
+            }
+        }
+        PostLogin()
+
+    }
+    
   return <div>
     <Header />
     <section className="fl-page-title">
@@ -93,7 +127,7 @@ const Login = () => {
                                     </div>
                                 </div>
                                 <button name="submit" type="submit"
-                                    className="sc-button style letter style-2" ><span>Sing In</span> </button>
+                                    className="sc-button style letter style-2" ><span>Log In</span> </button>
                             </form>
                             <div className="other-login">
                                 <div className="text">Or</div>

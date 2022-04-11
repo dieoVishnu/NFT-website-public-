@@ -1075,7 +1075,9 @@ a:focus {
   background-color: var(--bg-topbar);
   padding: 6px 0;
 }
-
+.topbar-inner {
+  justify-content: space-between;
+}
 /* menu options */
 /* .dropdown {
     width: 100%;

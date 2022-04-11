@@ -12,25 +12,25 @@ const TopBar = () => {
                                 <div id="ethereum" className="dropdown">
                                     <Dropdown>
                                         <Dropdown.Toggle className="btn-selector nolink" id="dropdown-basic">
-                                            <span>Ethereum</span>
+                                            <span>USD</span>
                                         </Dropdown.Toggle>
 
                                         <Dropdown.Menu>
                                         <Dropdown.Item href="#">
-                                            <span>Ethereum</span>
+                                            <span>AED</span>
                                         </Dropdown.Item>
                                         <Dropdown.Item href="#">
-                                            <span>Bitski</span>
+                                            <span>USD</span>
                                         </Dropdown.Item>
                                         <Dropdown.Item href="#">
-                                            <span>Fortmatic</span>
+                                            <span>EUR</span>
                                         </Dropdown.Item>
 
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </div>
                             </div>
-                            <div className="english">
+                            {/* <div className="english">
                                 <div id="english" className="dropdown">
                                     <Dropdown>
                                         <Dropdown.Toggle className="btn-selector nolink" id="dropdown-basic">
@@ -51,7 +51,7 @@ const TopBar = () => {
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="topbar-right flex">
                             {/* <span>New Product Coming Soon</span> */}
