@@ -101,7 +101,7 @@ const Blog = () => {
                                         <h5><Link to={`${changeLink.link}/${item.ad_slug}/${item.ad_category}`}>{item.ad_title}</Link></h5>
                                     </div>
                                     <Link to={`${changeLink.link}/${item.ad_slug}/${item.ad_category}`}
-                                        className="sc-button btn-bordered-white style letter"><span>{item.ad_price}</span></Link>
+                                        className="sc-button btn-bordered-white style letter"><span>${item.ad_price}</span></Link>
                                 </div>
                             </article>
                         </div>

@@ -162,7 +162,7 @@ const Login = () => {
         </div>
     </section>
 
-    <Newsletters />
+    {/* <Newsletters /> */}
     <Footer />
   </div>;
 };

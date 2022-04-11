@@ -170,7 +170,7 @@ const Contact = () => {
             </div>
         </div>
     </section>
-    <Newsletters />
+    {/* <Newsletters /> */}
     <Footer />
   </div>;
 };

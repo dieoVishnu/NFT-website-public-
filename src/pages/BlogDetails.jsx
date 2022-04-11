@@ -15,6 +15,7 @@ import avt1 from '../assets/images/avatar/avt-13.jpg'
 import avt2 from '../assets/images/avatar/avt-14.jpg'
 import avt3 from '../assets/images/avatar/avt-15.jpg'
 import useSingelpost from '../customhook/useSingelpost';
+import Slider04 from '../components/slider/Slider04';
 
 
 const BlogDetails = () => {
@@ -184,7 +185,7 @@ const BlogDetails = () => {
             <div className="row">
                 <div className="col-lg-8 col-md-12">
                     <article className="blog-details">
-                        <div className="post-media">
+                        {/* <div className="post-media">
                             <img src={imoodiniData.data.ad_cover_image} alt="Bidzen" />
                             <div className="meta">
                                 <div className="item author">
@@ -197,7 +198,8 @@ const BlogDetails = () => {
                                     Comments (5)
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
+                        <Slider04 data={imoodiniData.data.ad_cover_loop}/>
                         <div className="post-content">
                             <h1 className="post-title">{imoodiniData.data.ad_title}</h1>
                             <p>{imoodiniData.data.ad_details}</p>

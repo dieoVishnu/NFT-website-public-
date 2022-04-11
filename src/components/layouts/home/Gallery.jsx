@@ -99,7 +99,7 @@ const LiveAutionItem = props => (
                     <div className="product-price">
                         <div className="title">Price</div>
                         <div className="price">
-                            <span>{props.item.ad_price}</span>
+                            <span>${props.item.ad_price}</span>
                             {/* <span>= {props.item.priceChange}</span> */}
                         </div>
                     </div>

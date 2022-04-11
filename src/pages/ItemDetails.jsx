@@ -152,12 +152,12 @@ const ItemDetails = () => {
                                 <div className="flat-tabs themesflat-tabs">
                                 <Tabs>
                                         <TabList>
-                                        <Tab>Bid</Tab>
+                                        {/* <Tab>Bid</Tab> */}
                                         <Tab>location</Tab>
                                         <Tab>Details</Tab>
                                         </TabList>
 
-                                        <TabPanel>
+                                        {/* <TabPanel>
                                             <ul className="bid-history-list">
                                             {
                                                 dataHistory.map((item, index) => (
@@ -178,7 +178,7 @@ const ItemDetails = () => {
                                                 ))
                                             }
                                             </ul>
-                                        </TabPanel>
+                                        </TabPanel> */}
                                         <TabPanel>
                                             <ul className="bid-history-list">
                                                 <li>

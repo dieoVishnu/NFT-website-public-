@@ -1331,7 +1331,7 @@ a:focus {
 }
 
 .header_1 #site-logo .main-logo img {
-  width: 151px;
+  /* width: 151px; */
   height: 45px;
 }
 

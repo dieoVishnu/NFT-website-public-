@@ -45,7 +45,7 @@ const TrendingCollections = props => {
                                             <div className="product-price flex">
                                                 <div className="title">price</div>
                                                 <div className="price">
-                                                    <span>{item.ad_price}</span>
+                                                    <span>${item.ad_price}</span>
                                                     {/* <span>= {item.priceChange}</span> */}
                                                 </div>
                                             </div>
