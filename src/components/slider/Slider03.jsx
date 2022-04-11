@@ -13,8 +13,8 @@ const Slider03 = props => {
         <section className="tf-slider slider-box">
             <div className="slider-inner flex home-1 myswiper-slider">
                 <div className="slider-content">
-                    <h1 className="heading">Discover and collect your favorite digital NTFs</h1>
-                    <p className="sub-heading">Quis autem vel eum iure reprehenderit qui in ea voluptates esse quam nihil molestiae consequatur veillum</p>
+                    <h1 className="heading">Our Collectors</h1>
+                    <p className="sub-heading">UAE's Largest Buy, Sell & Compare Classified Ads And Auctions</p>
                     <div className="button-slider">
                         <Link to="/explore-01"
                             className="sc-button btn-bordered-white style letter "><span>Explore
