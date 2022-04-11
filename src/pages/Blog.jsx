@@ -88,7 +88,7 @@ const Blog = () => {
                             <article className="sc-card-article">
                                 <div className="card-media">
                                     {/* <Link to="/blog-details"><img src={item.img} alt="Bidzen" /></Link> */}
-                                    <Link to={`${changeLink.link}/${item.ad_slug}/${item.ad_category}`}><img src={item.ad_cover_image} alt="Bidzen" /></Link>
+                                    <Link to={`${changeLink.link}/${item.ad_slug}/${item.ad_category}`}><img src={item.ad_cover_image} alt="Bidzen" width={370} height={250}/></Link>
                                 </div>
                                 <div className="content">
                                     {/* <div className="meta-info">
@@ -124,7 +124,7 @@ const Blog = () => {
             </div>
         </div>
     </div>
-    <Newsletters />
+    {/* <Newsletters /> */}
     <Footer />
   </div>;
 };

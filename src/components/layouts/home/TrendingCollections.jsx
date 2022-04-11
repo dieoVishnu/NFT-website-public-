@@ -25,7 +25,7 @@ const TrendingCollections = props => {
                             <div key={index} className='col-lg-4 col-md-6 col-12'>
                                 <div className="sc-product-item style-2">
                                         <div className="product-img">
-                                            <img src={item.ad_cover_image} alt="Bidzen" />
+                                            <img src={item.ad_cover_image} alt="Bidzen" width={370} height={250} />
                                             {/* <img src={data[0].img} alt="Bidzen" /> */}
                                             {/* <Link to="/connect-wallet"
                                                 className="sc-button style letter"><span>Place Bid</span></Link> */}

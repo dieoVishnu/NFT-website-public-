@@ -79,7 +79,7 @@ const LiveAutionItem = props => (
             <div className="sc-product-item">
                 <div className="product-img">
                     
-                    <img src={props.item.ad_cover_image} alt="Bidzen" />
+                    <img src={props.item.ad_cover_image} alt="Bidzen"  width={250} height={250} />
                     {/* <img src={props.datas[0].img} alt="Bidzen" /> */}
                     {/* <Link to="/connect-wallet"
                         className="sc-button style letter"><span>Buy</span></Link> */}
