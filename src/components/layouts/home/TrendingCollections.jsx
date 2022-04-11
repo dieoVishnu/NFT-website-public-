@@ -13,7 +13,7 @@ const TrendingCollections = props => {
                     <div className="sc-heading style-2">
                         <div className="content-left">
                             <div className="inner">
-                                <h3>Trendy Collection</h3>
+                                <h3>Car Collection</h3>
                                 <p className="desc">Most popular gaming digital nft market place </p>
                             </div>
                         </div>
@@ -25,10 +25,10 @@ const TrendingCollections = props => {
                             <div key={index} className='col-lg-4 col-md-6 col-12'>
                                 <div className="sc-product-item style-2">
                                         <div className="product-img">
-                                            {/* <img src={item.img} alt="Bidzen" /> */}
-                                            <img src={data[0].img} alt="Bidzen" />
-                                            <Link to="/connect-wallet"
-                                                className="sc-button style letter"><span>Place Bid</span></Link>
+                                            <img src={item.ad_cover_image} alt="Bidzen" />
+                                            {/* <img src={data[0].img} alt="Bidzen" /> */}
+                                            {/* <Link to="/connect-wallet"
+                                                className="sc-button style letter"><span>Place Bid</span></Link> */}
                                             <label>{item.ad_category}</label>
                                         </div>
                                         <div className="product-content">

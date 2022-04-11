@@ -50,7 +50,7 @@ const ItemDetails = () => {
     
 
     const imoodiniData = useSingelpost(path1,path2)
-
+        console.log(imoodiniData)
   return <div className='item-details'>
         <Header />
         {
@@ -83,7 +83,7 @@ const ItemDetails = () => {
                         <div className="col-xl-6 col-lg-12 col-md-12">
                             <div className="item-media">
                                 <div className="media">
-                                    <img src={imgdetail1} alt="Bidzen" />
+                                    <img src={imoodiniData.data.ad_cover_image} alt="Bidzen" />
                                 </div>
                                 {/* <div className="countdown style-2">
                                     <Countdown  date={Date.now() + 500000000} />
@@ -235,7 +235,7 @@ const ItemDetails = () => {
         </>
 
         }
-        <Newsletters />
+        {/* <Newsletters /> */}
         <Footer />
 
   </div>;

@@ -185,7 +185,7 @@ const BlogDetails = () => {
                 <div className="col-lg-8 col-md-12">
                     <article className="blog-details">
                         <div className="post-media">
-                            <img src={img1} alt="Bidzen" />
+                            <img src={imoodiniData.data.ad_cover_image} alt="Bidzen" />
                             <div className="meta">
                                 <div className="item author">
                                     <Link to="#">Dale J. Barnes</Link>
@@ -406,7 +406,7 @@ const BlogDetails = () => {
     </>
     }
 
-    <Newsletters />
+    {/* <Newsletters /> */}
     <Footer />
   </div>;
 };

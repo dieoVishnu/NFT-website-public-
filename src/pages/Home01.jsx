@@ -32,7 +32,7 @@ const Home01 = () => {
     <TrendingCollections data={dataTrendingCollections} />
     {/* <Category data={dataCategory} /> */}
     {/* <Rareitems data={dataCategory} /> */}
-    <Newsletters />
+    {/* <Newsletters /> */}
     {/* <PurchaseOpensea /> */}
     <Footer />
   </div>;

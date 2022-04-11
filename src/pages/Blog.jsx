@@ -71,7 +71,7 @@ const Blog = () => {
                         <div className="breadcrumbs">
                             <ul>
                                 <li><Link to="/">Home</Link></li>
-                                <li>News & Blogs </li>
+                                <li>Memorabila </li>
                             </ul>
                         </div>
                     </div>
@@ -88,7 +88,7 @@ const Blog = () => {
                             <article className="sc-card-article">
                                 <div className="card-media">
                                     {/* <Link to="/blog-details"><img src={item.img} alt="Bidzen" /></Link> */}
-                                    <Link to={`${changeLink.link}/${item.ad_slug}/${item.ad_category}`}><img src={dataBlog[0].img} alt="Bidzen" /></Link>
+                                    <Link to={`${changeLink.link}/${item.ad_slug}/${item.ad_category}`}><img src={item.ad_cover_image} alt="Bidzen" /></Link>
                                 </div>
                                 <div className="content">
                                     {/* <div className="meta-info">
