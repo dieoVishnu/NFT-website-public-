@@ -9,7 +9,7 @@ const Gallery = props => {
     const [databse, setDatabse] = useState([])
     const data = props.data;
     const imoodiniData = useData(2,12)
-    // console.log("this is",imoodiniData)
+    console.log("this is",imoodiniData)
     
     return (
         <section className="tf-live-auctions tf-section bg-color-1">
@@ -22,7 +22,7 @@ const Gallery = props => {
                                 <div className="inner">
                                     <div className="group">
                                         <div className="icon"><i className="ripple"></i></div>
-                                        <h3>Featured Product</h3>
+                                        <h3>Sports Collection</h3>
                                     </div>
                                     <p className="desc">Most popular gaming digital nft market place </p>
                                 </div>

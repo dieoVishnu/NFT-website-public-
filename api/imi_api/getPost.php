@@ -1,7 +1,7 @@
 <?php
 
 include('../imi_configuration/D3sS0L4aToR.php');
-// include('../imi_includes/imi_config.php');
+include('../imi_includes/imi_config.php');
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
@@ -12,7 +12,8 @@ header("Content-Type: application/json; charset=UTF-8");
 $myObj = new \stdClass();
 $adid = $_GET['product_id'];
 $catid = $_GET['category_id'];
-
+$urlToImg = $url . "imi_includes/media/listing-img/";
+$imgloop = array();
 // 1 cars
 // 2 memerobilia
 
@@ -48,6 +49,13 @@ $catid = $_GET['category_id'];
 
                 $posted = $row['eg_dateAdd'];
                 $datePost = date_create($posted);
+
+                $getIMG = "SELECT * FROM `ad_media_imgs` WHERE `eg_adid` = '$ad_id' LIMIT 1";
+                $stmtIMG = $conn->prepare($getIMG);
+                $stmtIMG->execute();
+
+                $imgQ = $stmtIMG->fetch();
+                $img = $imgQ['ad_img_url'];
             }
 
             //    Image for Header
@@ -90,6 +98,7 @@ $catid = $_GET['category_id'];
                         "adlocation" => "$adlocation",
                         "adcondition" => "$adcondition",
                         "adyear" => "$adyear",
+                        "ad_cover_image" => $urlToImg . "$img",
                     );
 
                     $error = 200;
@@ -134,18 +143,28 @@ $catid = $_GET['category_id'];
                         
                         $posted = $row['eg_dateAdd'];
                         $datePost = date_create($posted);
+
+                        $getIMG = "SELECT * FROM `ad_media_imgs` WHERE `eg_adid` = '$ad_id' LIMIT 1";
+                        $stmtIMG = $conn->prepare($getIMG);
+                        $stmtIMG->execute();
+        
+                        $imgQ = $stmtIMG->fetch();
+                        $img = $imgQ['ad_img_url'];
                     }
         
                     //    Image for Header
-                    $getOPIMG = "SELECT * FROM `ad_media_imgs` WHERE `eg_adid` = '$ad_id' LIMIT 1";
+                    $getOPIMG = "SELECT * FROM `ad_media_imgs` WHERE `eg_adid` = '$ad_id' LIMIT 10";
                     $stmtOPIMG = $conn->prepare($getOPIMG);
                     $stmtOPIMG->execute();
         
                     $result = $stmtOPIMG->rowCount();
         
                     if ($result > 0) {
-                        $row = $stmtOPIMG->fetch();
-                        $imgOP = $row['ad_img_url'];
+                        while ($row = $stmtOPIMG->fetch()){
+                            // $imgOP = $row['ad_img_url'];
+                            $imgs = $row['ad_img_url'];
+                            $imgloop[] = $urlToImg . "$imgs";
+                        }
                     } else {
                         $imgOP = 'https://imoodini.com/imi-media/og-image-home.jpg';
                     }
@@ -170,7 +189,6 @@ $catid = $_GET['category_id'];
                                 "user_name" => "$userName",
                                 "ad_title" => "$adtitle",
                                 "ad_price" => "$adprice",
-                                "ad_cover_image" => "$imgOP",
                                 "ad_details" => "$ad_details",
                                 "adlocation" => "$adlocation",
                                 "adcondition" => "$adcondition",
@@ -182,6 +200,8 @@ $catid = $_GET['category_id'];
                                 "ad_transmission" => "$adtrans",
                                 "ad_kms" => "$adkms",
                                 "datePost" => "$posted",
+                                "ad_cover_image" => $urlToImg . "$img",
+                                "ad_cover_loop" => $imgloop
                             );
         
                             $error = 200;

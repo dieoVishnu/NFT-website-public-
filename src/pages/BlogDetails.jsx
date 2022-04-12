@@ -66,10 +66,6 @@ const BlogDetails = () => {
                 name: 'condition',
                 count: 'adcondition' 
             },
-            {
-                name: 'location',
-                count: 'adlocation' 
-            },
         ]
 
     const [dataRecent] = useState(
@@ -353,7 +349,9 @@ const BlogDetails = () => {
                                     dataCategory.map((item,index)=> (
                                         <li key={index}><Link to="#"><span>{item.name}</span><span>{imoodiniData ? imoodiniData.data[item.count] : null}</span></Link></li>
                                     ))
+
                                 }
+                                <li><Link to="#"><span>Price</span><span>$ {imoodiniData ? imoodiniData.data.ad_price: null}</span></Link></li>
                             </ul>
                         </div>
                         <div className="widget item widget-post style-3">
@@ -361,24 +359,27 @@ const BlogDetails = () => {
                                 Recent News
                             </div>
                             <ul className="post-new">
-                               
-                                        <li>
-                                            <div className="avatar">
-                                                <img src={avt1} alt="Post New" />
-                                            </div>
-                                            <div className="post-content">
-                                                <Link to="/blog-details" className="post-date">
-                                                    {/* <i className="fa fa-dot"></i> */}
-                                                    Owner By</Link>
-                                                <h6 className="title"><Link to="/blog-details">{imoodiniData.data.user_name}</Link></h6>
-                                            </div>
-                                        </li>
-                                    
+                        
+                                <li>
+                                    <div className="avatar">
+                                        <img src={avt1} alt="Post New" />
+                                    </div>
+                                    <div className="post-content">
+                                        <Link to="/blog-details" className="post-date">
+                                            {/* <i className="fa fa-dot"></i> */}
+                                            Owner By</Link>
+                                        <h6 className="title"><Link to="/blog-details">{imoodiniData.data.user_name}</Link></h6>
+                                    </div>
+                                </li>
+                                
+                                
                                 <div className='pt-5'>
+                               
                                 <Link to={`/contact/${imoodiniData.data.ad_id}/${imoodiniData.data.ad_title}`}
                                     className="sc-button style letter style-2 style-item-details"><span>Contact us</span>
                                 </Link>
                                 </div>
+                                
                             </ul>
                         </div>
                         {/* <div className="widget item wg-tags">

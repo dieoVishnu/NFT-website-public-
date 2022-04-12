@@ -98,7 +98,7 @@ const menus = [
     // },
     {
         id: 4,
-        name: 'NFT',
+        name: "NFT's",
         namesub: [
             {
                 id: 1,

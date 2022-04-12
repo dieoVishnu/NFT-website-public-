@@ -50,7 +50,8 @@ const ItemDetails = () => {
     
 
     const imoodiniData = useSingelpost(path1,path2)
-        console.log(imoodiniData)
+    // const imoodiniData = false
+        
   return <div className='item-details'>
         <Header />
         {
@@ -100,7 +101,7 @@ const ItemDetails = () => {
                                     </div>
                                     <div className="infor">
                                         <div className="create">Owner By</div>
-                                        <h6><Link to="/authors">{imoodiniData.data.user_name}</Link> </h6>
+                                        <h6><Link to="/authors">{imoodiniData.data.user_name}</Link></h6>
                                         {/* <div className="widget-social">
                                             <ul>
                                                 <li><Link to="#" className="active"><i className="fab fa-facebook-f"></i></Link>
@@ -231,7 +232,10 @@ const ItemDetails = () => {
         </>
         :
         <>
-        loding
+        lodings
+        <div className="loading-section">
+
+        </div>
         </>
 
         }
@@ -244,4 +248,3 @@ const ItemDetails = () => {
 export default ItemDetails;
 
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d464.5379865223107!2d55.28109850974789!3d25.186086876696038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f683a83e528df%3A0xf9c17edb93ae3854!2sInner%20Circle%20Bay%20Business%20Center!5e0!3m2!1sen!2sae!4v1649397367195!5m2!1sen!2sae" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

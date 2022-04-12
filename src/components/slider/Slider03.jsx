@@ -13,15 +13,17 @@ const Slider03 = props => {
         <section className="tf-slider slider-box">
             <div className="slider-inner flex home-1 myswiper-slider">
                 <div className="slider-content">
-                    <h1 className="heading">Our Collectors</h1>
-                    <p className="sub-heading">UAE's Largest Buy, Sell & Compare Classified Ads And Auctions</p>
+                    <h1 className="heading">For Collectors,</h1>
+                    <h1 className="heading">By Collectors</h1>
+                    <p className="sub-heading">The Worlds Only One Stop Shop For All Rare Collectibles</p>
                     <div className="button-slider">
-                        <Link to="/explore-01"
-                            className="sc-button btn-bordered-white style letter "><span>Explore
-                                More</span></Link>
-                        <Link to="/create-item"
+                        <p>Couldn't Find What You Are Looking For?</p>
+                        <Link to="/contact"
+                            className="sc-button btn-bordered-white style letter "><span>Special
+                                Inquiry</span></Link>
+                        {/* <Link to="/create-item"
                             className="sc-button btn-bordered-white style file"><span>Create
-                                Now</span></Link>
+                                Now</span></Link> */}
                     </div>
                 </div>
                 <div className='mySwiper slider-content'>

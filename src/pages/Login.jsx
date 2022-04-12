@@ -70,7 +70,7 @@ const Login = () => {
                         name: goole.profileObj.name}))
                     // setData(res.data.data)
                     console.log(res)
-                    // res.data && window.location.replace('/')
+                    res.data && window.location.replace('/')
                 }
                 
             }

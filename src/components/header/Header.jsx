@@ -1,15 +1,15 @@
 import React, { useRef, useState, useEffect } from 'react';
 import TopBar from './TopBar';
 import { Link, useLocation } from 'react-router-dom'
-import logo from '../../assets/images/logo/logo_dark.png'
-import logo2x from '../../assets/images/logo/logo_dark@2x.png'
-import logolight from '../../assets/images/logo/logo.png'
-import logolight2x from '../../assets/images/logo/logo@2x.png'
-import menus from "../../pages/menu";
+import logo from '../../assets/images/logo/new-logo.png'
+import logo2x from '../../assets/images/logo/new-logo.png'
+import logolight from '../../assets/images/logo/new-logo.png'
+import logolight2x from '../../assets/images/logo/new-logo.png'
+import menus from "../../pages/menu"
 import DarkMode from "./DarkMode"
 import icon from '../../assets/images/icon/connect-wallet.svg'
 import {useSelector,useDispatch} from "react-redux"
-import { logOut } from '../../redux/auth';
+import { logOut } from '../../redux/auth'
 
 const Header = () => {
 

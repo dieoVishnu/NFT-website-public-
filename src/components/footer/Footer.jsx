@@ -120,9 +120,8 @@ const Footer = () => {
                             <div className="widget widget-logo">
                                 <div className="logo-footer" id="logo-footer">
                                     <Link to="/">
-                                        {/* <img id="logo_footer" src={logo} alt="nft-gaming"
-                                        srcSet={logo2x} /> */}
-                                        DIVINE NFTS
+                                        <img id="logo_footer" src={logo} alt="nft-gaming"
+                                        srcSet={logo2x} />
                                     </Link>
                                 </div>
                                 <p className="sub-widget-logo">Sed ut perspiciatis unde omnis iste natus error sit voluptate
@@ -162,7 +161,7 @@ const Footer = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-lg-4 col-md-6 col-sm-12 col-12">
+                        {/* <div className="col-lg-4 col-md-6 col-sm-12 col-12">
                             <div className="widget widget-post">
                                 <h5 className="title-widget">News & Post</h5>
                                 <ul className="post-new">
@@ -182,14 +181,14 @@ const Footer = () => {
                                     }
                                 </ul>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </footer>
             <div className="bottom">
                 <div className="container">
                     <div className="bottom-inner">
-                        Copyright © 2022 Bidzen | NFT Marketplace React Js Template. Designed by <a
+                        Copyright © 2022 Divine Intervention Entertainment  | Designed by <a
                             href="https://themeforest.net/user/themesflat/portfolio"> Themesflat</a>
                     </div>
                 </div>

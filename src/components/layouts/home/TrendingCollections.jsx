@@ -13,7 +13,7 @@ const TrendingCollections = props => {
                     <div className="sc-heading style-2">
                         <div className="content-left">
                             <div className="inner">
-                                <h3>Car Collection</h3>
+                                <h3>Classic Cars</h3>
                                 <p className="desc">Most popular gaming digital nft market place </p>
                             </div>
                         </div>
@@ -43,7 +43,7 @@ const TrendingCollections = props => {
                                                 </div>
                                             </div> */}
                                             <div className="product-price flex">
-                                                <div className="title">price</div>
+                                                <div className="title">Price</div>
                                                 <div className="price">
                                                     <span>${item.ad_price}</span>
                                                     {/* <span>= {item.priceChange}</span> */}

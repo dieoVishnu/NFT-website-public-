@@ -2237,7 +2237,7 @@ a:focus {
   margin-bottom: 22px;
 }
 .widget-logo .logo-footer img {
-  width: 151px;
+  /* width: 151px; */
   height: 45px;
 }
 .widget-logo .sub-widget-logo {
