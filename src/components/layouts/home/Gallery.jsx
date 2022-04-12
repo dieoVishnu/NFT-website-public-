@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import Countdown from "react-countdown";
 import useData from '../../../customhook/useData';
+import Test from '../../test/Test';
 
 const Gallery = props => {
     const [databse, setDatabse] = useState([])
@@ -99,7 +100,8 @@ const LiveAutionItem = props => (
                     <div className="product-price">
                         <div className="title">Price</div>
                         <div className="price">
-                            <span>${props.item.ad_price}</span>
+                            <span>${props.item.ad_price.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</span>
+                            {/* <Test data={props.item.ad_price} /> */}
                             {/* <span>= {props.item.priceChange}</span> */}
                         </div>
                     </div>

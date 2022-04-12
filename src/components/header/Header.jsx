@@ -52,6 +52,21 @@ const Header = () => {
         dispatch(logOut())
     }
 
+    const userMenu =[
+        {
+            id: 1,
+            name: 'SPORTS COLLECTION',
+            tag: '2',
+            namesub: [
+                {
+                    id: 1,
+                    sub: 'Logout',
+                    links: '/login'
+                },
+            ]
+        },
+    ]
+
     return <div>
 
         <TopBar />
@@ -95,9 +110,6 @@ const Header = () => {
                                             </li>
                                         ))
                                     }
-                                    {/* <li><Link to="#" className="active"><i className="fab fa-facebook-f"></i></Link></li> */}
-                                    {/* <li><Link to="#"><i className="fa fa-heart"></i></Link></li>
-                                    <li><Link to="#"><i className="fa fa-shopping-cart"></i></Link></li> */}
                                     
                                 </ul>
                             </nav>
@@ -109,20 +121,41 @@ const Header = () => {
                              </Link>
                                 :
                                 <div className='flex' id='center'>
-                                <div >
+                                {/* <div >
+                                    <Link to="/login" className="sc-button wallet  style-2" onClick={e=>handelLogout(e)}>
+                                    <img src={icon} alt="icon" />
+                                    <span>Log out</span>
+                                            </Link>
+                                </div> */}
+                                            
 
-                                <Link to="/login" className="sc-button wallet  style-2" onClick={e=>handelLogout(e)}>
-                                <img src={icon} alt="icon" />
-                                <span>Log out</span>
-                            </Link>
-                                </div>
+                                            <nav id="main-nav" className="main-nav" ref={menuLeft}>
+                                <ul id="menu-primary-menu" className="menu">
+                                    {
+                                        userMenu.map((data, index) => (
+                                            <li key={index} onClick={() => handleOnClick(index)} className={`menu-item menu-item-has-children ${activeIndex === index ? 'active' : ''} `}   >
+                                                <Link to={`/blog/${data.tag}`} onClick={() => {window.location.href=`/blog/${data.tag}`}}><i className="fa fa-user"></i></Link>
+                                                {/* submenu */}
+                                                <ul className="sub-menu" >
+                                                    {
+                                                        data.namesub.map((submenu, index) => (
+                                                            <li key={index} className={
+                                                                pathname === submenu.links
+                                                                    ? "menu-item current-item"
+                                                                    : "menu-item"
+                                                            }><Link to={submenu.links} onClick={e=>handelLogout(e)}>{submenu.sub}</Link></li>
+                                                        ))
+                                                    }
+                                                </ul>
+                                            </li>
+                                        ))
+                                    }
+                                
+                                    
+                                </ul>
+                            </nav>
 
-                                <li className='pl-5' ><Link to="#"><i className="fa fa-user">
-                                        <ul className="sub-menu" >
-                                        <li className= "menu-item current-item"
-                                                                ><Link to="#"></Link></li>
-                                                    </ul>
-                                            </i></Link></li>
+                                            
                                 </div>
                             
                                 }

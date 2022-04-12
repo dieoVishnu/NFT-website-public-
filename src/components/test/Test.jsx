@@ -2,20 +2,12 @@ import React from 'react';
 import MetaTags from 'react-meta-tags';
 
 
-const Test = ()=>{
+const Test = (props)=>{
+    let num = 1554545484
+    num.toLocaleString()
 
-    return(
-        <>
-        <MetaTags>
-            <title>Page 3</title>
-            <meta name="description" content="Some description." />
-            <meta property="og:title" content="MyApp" />
-            <meta property="og:image" content="path/to/image.jpg" />
-        </MetaTags>
 
-        <h1>this is teset</h1>
-        </>
-    )
+    return  <span>${num}</span>
 }
 
 export default Test

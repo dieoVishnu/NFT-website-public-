@@ -4,6 +4,7 @@ import img1 from '../../assets/images/post/post-recent-new-4.jpg'
 import img2 from '../../assets/images/post/post-recent-new-5.jpg'
 
 import logo from '../../assets/images/logo/logo_dark.png'
+import logo1 from '../../assets/images/logo/logodivine.png'
 import logo2x from '../../assets/images/logo/logo_dark@2x.png'
 
 const Footer = () => {
@@ -124,7 +125,15 @@ const Footer = () => {
                                         srcSet={logo2x} />
                                     </Link>
                                 </div>
-                                <p className="sub-widget-logo">Product of Divine</p>
+                                
+                                <div className="logo-footer" id="logo-footer">
+                                <p className="sub-widget-logo">Product of &nbsp;
+                                    <a href="https://divine-ie.com/" target="_blank" rel="noopener noreferrer">
+                                        <img id="logo_footer" src={logo1} alt="nft-gaming"
+                                        srcSet={logo1} />
+                                    </a>
+                                        </p>
+                                </div>
                                 <div className="widget-social">
                                     <ul>
                                         {
