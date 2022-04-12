@@ -69,10 +69,10 @@ const SliderItem = props => (
             <div className="author-part">
                 <ul className="author-list d-flex">
                     <li className="single-author d-flex align-items-center">
-                        <a href="author.html" className="veryfied"><img
+                        {/* <a href="author.html" className="veryfied"><img
                             loading="lazy" src="assets/images/seller/04.png"
                             alt="author-img" /></a>
-                        <h6><a href="author.html">rasselmrh</a></h6>
+                        <h6><a href="author.html">rasselmrh</a></h6> */}
                     </li>
                 </ul>
             </div>
@@ -106,15 +106,15 @@ const SliderItem = props => (
                 <div classNameName="img-home-1"><img src={props.item.img} alt="Bidzen" /></div>
             </div> */}
             <div className="nft-content">
-                <h4><a href="item-details.html">Black Cat </a> </h4>
-                <div
+                <h4><Link to={`/item-details/${props.item.ad_slug}/${props.item.ad_category}`}>{props.item.title}</Link> </h4>
+                {/* <div
                     className="price-like d-flex justify-content-between align-items-center">
                     <p className="nft-price">Price: <span className="yellow-color">0.34
                         ETH</span>
                     </p>
                     <a href="#" className="nft-like"><i className="icofont-heart"></i>
                         230</a>
-                </div>
+                </div> */}
             </div>
         </div>
     </div>

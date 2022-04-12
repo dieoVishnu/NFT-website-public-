@@ -55,7 +55,7 @@ const Gallery = props => {
                                     scrollbar={{ draggable: true }}
                                 >
                                     {
-                                        imoodiniData.map((item, index) => (
+                                        imoodiniData.slice(1).map((item, index) => (
                                             <SwiperSlide key={index}>
                                                 <LiveAutionItem item={item} datas={props.data} />
                                             </SwiperSlide>
