@@ -61,11 +61,8 @@ const TopBar = () => {
                                 </Countdown>
                             </div> */}
                             <ul className="socical-icon flex">
-                                <li><Link to="#" className="active"><i className="fab fa-facebook-f"></i></Link></li>
-                                <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>
-                                <li><Link to="#"><i className="fab fa-instagram"></i></Link></li>
-                                <li><Link to="#"><i className="fab fa-dribbble"></i></Link></li>
-                                <li><Link to="#"><i className="fab fa-linkedin-in"></i></Link></li>
+                                <li><a href="https://www.facebook.com/imoodini" target="_blank" rel="noopener noreferrer" className="active"><i className="fab fa-facebook-f"></i></a></li>
+                                <li><a href='https://www.instagram.com/imoodini' target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a></li>
                             </ul>
                         </div>
                     </div>

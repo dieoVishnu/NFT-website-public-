@@ -15,6 +15,7 @@ import Register from './Register'
 import Contact from './Contact'
 import Test from "../components/test/Test";
 import ItemDetailsCars from "./ItemDetailsCars";
+import Privacy from "./Privacy";
 
 const routes = [
     { path: '/', component: <Home01 />},
@@ -34,7 +35,8 @@ const routes = [
     { path: '/register', component: <Register />},
     { path: '/contact', component: <Contact />},
     { path: '/contact/:id/:id', component: <Contact />},
-    { path: '/test', component: <Test />}
+    { path: '/test', component: <Test />},
+    { path: '/privacy', component: <Privacy />},
 ]
 
 export default routes;

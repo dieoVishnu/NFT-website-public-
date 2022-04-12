@@ -9,71 +9,71 @@ import logo2x from '../../assets/images/logo/logo_dark@2x.png'
 const Footer = () => {
     const [dataSocial] = useState([
         {
-            icon: 'fab fa-facebook-f'
+            icon: 'fab fa-facebook-f',
+            link: "https://www.facebook.com/imoodini"
         },
         {
-            icon: 'fab fa-twitter'
-        },
-        {
-            icon: 'fab fa-linkedin-in'
-        },
-        {
-            icon: 'fab fa-youtube'
+            icon: 'fab fa-instagram',
+            link: "https://www.instagram.com/imoodini"
         },
     ])
 
     const [dataLinkMarket] = useState([
+        // {
+        //     title: 'Gaming',
+        //     link: '/item'
+        // },
+        // {
+        //     title: 'Product',
+        //     link: '/item'
+        // },
+        // {
+        //     title: 'All NFTs',
+        //     link: '/item'
+        // },
+        // {
+        //     title: 'Social Network',
+        //     link: '/item'
+        // },
+        // {
+        //     title: 'Domain Names',
+        //     link: '/item'
+        // },
+        // {
+        //     title: 'Collectibles',
+        //     link: '/item'
+        // },
         {
-            title: 'Gaming',
-            link: '/item'
-        },
-        {
-            title: 'Product',
-            link: '/item'
-        },
-        {
-            title: 'All NFTs',
-            link: '/item'
-        },
-        {
-            title: 'Social Network',
-            link: '/item'
-        },
-        {
-            title: 'Domain Names',
-            link: '/item'
-        },
-        {
-            title: 'Collectibles',
-            link: '/item'
+            title: 'Help & Support',
+            link: '/contact'
         },
     ])
 
     const [dataSupport] = useState([
         {
             title: 'Setting & Privacy',
-            link: '/contact'
+            link: '/privacy'
         },
-        {
-            title: 'Help & Support',
-            link: '/contact'
-        },
-        {
-            title: 'Live Auctions',
-            link: '/item'
-        },
-        {
-            title: 'Item Details',
-            link: '/item-details'
-        },
-        {
-            title: '24/7 Supports',
-            link: '/contact'
-        },
-        {
-            title: 'Blog',
-            link: '/blog'
-        },
+        // {
+        //     title: 'Help & Support',
+        //     link: '/contact'
+        // },
+        // {
+        //     title: 'Live Auctions',
+        //     link: '/item'
+        // },
+        // {
+        //     title: 'Item Details',
+        //     link: '/item-details'
+        // },
+        // {
+        //     title: '24/7 Supports',
+        //     link: '/contact'
+        // },
+        // {
+        //     title: 'Blog',
+        //     link: '/blog'
+        // },
     ])
 
     const [dataRecent] = useState([
@@ -124,13 +124,12 @@ const Footer = () => {
                                         srcSet={logo2x} />
                                     </Link>
                                 </div>
-                                <p className="sub-widget-logo">Sed ut perspiciatis unde omnis iste natus error sit voluptate
-                                    accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quaes</p>
+                                <p className="sub-widget-logo">Product of Divine</p>
                                 <div className="widget-social">
                                     <ul>
                                         {
                                             dataSocial.map((item, index) => (
-                                                <li key={index}><Link to="#"><i className={item.icon}></i></Link></li>
+                                                <li key={index}><a href={item.link} target="_blank" rel="noopener noreferrer"><i className={item.icon}></i></a></li>
                                             ))
                                         }
                                     </ul>
@@ -139,7 +138,7 @@ const Footer = () => {
                         </div>
                         <div className="col-lg-2 col-md-6 col-sm-6 col-6">
                             <div className="widget widget-menu menu-marketplace">
-                                <h5 className="title-widget">Marketplace</h5>
+                                {/* <h5 className="title-widget">Help & Support</h5> */}
                                 <ul>
                                     {
                                         dataLinkMarket.map((item, index) => (
@@ -151,7 +150,7 @@ const Footer = () => {
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                             <div className="widget widget-menu menu-supports">
-                                <h5 className="title-widget">Supports</h5>
+                                {/* <h5 className="title-widget">Setting & Privacy</h5> */}
                                 <ul>
                                     {
                                         dataSupport.map((item, index) => (
