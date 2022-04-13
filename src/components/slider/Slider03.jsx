@@ -16,9 +16,11 @@ const Slider03 = props => {
                     <h1 className="heading">For Collectors,</h1>
                     <h1 className="heading">By Collectors</h1>
                     <p className="sub-heading">The Worlds Only One Stop Shop For All Rare Collectibles</p>
+                    
                     <div className="button-slider">
-                        <p>Couldn't Find What You Are Looking For?</p>
+                    <p className="sub-heading">Couldn't Find What You Are Looking For?</p>
                         <Link to="/contact"
+
                             className="sc-button btn-bordered-white style letter "><span>Special
                                 Inquiry</span></Link>
                         {/* <Link to="/create-item"
@@ -65,14 +67,14 @@ const Slider03 = props => {
 const SliderItem = props => (
 
     <div className='nft-inner'>
-        <div className="nft-item-top d-flex justify-content-between align-items-center">
+        {/* <div className="nft-item-top d-flex justify-content-between align-items-center">
             <div className="author-part">
                 <ul className="author-list d-flex">
                     <li className="single-author d-flex align-items-center">
-                        {/* <a href="author.html" className="veryfied"><img
+                        <a href="author.html" className="veryfied"><img
                             loading="lazy" src="assets/images/seller/04.png"
                             alt="author-img" /></a>
-                        <h6><a href="author.html">rasselmrh</a></h6> */}
+                        <h6><a href="author.html">rasselmrh</a></h6>
                     </li>
                 </ul>
             </div>
@@ -95,7 +97,7 @@ const SliderItem = props => (
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> */}
         {/* <!-- nft-bottom part-- > */}
         <div className="nft-item-bottom">
             <div className="nft-thumb">

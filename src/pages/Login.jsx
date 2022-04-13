@@ -64,7 +64,7 @@ const Login = () => {
                 else{
                     dispatch(loginSuccess({ email: goole.profileObj.email,
                         familyName: goole.profileObj.familyName,
-                        givenName: goole.profileObj.givenName,
+                        user_Name: goole.profileObj.givenName,
                         googleId: goole.profileObj.googleId,
                         imageUrl: goole.profileObj.imageUrl,
                         name: goole.profileObj.name}))

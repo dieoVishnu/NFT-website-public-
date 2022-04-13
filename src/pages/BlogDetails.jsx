@@ -162,12 +162,12 @@ const BlogDetails = () => {
                 <div className="col-md-12">
                     <div className="page-title-inner flex">
                         <div className="page-title-heading">
-                            <h2 className="heading">Blog Destails</h2>
+                            <h2 className="heading">{path2 === 'Car' ? 'Classic Car': 'Sports Collection'}</h2>
                         </div>
                         <div className="breadcrumbs">
                             <ul>
                                 <li><Link to="/">Home</Link></li>
-                                <li>Blog Destails</li>
+                                <li>{path2 === 'Car' ? 'Classic Car': 'Sports Collection'}</li>
                             </ul>
                         </div>
                     </div>

@@ -60,6 +60,11 @@ const Header = () => {
             namesub: [
                 {
                     id: 1,
+                    sub: 'Favourite',
+                    links: '/login'
+                },
+                {
+                    id: 2,
                     sub: 'Logout',
                     links: '/login'
                 },
@@ -116,7 +121,8 @@ const Header = () => {
                             <div className="button-connect-wallet">
                                 {user === 'null' || user === null ?
                                  <Link to="/login" className="sc-button wallet  style-2">
-                                 <img src={icon} alt="icon" />
+                                 {/* <img src={icon} alt="icon" /> */}
+                                 <i className="fa fa-user"></i>
                                  <span>Log in</span>
                              </Link>
                                 :
@@ -134,7 +140,7 @@ const Header = () => {
                                     {
                                         userMenu.map((data, index) => (
                                             <li key={index} onClick={() => handleOnClick(index)} className={`menu-item menu-item-has-children ${activeIndex === index ? 'active' : ''} `}   >
-                                                <Link to={`/blog/${data.tag}`} onClick={() => {window.location.href=`/blog/${data.tag}`}}><i className="fa fa-user"></i></Link>
+                                                <Link to={`/blog/${data.tag}`} onClick={() => {window.location.href=`/blog/${data.tag}`}}><i className="fa fa-user"></i>&nbsp;Hello, {user.user_Name}</Link>
                                                 {/* submenu */}
                                                 <ul className="sub-menu" >
                                                     {

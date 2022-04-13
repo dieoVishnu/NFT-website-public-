@@ -36,6 +36,8 @@
   --primary-color3: #dc39fc;
   --primary-color4: #616161;
   --primary-color5: #6345ed;
+  --primary-color6: #b0851a;
+  --primary-color7: #f4b442;
 }
 
 :root {
@@ -51,7 +53,7 @@
   --color-2: #616161;
   --color-3: rgba(99, 69, 237, 0.07);
   --color-4: #fff;
-  --color-5: #616161;
+  --color-5: #3a3a37;
   --color-6: rgba(99, 69, 237, 0.1);
   --border-color-1: rgba(99, 69, 237, 0.12);
   --color-7: #7d7d7d;
@@ -64,6 +66,8 @@
   --bg-newletter: #f9f9f9;
   /* gradint */
   --bg-gradint-color-my: linear-gradient(to right, #009fff, #ec2f4b);
+  --gold-dark: #f4b442;
+  --gold-white: #b0851a;
 }
 
 .is_dark {
@@ -79,7 +83,7 @@
   --color-2: rgba(255, 255, 255, 0.6);
   --color-3: #343444;
   --color-4: #343444;
-  --color-5: #14161b;
+  --color-5: #fff;
   --color-6: rgba(255, 255, 255, 0.6);
   --primary-color4: #ffffffcc;
   --primary-color2: #fff;
@@ -93,6 +97,8 @@
   --primary-color5: #fff;
   --border-color-2: rgba(255, 255, 255, 0.12);
   --bg-newletter: #222232;
+  --gold-dark: #b0851a;
+  --gold-white: #f4b442;
 }
 
 /* PreLoad
@@ -200,7 +206,11 @@
   content: "";
   height: calc(100% + 4px);
   width: calc(100% + 4px);
-  background-image: linear-gradient(132.41deg, #6345ed 18.03%, #dc39fc 81.29%);
+  background-image: linear-gradient(
+    132.41deg,
+    var(--primary-color7) 18.03%,
+    var(--primary-color6) 81.29%
+  );
   top: -2px;
   left: -2px;
   border-radius: 100px;
@@ -257,14 +267,18 @@
 
 /* button style */
 .sc-button.style-2 {
-  background-image: linear-gradient(to left, #6345ed 58.12%, #dc39fc 81.74%);
+  background-image: linear-gradient(
+    to left,
+    var(--primary-color6) 58.12%,
+    var(--primary-color7) 81.74%
+  );
   border: unset;
   background-size: 200% auto;
 }
 
 .sc-button.style-2 span,
 .sc-button.style-2 span::before {
-  color: var(--primary-color);
+  color: var(--color-5);
 }
 
 .sc-button.style-2:hover {
@@ -1308,7 +1322,7 @@ blockquote .author::before {
 .sc-product-item.style-2 .product-img label {
   right: 28px;
   padding: 6px 13px;
-  background: linear-gradient(124.27deg, #6345ed 15.3%, #dc39fc 69.02%);
+  /* background: linear-gradient(124.27deg, #6345ed 15.3%, #dc39fc 69.02%); */
   border-radius: 10px;
   font-size: 13px;
 }
@@ -2436,7 +2450,13 @@ blockquote .author::before {
 
 .nft-inner {
   padding: 20px;
-  background: var(--primary-color);
+  background: rgb(167, 126, 25);
+  background: linear-gradient(
+    90deg,
+    rgba(167, 126, 25, 1) 0%,
+    rgba(227, 171, 32, 1) 52%,
+    rgba(167, 126, 25, 1) 100%
+  );
   border-radius: 5px;
   border: 1px solid transparent;
 }
@@ -2493,8 +2513,11 @@ blockquote .author::before {
 }
 
 .slider-inner .slider-content .heading,
+.slider-inner .slider-content {
+  color: var(--color-5);
+}
 .slider-inner .slider-content .sub-heading {
-  color: #fff;
+  color: var(--gold);
 }
 
 .slider-inner .slider-content .heading {
@@ -2705,7 +2728,11 @@ blockquote .author::before {
 
 .is_dark .slider .swiper-button-next,
 .is_dark .slider .swiper-button-prev {
-  background: linear-gradient(130.35deg, #6345ed 17.35%, #dc39fc 78.23%);
+  background: linear-gradient(
+    130.35deg,
+    var(--primary-color7) 17.35%,
+    var(--primary-color6) 78.23%
+  );
 }
 
 .is_dark .slider .swiper-button-next.swiper-button-disabled,
