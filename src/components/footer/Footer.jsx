@@ -48,13 +48,17 @@ const Footer = () => {
             title: 'Help & Support',
             link: '/contact'
         },
-    ])
-
-    const [dataSupport] = useState([
         {
             title: 'Setting & Privacy',
             link: '/privacy'
         },
+    ])
+
+    const [dataSupport] = useState([
+        // {
+        //     title: 'Setting & Privacy',
+        //     link: '/privacy'
+        // },
         // {
         //     title: 'Help & Support',
         //     link: '/contact'
@@ -145,7 +149,7 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-2 col-md-6 col-sm-6 col-6">
+                        <div className="col-lg-2 col-md-6 col-sm-6 col-6 flex " id="center">
                             <div className="widget widget-menu menu-marketplace">
                                 {/* <h5 className="title-widget">Help & Support</h5> */}
                                 <ul>
@@ -157,9 +161,9 @@ const Footer = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-6">
+                        {/* <div className="col-lg-3 col-md-6 col-sm-6 col-6">
                             <div className="widget widget-menu menu-supports">
-                                {/* <h5 className="title-widget">Setting & Privacy</h5> */}
+                                <h5 className="title-widget">Setting & Privacy</h5>
                                 <ul>
                                     {
                                         dataSupport.map((item, index) => (
@@ -168,7 +172,7 @@ const Footer = () => {
                                     }
                                 </ul>
                             </div>
-                        </div>
+                        </div> */}
                         {/* <div className="col-lg-4 col-md-6 col-sm-12 col-12">
                             <div className="widget widget-post">
                                 <h5 className="title-widget">News & Post</h5>
