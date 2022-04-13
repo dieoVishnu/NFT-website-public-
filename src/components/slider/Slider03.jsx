@@ -18,9 +18,8 @@ const Slider03 = props => {
                     <p className="sub-heading">The Worlds Only One Stop Shop For All Rare Collectibles</p>
                     
                     <div className="button-slider">
-                    <p className="sub-heading">Couldn't Find What You Are Looking For?</p>
+                    <p className='stroke'>Couldn't Find What You Are Looking For?</p>
                         <Link to="/contact"
-
                             className="sc-button btn-bordered-white style letter "><span>Special
                                 Inquiry</span></Link>
                         {/* <Link to="/create-item"
@@ -101,7 +100,7 @@ const SliderItem = props => (
         {/* <!-- nft-bottom part-- > */}
         <div className="nft-item-bottom">
             <div className="nft-thumb">
-                <img loading="lazy" src={props.item.img}
+                <img className='slide-cover-img' loading="lazy" src={props.item.img}
                     alt="nft-img" />
             </div>
             {/* <div className="slider-img">

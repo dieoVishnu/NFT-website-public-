@@ -5,7 +5,7 @@ import Header from '../components/header/Header';
 import  {Newsletters} from '../components/layouts/home/Newsletters';
 import Footer from '../components/footer/Footer';
 import axios from '../assets/axios';
-import img1 from '../assets/images/background/img-login.jpg'
+import img1 from '../assets/images/background/img-login.png'
 import {useDispatch} from "react-redux";
 import { loginFaild, loginSuccess } from '../redux/auth';
 import GoogleLogin from 'react-google-login'

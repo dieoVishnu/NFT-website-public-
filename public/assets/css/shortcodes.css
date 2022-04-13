@@ -244,7 +244,7 @@
   left: 0px;
   font-weight: 700;
   top: -1px;
-  color: #dc39fc;
+  color: var(--gold-dark);
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -2517,13 +2517,13 @@ blockquote .author::before {
   color: var(--color-5);
 }
 .slider-inner .slider-content .sub-heading {
-  color: var(--gold);
+  color: var(--gold-dark);
 }
 
 .slider-inner .slider-content .heading {
   line-height: 1.07;
   letter-spacing: -2px;
-  margin-bottom: 28px;
+  margin-bottom: 10px;
 }
 
 .slider-inner .slider-content .sub-heading {
@@ -2594,7 +2594,11 @@ blockquote .author::before {
   .slider-content
   .button-slider
   .sc-button.btn-bordered-white::after {
-  background-image: linear-gradient(132.41deg, #6345ed 18.03%, #dc39fc 81.29%);
+  background-image: linear-gradient(
+    132.41deg,
+    var(--primary-color7) 18.03%,
+    var(--primary-color6) 81.29%
+  );
 }
 
 .slider-inner .slider-content .button-slider .sc-button.active span::before,

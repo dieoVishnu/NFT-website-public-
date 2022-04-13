@@ -213,7 +213,7 @@ a img {
 img {
   max-width: 100%;
   /* height: auto; */
-  object-fit: cover;
+  object-fit: contain;
 }
 
 select {
@@ -733,7 +733,7 @@ h6 {
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 58px;
 }
 
 h2 {
@@ -1074,7 +1074,7 @@ a:focus {
 --------------------------------------------------------------*/
 
 .topbar {
-  background-color: var(--bg-topbar);
+  background-color: var(--bg-slider);
   padding: 6px 0;
 }
 .topbar-inner {
@@ -1291,7 +1291,7 @@ a:focus {
 .header_1 {
   position: relative;
   z-index: 100;
-  background-color: var(--bg-header);
+  background-color: var(--bg-slider);
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
