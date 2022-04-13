@@ -15,7 +15,7 @@ const Blog = () => {
 
     const location = useLocation()
     const path1 = location.pathname.split("/")[2]
-    const imoodiniData = useData(path1,50)
+    const imoodiniData = useData(path1,60)
 
     const [changeLink, setChangeLink] = useState({
         link:'s'
@@ -28,6 +28,26 @@ const Blog = () => {
 
     const paginationIncrement = (value)=>{
         setCurrentPage(value)
+        window.scrollTo(0, 0);
+    }
+
+    const handelPagination = (method)=>{
+        if (!method){
+            if (currentPage === 1){
+                return 0
+            }else{
+                window.scrollTo(0, 0);
+                setCurrentPage(currentPage-1)
+            }
+        }else{
+            if (currentPage === totalPageNumber.length){
+                return 0
+            }else{
+                window.scrollTo(0, 0);
+                setCurrentPage(currentPage+1)
+            }
+
+        }
     }
 
 
@@ -71,7 +91,7 @@ const Blog = () => {
                         <div className="breadcrumbs">
                             <ul>
                                 <li><Link to="/">Home</Link></li>
-                                <li>Memorabila </li>
+                                <li>Memorabila</li>
                             </ul>
                         </div>
                     </div>
@@ -111,13 +131,13 @@ const Blog = () => {
                 <div className="col-md-12">
                     <div className="wg-themesflat-pagination">
                         <ul>
-                            <li><Link to="#" className="page-numbers prev active"  onClick={()=>setCurrentPage(currentPage-1)}></Link></li>
+                            <li><Link to="#" className="page-numbers prev"  onClick={()=>handelPagination(false)}></Link></li>
                             {totalPageNumber.map((data, number)=>(
                                 
-                                <li><Link to="#" className="page-numbers" onClick={()=>paginationIncrement(number+1)}>{number+1}</Link></li>
+                                <li><Link to="#" className={number+1 === currentPage ? "page-numbers active" : "page-numbers"} onClick={()=>paginationIncrement(number+1)}>{number+1}</Link></li>
                             ))}
 
-                            <li><Link to="#" className="page-numbers next" onClick={()=>setCurrentPage(currentPage+1)}></Link></li>
+                            <li><Link to="#" className="page-numbers next" onClick={()=>handelPagination(true)}></Link></li>
                         </ul>
                     </div>
                 </div>

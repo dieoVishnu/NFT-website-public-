@@ -2833,7 +2833,7 @@ a:focus {
 /* Footer
 -------------------------------------------------------------- */
 #footer {
-  padding: 255px 0 70px;
+  padding: 26px 0 10px;
   background: var(--bg-footer);
 }
 
