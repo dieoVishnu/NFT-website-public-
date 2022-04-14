@@ -15,7 +15,6 @@ const Login = () => {
     const [email,setEmail] = useState()
     const [pass,setPass] = useState()
     const dispatch = useDispatch()
-
     const handeleFentch = async (e)=>{
         e.preventDefault()
         try{
@@ -81,6 +80,9 @@ const Login = () => {
         PostLogin()
 
     }
+    const handelError = (goole)=>{
+        console.log(goole)
+    }
     
   return <div>
     <Header />
@@ -143,7 +145,7 @@ const Login = () => {
                                     <GoogleLogin 
                                     clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                                     onSuccess={handelLogin}
-                                    onFailure={handelLogin}
+                                    onFailure={handelError}
                                     cookiePolicy={'single_host_origin'}
                                     >
 

@@ -10,7 +10,6 @@ const Gallery = props => {
     const [databse, setDatabse] = useState([])
     const data = props.data;
     const imoodiniData = useData(2,12)
-    console.log("this is",imoodiniData)
     
     return (
         <section className="tf-live-auctions tf-section bg-color-1">
