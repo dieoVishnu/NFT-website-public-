@@ -2152,7 +2152,7 @@ a:focus {
 .fl-page-title {
   padding: 83px 0;
   position: relative;
-  background: url(../images/background/bg-page-title.jpg) center center
+  background: url(../images/background/bg-page-title.jpeg) center center
     no-repeat;
   background-size: cover;
 }
@@ -2165,8 +2165,8 @@ a:focus {
   height: 100%;
   background: linear-gradient(
     130.35deg,
-    rgba(99, 69, 237, 0.85) 17.35%,
-    rgba(220, 57, 252, 0.85) 78.23%
+    rgba(8, 8, 8, 0.85) 17.35%,
+    rgba(176, 133, 26, 0.85) 78.23%
   );
 }
 

@@ -50,6 +50,7 @@ const Header = () => {
     const handelLogout = (e)=>{
         e.preventDefault()
         dispatch(logOut())
+        window.location.replace('/')
     }
 
     const userMenu =[
@@ -61,7 +62,7 @@ const Header = () => {
                 {
                     id: 1,
                     sub: 'Favourite',
-                    links: '/login'
+                    links: '/favourites'
                 },
                 {
                     id: 2,
@@ -149,7 +150,13 @@ const Header = () => {
                                                                 pathname === submenu.links
                                                                     ? "menu-item current-item"
                                                                     : "menu-item"
-                                                            }><Link to={submenu.links} onClick={e=>handelLogout(e)}>{submenu.sub}</Link></li>
+                                                            }>
+                                                                {submenu.id === 2 ?
+                                                                <Link to={submenu.links} onClick={e=>handelLogout(e)}>{submenu.sub}</Link> :
+                                                                <Link to={submenu.links} >{submenu.sub}</Link>
+
+                                                            }
+                                                                </li>
                                                         ))
                                                     }
                                                 </ul>

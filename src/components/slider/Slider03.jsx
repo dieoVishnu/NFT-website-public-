@@ -15,7 +15,7 @@ const Slider03 = props => {
                 <div className="slider-content">
                     <h1 className="heading">For Collectors,</h1>
                     <h1 className="heading">By Collectors</h1>
-                    <p className="sub-heading">The Worlds Only One Stop Shop For All Rare Collectibles</p>
+                    <p className="sub-heading">The world's only 'One Stop Shop' for all rare collectibles</p>
                     
                     <div className="button-slider">
                     <p className='stroke'>Couldn't Find What You Are Looking For?</p>
@@ -27,7 +27,7 @@ const Slider03 = props => {
                                 Now</span></Link> */}
                     </div>
                 </div>
-                <div className='mySwiper slider-content'>
+                {/* <div className='mySwiper slider-content'>
                     <Swiper
                         effect={"cube"}
                         grabCursor={true}
@@ -39,7 +39,7 @@ const Slider03 = props => {
                             shadowScale: 0.94,
                         }}
                         autoplay={{
-                            delay: 5500,
+                            delay: 3000,
                             disableOnInteraction: false,
                         }}
                         pagination={true}
@@ -54,7 +54,7 @@ const Slider03 = props => {
                             ))
                         }
                     </Swiper>
-                </div>
+                </div> */}
 
             </div>
 
@@ -107,7 +107,7 @@ const SliderItem = props => (
                 <div classNameName="img-home-1"><img src={props.item.img} alt="Bidzen" /></div>
             </div> */}
             <div className="nft-content">
-                <h4><Link to={`/item-details/${props.item.ad_slug}/${props.item.ad_category}`}>{props.item.title}</Link> </h4>
+                {/* <h4><Link to={`/item-details/${props.item.ad_slug}/${props.item.ad_category}`}>{props.item.title}</Link> </h4> */}
                 {/* <div
                     className="price-like d-flex justify-content-between align-items-center">
                     <p className="nft-price">Price: <span className="yellow-color">0.34

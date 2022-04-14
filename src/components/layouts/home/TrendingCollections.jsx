@@ -29,7 +29,7 @@ const TrendingCollections = props => {
                                             {/* <img src={data[0].img} alt="Bidzen" /> */}
                                             {/* <Link to="/connect-wallet"
                                                 className="sc-button style letter"><span>Place Bid</span></Link> */}
-                                            <label>{item.ad_category}</label>
+                                            {/* <label>{item.ad_category}</label> */}
                                         </div>
                                         <div className="product-content">
                                             <h5 className="title"><Link to={`/blog-details/${item.ad_slug}/${item.ad_category}`}>{item.ad_title}</Link> </h5>

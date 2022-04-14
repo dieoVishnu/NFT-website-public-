@@ -56,7 +56,7 @@ const Blog = () => {
             if(path1 === '1'){
                 setChangeLink({
                     link:'/blog-details',
-                    category: 'cars'
+                    category: 'Classic Cars'
                 })
             }if (path1 === '2'){
                 setChangeLink({
@@ -90,7 +90,7 @@ const Blog = () => {
                         <div className="breadcrumbs">
                             <ul>
                                 <li><Link to="/">Home</Link></li>
-                                <li>Memorabila</li>
+                                <li>{changeLink.category}</li>
                             </ul>
                         </div>
                     </div>

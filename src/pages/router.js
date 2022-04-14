@@ -16,6 +16,7 @@ import Contact from './Contact'
 import Test from "../components/test/Test";
 import ItemDetailsCars from "./ItemDetailsCars";
 import Privacy from "./Privacy";
+import Favourite from "../components/dashbord/Favourite"
 
 const routes = [
     { path: '/', component: <Home01 />},
@@ -37,6 +38,7 @@ const routes = [
     { path: '/contact/:id/:id', component: <Contact />},
     { path: '/test', component: <Test />},
     { path: '/privacy', component: <Privacy />},
+    { path: '/favourites', component: <Favourite />},
 ]
 
 export default routes;

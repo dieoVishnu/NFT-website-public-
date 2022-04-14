@@ -2471,6 +2471,7 @@ blockquote .author::before {
   background-size: cover;
   position: relative;
   z-index: 2;
+  background: url("../images/background/classic.jpg") center center no-repeat;
 }
 .tf-slider .overlay {
   position: absolute;

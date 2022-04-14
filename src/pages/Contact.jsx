@@ -65,21 +65,22 @@ const Contact = () => {
     const [data] = useState(
         [
             {
-                title: 'Need Help? Contact With Our Hotline',
+                title: 'Contact Our Hotline',
                 icon: 'fal fa-phone-volume',
-                info: '+97145514225',
-                link: 'tel:97145514225'
+                info: '+971 4 551 4225',
+                link: 'tel:0097145514225'
             },
             {
-                title: 'Need Help? Contact With Our Hotline',
+                title: 'Our Location',
                 icon: 'fal fa-map-marker-alt',
-                info: '406-407, Bay Square 13, Business Bay,Dubai, United Arab Emirates',
+                info: '406-407, Bay Square 13, Business Bay, Dubai, UAE',
+                p : "United Arab Emirates",
                 link: ''
             },
             {
-                title: 'Need Help? Contact With Our Hotline',
+                title: 'Contact Us via Email',
                 icon: 'fal fa-envelope-open',
-                info: 'contact@imoodini.com www.imoodini.net',
+                info: 'contact@imoodini.com',
                 link: 'mailto:contact@imoodini.com'
             },
         ]
@@ -120,6 +121,7 @@ const Contact = () => {
                                 </div>
                                 <div className="infor">
                                     <Link to={item.link}>{item.info}</Link>
+                                    {/* <Link to="#"> {item.p}</Link> */}
                                 </div>
                             </div>
                         </div>
@@ -144,8 +146,8 @@ const Contact = () => {
                     <div className="form-create-item-content">
                         <div className="form-create-item">
                             <div className="sc-heading">
-                                <h3>Send Us Message</h3>
-                                <p className="desc">Most popular gaming digital nft market place </p>
+                                <h3>Inquiry Form</h3>
+                                {/* <p className="desc">Most popular gaming digital nft market place </p> */}
                             </div>
                             <form me id="create-item-1" onSubmit={handelSubmit}>
                                 <input type="text" id="name" className="tb-my-input" name="inquiryUserName" value={formvalues.inquiryUserName} tabIndex="1"
@@ -153,7 +155,7 @@ const Contact = () => {
                                 <input type="email" id="email" className="tb-my-input" name="inquiryUserEmail" tabIndex="2"
                                     placeholder="Email Address" aria-required="true" required value={formvalues.inquiryUserEmail} onChange={handelChange}/>
                                 <input type="text" id="email" className="tb-my-input" name="inquiryUserNumber" tabIndex="2"
-                                    placeholder="Contact Numbe" aria-required="true" required value={formvalues.inquiryUserNumber} onChange={handelChange}/>
+                                    placeholder="Contact Number" aria-required="true" required value={formvalues.inquiryUserNumber} onChange={handelChange}/>
                                 {/* <select className="valid">
                                     <option value="1">Car</option>
                                     <option value="2">Memorabilia</option>

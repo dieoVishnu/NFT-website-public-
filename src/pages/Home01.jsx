@@ -9,7 +9,7 @@ import Gallery from '../components/layouts/home/Gallery';
 import Rareitems from '../components/layouts/home/Rareitems';
 import { PurchaseOpensea } from '../components/layouts/home/PurchaseOpensea';
 import Slider01 from '../components/slider/Slider01';
-import LiveAution from '../components/layouts/home/LiveAution';
+import LiveAution from '../components/layouts/home02/LiveAution';
 import LatestCollections from '../components/layouts/home/LatestCollections';
 import dataCollections from '../assets/fake-data/dataCollections'
 import BestSeller from '../components/layouts/home/BestSeller';
@@ -25,11 +25,11 @@ const Home01 = () => {
     <Header />
     {/* <Slider01 data={dataSlider} /> */}
     <Slider03 data={dataSlider} />
-    {/* <LiveAution data={dataLiveAution} /> */}
-    <Gallery data={dataLiveAution} />
+    <LiveAution data={dataLiveAution} />
+    {/* <Gallery data={dataLiveAution} /> */}
     {/* <LatestCollections data={dataCollections} /> */}
     {/* <BestSeller data={dataBestSeller} /> */}
-    <TrendingCollections data={dataTrendingCollections} />
+    {/* <TrendingCollections data={dataTrendingCollections} /> */}
     {/* <Category data={dataCategory} /> */}
     {/* <Rareitems data={dataCategory} /> */}
     {/* <Newsletters /> */}

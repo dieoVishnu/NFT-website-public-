@@ -200,8 +200,7 @@ const Footer = () => {
             <div className="bottom">
                 <div className="container">
                     <div className="bottom-inner">
-                        Copyright © 2022 Divine Intervention Entertainment  | Designed by <a
-                            href="https://themeforest.net/user/themesflat/portfolio"> Themesflat</a>
+                        Copyright © 2022 Divine Intervention Entertainment
                     </div>
                 </div>
             </div>
