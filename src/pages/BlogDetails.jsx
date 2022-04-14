@@ -351,7 +351,7 @@ const BlogDetails = () => {
                                     ))
 
                                 }
-                                <li><Link to="#"><span>Price</span><span>$ {imoodiniData ? imoodiniData.data.ad_price.toLocaleString(navigator.language, { minimumFractionDigits: 0 }): null}</span></Link></li>
+                                <li><Link to="#"><span>Price</span><span>$ {imoodiniData ? Number(imoodiniData.data.ad_price).toLocaleString(navigator.language, { minimumFractionDigits: 0 }): null}</span></Link></li>
                             </ul>
                         </div>
                         <div className="widget item widget-post style-3">

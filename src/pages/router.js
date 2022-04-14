@@ -1,5 +1,5 @@
-import Home01 from "./Home01";
-import Home02 from "./Home02";
+import Home01 from "./Home01"
+import Home02 from "./Home02"
 import Explore01 from './Explore01'
 import Explore02 from './Explore02'
 import Creator from './Creator'

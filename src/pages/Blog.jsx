@@ -70,7 +70,6 @@ const Blog = () => {
             pagnum.push(1+i)
         }
         setTotalPageNumber(pagnum)
-        console.log(pagnum)
 
         handelCategory()
     },[path1,imoodiniData])
@@ -134,7 +133,7 @@ const Blog = () => {
                             <li><Link to="#" className="page-numbers prev"  onClick={()=>handelPagination(false)}></Link></li>
                             {totalPageNumber.map((data, number)=>(
                                 
-                                <li><Link to="#" className={number+1 === currentPage ? "page-numbers active" : "page-numbers"} onClick={()=>paginationIncrement(number+1)}>{number+1}</Link></li>
+                                <li key={number}><Link to="#" className={number+1 === currentPage ? "page-numbers active" : "page-numbers"} onClick={()=>paginationIncrement(number+1)}>{number+1}</Link></li>
                             ))}
 
                             <li><Link to="#" className="page-numbers next" onClick={()=>handelPagination(true)}></Link></li>

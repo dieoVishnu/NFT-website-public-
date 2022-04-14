@@ -25,7 +25,7 @@ const Gallery = props => {
                                         <div className="icon"><i className="ripple"></i></div>
                                         <h3>Sports Collection</h3>
                                     </div>
-                                    <p className="desc">Most popular gaming digital nft market place </p>
+                                    <p className="desc"></p>
                                 </div>
                             </div>
                         </div>

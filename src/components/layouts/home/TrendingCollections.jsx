@@ -14,7 +14,7 @@ const TrendingCollections = props => {
                         <div className="content-left">
                             <div className="inner">
                                 <h3>Classic Cars</h3>
-                                <p className="desc">Most popular gaming digital nft market place </p>
+                                <p className="desc"></p>
                             </div>
                         </div>
                     </div>

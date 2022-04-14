@@ -115,7 +115,7 @@ const ItemDetails = () => {
                                 </div>
                                 <ul className="list-details-item">
                                     <li><span className="name">Current Price</span><span
-                                            className="price">${imoodiniData.data.ad_price}</span> <span className="pagi"></span> </li>
+                                            className="price">${Number(imoodiniData.data.ad_price).toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</span> <span className="pagi"></span> </li>
                                     {/* <li>Size 14000 x 14000 px</li> */}
                                     {/* <li> Volume Traded 64.1</li> */}
                                 </ul>
