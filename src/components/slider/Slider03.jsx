@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css/effect-cube";
 
 import { EffectCube } from "swiper";
+import Header from '../header/Header';
 
 
 const Slider03 = props => {
@@ -12,10 +13,11 @@ const Slider03 = props => {
     console.log(props.activeData)
     return (
         <section className={props.activeData === true ? "tf-slider slider-box viewHight-90 active-opacity " : "tf-slider slider-box viewHight-90 "}>
-            <div className="overlay"></div>
+            <Header />
+            {/* <div className="overlay"></div> */}
             <div className="slider-inner flex home-1 myswiper-slider">
                 <div className="slider-content">
-                    <h1 className="heading" >the collectors Market</h1>
+                    <h1 className="heading" >the <br /> collectors <br /> Market</h1>
                     {/* <h1 className="heading stroke-heading">the way you collect</h1> */}
                     <p className="sub-heading">Build your collection portfolio</p>
                     

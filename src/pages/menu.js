@@ -3,6 +3,7 @@ const menus = [
         id: 1,
         name: 'SPORTS COLLECTION',
         tag: '2',
+        link: '/blog/2',
         namesub: [
             {
                 id: 1,
@@ -52,6 +53,7 @@ const menus = [
         id: 3,
         name: 'CLASSIC CARS',
         tag: '1',
+        link: '/blog/1',
         namesub: [
             {
                 id: 1,
@@ -98,7 +100,8 @@ const menus = [
     // },
     {
         id: 4,
-        name: "NFT's",
+        name: "CONTACT",
+        link: '/blog/contact',
         namesub: [
             {
                 id: 1,

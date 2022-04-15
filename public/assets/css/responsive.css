@@ -334,7 +334,8 @@
   .slider-inner .slider-content .button-slider .sc-button.btn-bordered-white {
     padding: 15px 23px;
   }
-  .slider-inner .slider-content .heading {
+  .slider-inner .slider-content .heading,
+  .heading {
     font-size: 60px;
   }
   .slider-inner .slider-content .sub-heading {
@@ -499,7 +500,8 @@
   .contact-page .sc-heading h3 {
     font-size: 35px;
   }
-  .page-title-heading .heading {
+  .page-title-heading .heading,
+  .heading {
     font-size: 45px;
   }
 
@@ -625,9 +627,18 @@
   .tf-col-6 {
     width: 100% !important;
   }
+  .selectitem-text {
+    opacity: 1;
+  }
+  .selectitem-text span {
+    top: 30%;
+    left: 2%;
+    opacity: 1;
+    font-size: 7rem;
+  }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 415px) {
   .new-letter-img .form-subcribe button,
   .new-letter-content .form-subcribe button {
     padding: 10px 8px;
@@ -655,5 +666,14 @@
   .sc-product-item.style-7 .product-content {
     width: 100%;
     margin-right: 0;
+  }
+  .selectitem-text {
+    opacity: 1;
+  }
+  .selectitem-text span {
+    top: 30%;
+    left: 2%;
+    opacity: 1;
+    font-size: 5rem;
   }
 }

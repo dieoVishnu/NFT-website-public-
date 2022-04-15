@@ -2474,10 +2474,14 @@ blockquote .author::before {
 
 .tf-slider {
   background: var(--bg-slider);
-  background-size: cover;
   position: relative;
   z-index: 2;
-  background: url("../images/background/classic.jpg") center center no-repeat;
+  background: url("../images/background/classic2.jpg") no-repeat;
+  background-size: cover;
+  /* background-size: 100vw 100%; */
+  opacity: 0.8;
+  /* width: 100%; */
+  /* height: auto; */
 }
 .tf-slider .overlay {
   position: absolute;

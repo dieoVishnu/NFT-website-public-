@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/header/Header';
 import dataSlider from '../assets/fake-data/dataSlider';
 import dataLiveAution from '../assets/fake-data/dataLiveAution'
@@ -25,9 +25,13 @@ const Home01 = () => {
 
   const [active, setActive] = useState(false)
   const activeData = {setActive:setActive}
+  useEffect(()=>{
+    const body = document.body
+    body.classList.add('is_dark')
+  },[])
 
   return <div className='home-1'>
-    <Header />
+    {/* <Header /> */}
     {/* <Slider01 data={dataSlider} /> */}
     <Slider03 data={dataSlider} activeData={active}/>
     {/* <LiveAution data={dataLiveAution} /> */}

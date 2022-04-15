@@ -18,12 +18,12 @@ const Header = () => {
     const { pathname } = useLocation();
     const headerRef = useRef(null)
     
-    useEffect(() => {
-        window.addEventListener('scroll', isSticky);
-        return () => {
-            window.removeEventListener('scroll', isSticky);
-        };
-    });
+    // useEffect(() => {
+    //     window.addEventListener('scroll', isSticky);
+    //     return () => {
+    //         window.removeEventListener('scroll', isSticky);
+    //     };
+    // });
     const isSticky = (e) => {
         const header = document.querySelector('.js-header');
         const scrollTop = window.scrollY;
@@ -75,7 +75,7 @@ const Header = () => {
 
     return <div>
 
-        <TopBar />
+        {/* <TopBar /> */}
         <header id="header_main" className="header_1 js-header" ref={headerRef}>
             <div className="container-fluid">
                 <div className="row">
@@ -100,7 +100,7 @@ const Header = () => {
                                     {
                                         menus.map((data, index) => (
                                             <li key={index} onClick={() => handleOnClick(index)} className={`menu-item menu-item-has-children ${activeIndex === index ? 'active' : ''} `}   >
-                                                <Link to={`/blog/${data.tag}`} onClick={() => {window.location.href=`/blog/${data.tag}`}}>{data.name}</Link>
+                                                <Link to={data.link}>{data.name}</Link>
                                                 {/* submenu */}
                                                 {/* <ul className="sub-menu" >
                                                     {
@@ -119,46 +119,25 @@ const Header = () => {
                                     
                                 </ul>
                             </nav>
-                            <div className="button-connect-wallet flex">
+                            <div className="flex">
                                 {user === 'null' || user === null ?
                                 <>
-                                 {/* <Link to="/login" className=" wallet  style-2">
-                                     
-                                     <img src={icon} alt="icon" />
+                                 <Link to="/login" className="wallet  style-2">
                                  <i className="fa fa-user"></i>
-                                 <span>Log in</span>
-                             </Link> */}
-                            <div className="main-nav ">
-                                <ul>
-                                    <li className='menu-item menu-item-has-children '   >
-                                                        <Link to="/login">
-                                                        <i className="fa fa-user"></i>
-                                                            <span className='pl-3'>Login</span>
-                                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
+                                 <span className='pl-3 login-text'>Log in</span>
+                             </Link>
                                 </>
                                 :
                                 <div className='flex' id='center'>
-                                {/* <div >
-                                    <Link to="/login" className="sc-button wallet  style-2" onClick={e=>handelLogout(e)}>
-                                    <img src={icon} alt="icon" />
-                                    <span>Log out</span>
-                                            </Link>
-                                </div> */}
-                                            
-
-                                            <nav id="main-nav" className="main-nav" ref={menuLeft}>
+                                    <nav id="main-nav" className="main-nav">
                                 <ul id="menu-primary-menu" className="menu">
                                     {
                                         userMenu.map((data, index) => (
-                                            <li key={index} onClick={() => handleOnClick(index)} className={`menu-item menu-item-has-children ${activeIndex === index ? 'active' : ''} `}   >
-                                                <Link to={`/blog/${data.tag}`} onClick={() => {window.location.href=`/blog/${data.tag}`}}><i className="fa fa-user"></i>&nbsp;Hello, {user.user_Name}</Link>
+                                            <li key={index} onClick={() => handleOnClick(index)} className={`menu-item menu-item-has-children`}   >
+                                                <Link to="#" onClick={() => {window.location.href=`/blog/${data.tag}`}}><i className="fa fa-user"></i>&nbsp;Hello, {user.user_Name}</Link>
                                                 {/* submenu */}
                                                 <ul className="sub-menu" >
-                                                    {
-                                                        data.namesub.map((submenu, index) => (
+                                                    { data.namesub.map((submenu, index) => (
                                                             <li key={index} className={
                                                                 pathname === submenu.links
                                                                     ? "menu-item current-item"
@@ -186,7 +165,7 @@ const Header = () => {
                             
                                 }
 
-                                 <DarkMode />
+                                 {/* <DarkMode /> */}
                                
                             </div>
 

@@ -133,7 +133,7 @@ const Footer = () => {
                                 <div className="logo-footer" id="logo-footer">
                                 <p className="sub-widget-logo">Product of &nbsp;
                                     <a href="https://divine-ie.com/" target="_blank" rel="noopener noreferrer">
-                                        <img id="logo_footer" src={logo1} alt="nft-gaming"
+                                        <img id="logo_footer" className='secondlogo' src={logo1} alt="nft-gaming"
                                         srcSet={logo1} />
                                     </a>
                                         </p>
