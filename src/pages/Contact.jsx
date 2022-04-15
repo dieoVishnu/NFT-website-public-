@@ -130,7 +130,7 @@ const Contact = () => {
             </div>
         </div>
     </section>
-    <section>
+    <section  id='Special'>
         <div className="container-fluid">
             <div className="row">
                 <iframe title="Bidzen" className="map-contact"

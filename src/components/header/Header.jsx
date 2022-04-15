@@ -119,13 +119,26 @@ const Header = () => {
                                     
                                 </ul>
                             </nav>
-                            <div className="button-connect-wallet">
+                            <div className="button-connect-wallet flex">
                                 {user === 'null' || user === null ?
-                                 <Link to="/login" className="sc-button wallet  style-2">
-                                 {/* <img src={icon} alt="icon" /> */}
+                                <>
+                                 {/* <Link to="/login" className=" wallet  style-2">
+                                     
+                                     <img src={icon} alt="icon" />
                                  <i className="fa fa-user"></i>
                                  <span>Log in</span>
-                             </Link>
+                             </Link> */}
+                            <div className="main-nav ">
+                                <ul>
+                                    <li className='menu-item menu-item-has-children '   >
+                                                        <Link to="/login">
+                                                        <i className="fa fa-user"></i>
+                                                            <span className='pl-3'>Login</span>
+                                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
+                                </>
                                 :
                                 <div className='flex' id='center'>
                                 {/* <div >
@@ -166,16 +179,18 @@ const Header = () => {
                                 
                                     
                                 </ul>
-                            </nav>
+                                </nav>
 
                                             
                                 </div>
                             
                                 }
+
+                                 <DarkMode />
                                
                             </div>
 
-                            <DarkMode />
+                           
                         </div>
                     </div>
                 </div>

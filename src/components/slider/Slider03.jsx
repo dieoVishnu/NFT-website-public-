@@ -9,19 +9,21 @@ import { EffectCube } from "swiper";
 
 const Slider03 = props => {
     const data = props.data
+    console.log(props.activeData)
     return (
-        <section className="tf-slider slider-box">
+        <section className={props.activeData === true ? "tf-slider slider-box viewHight-90 active-opacity " : "tf-slider slider-box viewHight-90 "}>
+            <div className="overlay"></div>
             <div className="slider-inner flex home-1 myswiper-slider">
                 <div className="slider-content">
-                    <h1 className="heading">For Collectors,</h1>
-                    <h1 className="heading">By Collectors</h1>
-                    <p className="sub-heading">The world's only 'One Stop Shop' for all rare collectibles</p>
+                    <h1 className="heading" >the collectors Market</h1>
+                    {/* <h1 className="heading stroke-heading">the way you collect</h1> */}
+                    <p className="sub-heading">Build your collection portfolio</p>
                     
-                    <div className="button-slider">
-                    <p className='stroke'>Couldn't Find What You Are Looking For?</p>
-                        <Link to="/contact"
+                    <div className="button-slider pt-5">
+                    {/* <p className=' sub-heading stroke stroke-heading'>Couldn't Find What You Are Looking For?</p>
+                        <a href="/contact/#Special"
                             className="sc-button btn-bordered-white style letter "><span>Special
-                                Inquiry</span></Link>
+                                Inquiry</span></a> */}
                         {/* <Link to="/create-item"
                             className="sc-button btn-bordered-white style file"><span>Create
                                 Now</span></Link> */}

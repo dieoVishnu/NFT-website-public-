@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/header/Header';
 import dataSlider from '../assets/fake-data/dataSlider';
 import dataLiveAution from '../assets/fake-data/dataLiveAution'
@@ -19,13 +19,19 @@ import dataTrendingCollections from '../assets/fake-data/dataTrendingCollections
 import Category from '../components/layouts/home/Category';
 import { Newsletters } from '../components/layouts/home/Newsletters';
 import Test from '../components/test/Test';
+import SelectProduct from '../components/layouts/my/SelectProduct';
 
 const Home01 = () => {
+
+  const [active, setActive] = useState(false)
+  const activeData = {setActive:setActive}
+
   return <div className='home-1'>
     <Header />
     {/* <Slider01 data={dataSlider} /> */}
-    <Slider03 data={dataSlider} />
-    <LiveAution data={dataLiveAution} />
+    <Slider03 data={dataSlider} activeData={active}/>
+    {/* <LiveAution data={dataLiveAution} /> */}
+    <SelectProduct data={activeData}/>
     {/* <Gallery data={dataLiveAution} /> */}
     {/* <LatestCollections data={dataCollections} /> */}
     {/* <BestSeller data={dataBestSeller} /> */}

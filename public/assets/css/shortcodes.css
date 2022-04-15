@@ -33,6 +33,7 @@
   /* color */
   --primary-color: #ffffff;
   --primary-color2: #14161b;
+  --primary-color12: #221e1d;
   --primary-color3: #dc39fc;
   --primary-color4: #616161;
   --primary-color5: #6345ed;
@@ -542,7 +543,7 @@ blockquote .author::before {
 
 .new-letter-content .heading,
 .new-letter-content .sub-heading {
-  color: #fff;
+  color: #f9f9f9;
 }
 
 .new-letter-content .heading {
@@ -1164,9 +1165,13 @@ blockquote .author::before {
   text-align: center;
   border: 0px;
   background-size: 200% auto;
-  background-image: linear-gradient(130.35deg, #6345ed 17.35%, #6345ed 78.23%);
+  background-image: linear-gradient(
+    130.35deg,
+    var(--primary-color6) 17.35%,
+    var(--primary-color7) 78.23%
+  );
   color: #fff;
-  opacity: 0;
+  opacity: 1;
   border: unset;
   background-size: 200% auto;
   -webkit-transition: all 0.5s ease;
@@ -2356,6 +2361,7 @@ blockquote .author::before {
   border-radius: 12px;
   padding: 39px 55px;
   text-align: center;
+  height: 350px;
 }
 .sc-contact-infor h4 {
   font-size: 24px;
@@ -2505,7 +2511,9 @@ blockquote .author::before {
 
 .slider-inner {
   justify-content: space-between;
-  padding: 60px 12.7% 78px 19.3%;
+  /* padding: 60px 12.7% 78px 19.3%; */
+  padding: 60px 12.7% 58px 10.3%;
+  /* padding: 50px 50px; */
 }
 
 .slider-inner.style-2.home-1 {
@@ -2519,10 +2527,12 @@ blockquote .author::before {
 
 .slider-inner .slider-content .heading,
 .slider-inner .slider-content {
-  color: var(--color-5);
+  color: #dadada;
+  text-transform: uppercase;
+  font-size: 10rem;
 }
 .slider-inner .slider-content .sub-heading {
-  color: var(--gold-dark);
+  color: #dadada;
 }
 
 .slider-inner .slider-content .heading {
