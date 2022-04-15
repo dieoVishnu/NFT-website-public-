@@ -39,10 +39,11 @@
   --primary-color5: #6345ed;
   --primary-color6: #b0851a;
   --primary-color7: #f4b442;
+  --new-color: #1d1d20;
 }
 
-:root {
-  /* color */
+/* :root {
+  color
   --bg-body: #fff;
   --bg-topbar: #f9f9f9;
   --bg-header: #e5e5e5;
@@ -65,14 +66,13 @@
   --color-11: #fff;
   --border-color-2: rgba(99, 69, 237, 0.12);
   --bg-newletter: #f9f9f9;
-  /* gradint */
+  gradint
   --bg-gradint-color-my: linear-gradient(to right, #009fff, #ec2f4b);
   --gold-dark: #f4b442;
   --gold-white: #b0851a;
-}
-
-.is_dark {
-  --bg-body: #222232;
+} */
+:root {
+  --bg-body: #1d1d20;
   --bg-topbar: #343444;
   --bg-header: #3d3d53;
   --bg-slider: #14141f;
@@ -100,6 +100,39 @@
   --bg-newletter: #222232;
   --gold-dark: #b0851a;
   --gold-white: #f4b442;
+  --new-color: #1d1d20;
+}
+
+.is_dark {
+  --bg-body: #1d1d20;
+  --bg-topbar: #343444;
+  --bg-header: #3d3d53;
+  --bg-slider: #14141f;
+  --bg-footer: #030303;
+  --bg-section-color-1: #222232;
+  --bg-section-color-2: #14161b;
+  --bg-section-color-3: rgba(99, 69, 237, 0.05);
+  --color-1: #fff;
+  --color-2: rgba(255, 255, 255, 0.6);
+  --color-3: #343444;
+  --color-4: #343444;
+  --color-5: #fff;
+  --color-6: rgba(255, 255, 255, 0.6);
+  --primary-color4: #ffffffcc;
+  --primary-color2: #fff;
+  --border-color-1: rgba(255, 255, 255, 0.15);
+  --color-7: #fff;
+  --color-8: #fff;
+  --color-9: #ffffffb2;
+  --color-12: rgba(255, 255, 255, 0.1);
+  --color-10: #fff;
+  --color-11: rgba(255, 255, 255, 0.1);
+  --primary-color5: #fff;
+  --border-color-2: rgba(255, 255, 255, 0.12);
+  --bg-newletter: #222232;
+  --gold-dark: #b0851a;
+  --gold-white: #f4b442;
+  --new-color: #1d1d20;
 }
 
 /* PreLoad
@@ -149,7 +182,7 @@
 
 .tf-section {
   padding: 80px 0;
-  background: var(--bg-section);
+  background: var(--new-color);
   margin-bottom: 0 !important;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -313,8 +346,8 @@
 
 .sc-card-article .content {
   padding: 26px 35px 33px 35px;
-  background: var(--color-4);
-  box-shadow: 4px 4px 60px rgba(99, 69, 237, 0.1);
+  background: #36393b;
+  box-shadow: 4px 4px 60px rgba(255, 255, 255, 0.1);
   border-radius: 0px 0px 7px 7px;
 }
 

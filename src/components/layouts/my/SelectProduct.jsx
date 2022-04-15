@@ -36,7 +36,7 @@ const SelectProduct = (props)=>{
                              <div className="selectItem-card2  product-img">
                                 <div className="iterm">
                                 <Link to="/blog/2"
-                                    className="selectitem-text heading"><span>shop <br /> sports <br /> collection</span></Link>
+                                    className="selectitem-text heading"><span>shop <br /> Memorabilia</span></Link>
                                 </div>
                                 
                             </div>

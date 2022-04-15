@@ -132,7 +132,7 @@
 /* hoverEffect for text */
 
 .selectitem-text {
-  top: 30%;
+  top: 10%;
   left: 100%;
   /* transform: translate(-50%, -30%); */
   padding: 10px;
@@ -146,7 +146,7 @@
     var(--primary-color7) 78.23%
   ); */
   color: rgb(255, 255, 255);
-  font-size: 11rem;
+  font-size: 6vw;
   font-weight: 600;
   text-align: left;
   text-transform: uppercase;
@@ -190,7 +190,7 @@
 }
 .selectitem-text span {
   position: relative;
-  top: 20%;
+  top: 30%;
   left: -10%;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;

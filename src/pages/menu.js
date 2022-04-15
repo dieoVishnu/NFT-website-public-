@@ -1,7 +1,7 @@
 const menus = [
     {
         id: 1,
-        name: 'SPORTS COLLECTION',
+        name: 'MEMORABILIA',
         tag: '2',
         link: '/blog/2',
         namesub: [

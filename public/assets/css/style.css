@@ -1046,9 +1046,31 @@ a:focus {
   --bg-color-4: #fff;
   --bg-color-5: #222232;
 }
+:root {
+  --bg-body: #1d1d20;
+  --bg-topbar: #343444;
+  --bg-header: #06060e;
+  --bg-slider: #14141f;
+  --bg-slider-2: #14141f;
+  --bg-footer: #030303;
+  --bg-section-color-1: #030303;
+  --bg-section-color-2: #0d0d12;
+  --bg-section-color-3: rgba(99, 69, 237, 0.05);
+  --color-1: #fff;
+  --color-2: rgba(255, 255, 255, 0.6);
+  --color-3: #343444;
+  --color-4: #343444;
+  --color-5: #fff;
+  --color-6: rgba(255, 255, 255, 0.6);
+  --primary-color4: #ffffffcc;
+  --primary-color2: #fff;
+  --bg-color-3: #222232;
+  --bg-color-4: #14161b;
+  --bg-color-5: #343444;
+}
 
 .is_dark {
-  --bg-body: #222232;
+  --bg-body: #1d1d20;
   --bg-topbar: #343444;
   --bg-header: #06060e;
   --bg-slider: #14141f;
@@ -1291,7 +1313,7 @@ a:focus {
 .header_1 {
   position: relative;
   z-index: 100;
-  /* background-color: var(--bg-slider); */
+  background-color: var(--new-color);
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;

@@ -19,7 +19,7 @@ const Slider03 = props => {
                 <div className="slider-content">
                     <h1 className="heading" >the <br /> collectors <br /> Market</h1>
                     {/* <h1 className="heading stroke-heading">the way you collect</h1> */}
-                    <p className="sub-heading">Build your collection portfolio</p>
+                    {/* <p className="sub-heading">Build your collection portfolio</p> */}
                     
                     <div className="button-slider pt-5">
                     {/* <p className=' sub-heading stroke stroke-heading'>Couldn't Find What You Are Looking For?</p>
