@@ -101,7 +101,7 @@ const menus = [
     {
         id: 4,
         name: "CONTACT",
-        link: '/blog/contact',
+        link: '/contact',
         namesub: [
             {
                 id: 1,

@@ -1313,7 +1313,7 @@ a:focus {
 .header_1 {
   position: relative;
   z-index: 100;
-  background-color: var(--new-color);
+  /* background-color: var(--new-color); */
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
