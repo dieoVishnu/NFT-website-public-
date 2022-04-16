@@ -208,3 +208,20 @@
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
+
+/* log menu */
+
+@media only screen and (max-width: 991px){
+  .flex .logout-menu{
+    position: relative !important;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: translateX(0px);
+    background: none !important;
+  }
+  .flex .logout-menu .menu-item{
+    border: none;
+  }
+}

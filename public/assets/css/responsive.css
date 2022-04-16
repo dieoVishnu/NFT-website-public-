@@ -272,6 +272,7 @@
   }
   .sc-product-item {
     margin-bottom: 30px;
+    z-index: 1;
   }
 
   .latest-coll .sc-product-item,

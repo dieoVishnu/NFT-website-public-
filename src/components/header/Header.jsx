@@ -8,7 +8,7 @@ import logolight2x from '../../assets/images/logo/new-logo.png'
 import menus from "../../pages/menu"
 import DarkMode from "./DarkMode"
 import icon from '../../assets/images/icon/connect-wallet.svg'
-import {useSelector,useDispatch} from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import { logOut } from '../../redux/auth'
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
     const user = useSelector(state => state.user.token)
     const { pathname } = useLocation();
     const headerRef = useRef(null)
-    
+
     // useEffect(() => {
     //     window.addEventListener('scroll', isSticky);
     //     return () => {
@@ -47,13 +47,13 @@ const Header = () => {
     };
 
     // logout
-    const handelLogout = (e)=>{
+    const handelLogout = (e) => {
         e.preventDefault()
         dispatch(logOut())
         window.location.replace('/')
     }
 
-    const userMenu =[
+    const userMenu = [
         {
             id: 1,
             name: 'SPORTS COLLECTION',
@@ -116,60 +116,61 @@ const Header = () => {
                                             </li>
                                         ))
                                     }
-                                    
+
                                 </ul>
                             </nav>
                             <div className="flex">
                                 {user === 'null' || user === null ?
-                                <>
-                                 <Link to="/login" className="wallet  style-2">
-                                 <i className="fa fa-user"></i>
-                                 <span className='pl-3 login-text'>Log in</span>
-                             </Link>
-                                </>
-                                :
-                                <div className='flex' id='center'>
-                                    <nav id="main-nav" className="main-nav">
-                                <ul id="menu-primary-menu" className="menu">
-                                    {
-                                        userMenu.map((data, index) => (
-                                            <li key={index} onClick={() => handleOnClick(index)} className={`menu-item menu-item-has-children`}   >
-                                                <Link to="#" onClick={() => {window.location.href=`/blog/${data.tag}`}}><i className="fa fa-user"></i>&nbsp;Hello, {user.user_Name}</Link>
-                                                {/* submenu */}
-                                                <ul className="sub-menu" >
-                                                    { data.namesub.map((submenu, index) => (
-                                                            <li key={index} className={
-                                                                pathname === submenu.links
-                                                                    ? "menu-item current-item"
-                                                                    : "menu-item"
-                                                            }>
-                                                                {submenu.id === 2 ?
-                                                                <Link to={submenu.links} onClick={e=>handelLogout(e)}>{submenu.sub}</Link> :
-                                                                <Link to={submenu.links} >{submenu.sub}</Link>
+                                    <>
+                                        <Link to="/login" className="wallet  style-2">
+                                            <i className="fa fa-user"></i>
+                                            <span className='pl-3 login-text'>Log in</span>
+                                        </Link>
+                                    </>
+                                    :
+                                    <div className='flex' id='center'>
+                                        <nav id="main-nav" className="main-nav logout-menu">
+                                            <ul id="menu-primary-menu" className="menu">
+                                                {
+                                                    userMenu.map((data, index) => (
+                                                        <li key={index} onClick={() => handleOnClick(index)} className="menu-item menu-item-has-children"   >
+                                                            <Link to="#"><i className="fa fa-user"></i>&nbsp;Hello, {user.user_Name}</Link>
+                                                            {/* submenu */}
+                                                            <ul className="sub-menu" >
+                                                                {data.namesub.map((submenu, index) => (
+                                                                    <li key={index} className={
+                                                                        pathname === submenu.links
+                                                                            ? "menu-item current-item"
+                                                                            : "menu-item"
+                                                                    }>
+                                                                        {submenu.id === 2 ?
+                                                                            <Link to={submenu.links} onClick={e => handelLogout(e)}>{submenu.sub}</Link> :
+                                                                            <Link to={submenu.links} >{submenu.sub}</Link>
 
-                                                            }
-                                                                </li>
-                                                        ))
-                                                    }
-                                                </ul>
-                                            </li>
-                                        ))
-                                    }
-                                
-                                    
-                                </ul>
-                                </nav>
+                                                                        }
+                                                                    </li>
+                                                                ))
+                                                                }
+                                                            </ul>
+                                                        </li>
+                                                    ))
+                                                }
 
-                                            
-                                </div>
-                            
+
+                                            </ul>
+                                        </nav>
+
+
+                                    </div>
+
+
                                 }
 
-                                 {/* <DarkMode /> */}
-                               
+                                {/* <DarkMode /> */}
+
                             </div>
 
-                           
+
                         </div>
                     </div>
                 </div>
