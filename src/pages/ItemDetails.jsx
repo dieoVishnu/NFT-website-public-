@@ -65,12 +65,12 @@ const ItemDetails = () => {
                     <div className="col-md-12">
                         <div className="page-title-inner flex">
                             <div className="page-title-heading">
-                                <h2 className="heading">Sports Collection</h2>
+                                <h2 className="heading">MEMORABILIA</h2>
                             </div>
                             <div className="breadcrumbs">
                                 <ul>
-                                    <li><Link to="/">Home</Link></li>
-                                    <li>Sports Collection</li>
+                                    <li><Link to="/">HOME</Link></li>
+                                    <li>MEMORABILIA</li>
                                 </ul>
                             </div>
                         </div>
@@ -97,7 +97,7 @@ const ItemDetails = () => {
                                 <p className="mg-bt-42">{imoodiniData.data.ad_details}</p>
                                 <div className="author-item">
                                     <div className="avatar">
-                                        <img src={avt1} alt="Bidzen" />
+                                        {/* <img src={avt1} alt="Bidzen" /> */}
                                     </div>
                                     <div className="infor">
                                         <div className="create">Owner By</div>
@@ -210,7 +210,7 @@ const ItemDetails = () => {
                                                     <div className="content">
                                                         <div className="author-item">
                                                             <div className="avatar">
-                                                                <img src={img1} alt="Bidzen" />
+                                                                {/* <img src={img1} alt="Bidzen" /> */}
                                                             </div>
                                                             <div className="infor">
                                                               <p>{imoodiniData.data.adyear}</p>

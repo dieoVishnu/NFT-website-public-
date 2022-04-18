@@ -40,6 +40,7 @@
   --primary-color6: #b0851a;
   --primary-color7: #f4b442;
   --new-color: #1d1d20;
+  --primary-gray: #36393b;
 }
 
 /* :root {
@@ -222,7 +223,7 @@
   font-size: 14px;
   line-height: 18px;
   position: relative;
-  color: #696969;
+  color: var(--primary-color);
   z-index: 10;
 }
 
@@ -346,7 +347,7 @@
 
 .sc-card-article .content {
   padding: 26px 35px 33px 35px;
-  background: #36393b;
+  background: var(--primary-gray);
   box-shadow: 4px 4px 60px rgba(255, 255, 255, 0.1);
   border-radius: 0px 0px 7px 7px;
 }
@@ -2193,7 +2194,7 @@ blockquote .author::before {
 }
 
 .form-create-item {
-  background: var(--color-4);
+  background: var(--primary-gray);
   padding: 60px 70px;
 }
 
@@ -2510,11 +2511,10 @@ blockquote .author::before {
   position: relative;
   z-index: 2;
   background: url("../images/background/classic2.jpg") no-repeat;
-  background-size: cover;
-  /* background-size: 100vw 100%; */
-  opacity: 0.8;
-  /* width: 100%; */
-  /* height: auto; */
+  background-size: 100% 100%;
+  /* background-size: cover; */
+  /* height: 100; */
+  /* overflow: hidden; */
 }
 .tf-slider .overlay {
   position: absolute;
@@ -2558,8 +2558,9 @@ blockquote .author::before {
 }
 
 .slider-inner .slider-content {
-  width: 45.6%;
-  padding-top: 113px;
+  /* width: 600px; */
+  display: inline-block;
+  padding-top: 75px;
 }
 
 .slider-inner .slider-content .heading,
@@ -2568,8 +2569,19 @@ blockquote .author::before {
   text-transform: uppercase;
   font-size: 10rem;
 }
+.slider-inner .slider-content .heading span {
+  font-weight: 900;
+  font-size: 14rem;
+}
+.slider-inner .slider-content .heading {
+  letter-spacing: 1rem !important;
+}
 .slider-inner .slider-content .sub-heading {
   color: #dadada;
+  /* display: inline-block; */
+  background-color: #0d0d0ea1;
+  /* position: absolute; */
+  /* top: 0; */
 }
 
 .slider-inner .slider-content .heading {
@@ -3261,7 +3273,7 @@ blockquote .author::before {
 }
 .item-details-page .author-item .widget-social ul li a.active,
 .item-details-page .author-item .widget-social ul li a:hover {
-  color: #dc39fc;
+  color: #f1eff1;
 }
 .item-details-page .author-item .widget-social ul li a::after {
   display: none;

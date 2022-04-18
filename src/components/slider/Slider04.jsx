@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 const Slider04 = props => {
     const data = props.data
     return (
-        <section className="tf-slider slider">
+        <section className=" slider">
             <Swiper
                 modules={[Navigation, Scrollbar, A11y]}
                 spaceBetween={0}

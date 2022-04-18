@@ -960,7 +960,7 @@ a {
 
 a:hover,
 a:focus {
-  color: var(--primary-color7);
+  /* color: var(--primary-color7); */
   text-decoration: none;
   outline: 0;
   -webkit-transition: all 0.3s ease-in-out;
@@ -1063,10 +1063,19 @@ a:focus {
   --color-5: #fff;
   --color-6: rgba(255, 255, 255, 0.6);
   --primary-color4: #ffffffcc;
-  --primary-color2: #fff;
+  --primary-color22: #fff;
   --bg-color-3: #222232;
   --bg-color-4: #14161b;
   --bg-color-5: #343444;
+  --primary-color: #ffffff;
+  --primary-color2: #14161b;
+  --primary-color12: #221e1d;
+  --primary-color3: #dc39fc;
+  --primary-color4: #616161;
+  --primary-color5: #6345ed;
+  --primary-color6: #b0851a;
+  --primary-color7: #f4b442;
+  --new-color: #1d1d20;
 }
 
 .is_dark {
@@ -1332,7 +1341,7 @@ a:focus {
 
 .header_1 #site-header-inner {
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   /* padding: 19px 0; */
 }
 #center {
@@ -1423,7 +1432,7 @@ a:focus {
   padding: 26px 24px 26px 13px;
 }
 .main-nav > ul > li.current-item > a {
-  color: var(--primary-color3);
+  /* color: var(--primary-color3); */
 }
 
 .main-nav > ul > li > a {
@@ -2174,7 +2183,7 @@ a:focus {
 .fl-page-title {
   padding: 83px 0;
   position: relative;
-  background: url(../images/background/bg-page-title.jpeg) center center
+  background: url(../images/background/bg-page-title.png) center center
     no-repeat;
   background-size: cover;
 }
@@ -2581,11 +2590,12 @@ a:focus {
 .wg-themesflat-pagination ul li .page-numbers::before {
   position: absolute;
   content: "";
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     132.41deg,
     var(--primary-color7) 18.03%,
     var(--primary-color6) 81.29%
-  );
+  ); */
+  background-color: var(--primary-color);
   top: 0;
   left: 0;
   right: 0;
@@ -2609,7 +2619,7 @@ a:focus {
 }
 .wg-themesflat-pagination ul li .page-numbers:hover,
 .wg-themesflat-pagination ul li .page-numbers.active {
-  color: var(--primary-color);
+  color: var(--primary-color12);
   border: 1px solid transparent;
 }
 .wg-themesflat-pagination ul li .page-numbers:hover::before,
@@ -2964,7 +2974,7 @@ a:focus {
   visibility: visible;
   cursor: pointer;
   overflow: hidden;
-  background: var(--primary-color3);
+  background: var(--primary-color);
 }
 
 #scroll-top.show {
@@ -2996,7 +3006,7 @@ a:focus {
   content: "\f077";
   font-family: "Font Awesome 5 Pro";
   font-size: 18px;
-  color: var(--primary-color);
+  color: var(--primary-color2);
   font-weight: 600;
 }
 

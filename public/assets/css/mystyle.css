@@ -35,6 +35,10 @@
   font-size: 18px;
   font-weight: 800;
 }
+.wallet:hover {
+  color: var(--primary-color7);
+}
+
 /* OPENSEA BUY SECTION */
 
 .button-link-purchase .style-3 {
@@ -72,18 +76,22 @@
   /* background-size: cover; */
   position: relative;
   z-index: 2;
-  background: url("../images/background/select1.jpg") no-repeat;
+  background: url("../images/background/select1.jpeg") no-repeat;
   background-size: cover;
   transition: transform 0.2s;
-  overflow: hidden;
-  filter: grayscale(100%);
+  /* overflow: hidden; */
+  height: 100%;
+}
+.selectItem-card1:hover {
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
 }
 .selectItem-card2 {
   /* background: var(--bg-slider); */
   /* background-size: cover; */
   position: relative;
   z-index: 2;
-  background: url("../images/background/select2.jpg") no-repeat;
+  background: url("../images/background/select2.jpeg") no-repeat;
   background-size: cover;
   transition: transform 0.2s;
   overflow: hidden;
@@ -114,7 +122,7 @@
 }
 
 .viewHight-90 {
-  /* height: 95vh; */
+  height: 100vh;
   transition: opacity 1.2s;
 }
 .active-opacity {
@@ -126,7 +134,7 @@
 }
 
 .bg-color {
-  background-color: #1d1d20;
+  background-color: #1c1c1d;
 }
 
 /* hoverEffect for text */
@@ -163,20 +171,35 @@
 .selectitem-text::after {
   content: "";
   position: absolute;
-  border-radius: 100px;
+  /* border-radius: 100px; */
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-image: linear-gradient(130.35deg, #6345ed 17.35%, #dc39fc 78.23%);
-  opacity: 0;
+  /* background-image: linear-gradient(130.35deg, #6345ed 17.35%, #dc39fc 78.23%); */
+
+  background-size: cover;
+  opacity: 1;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+.selectitem-img::after {
+  background: url("../images/background/select1.jpeg") no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+.selectitem-img1::after {
+  background: url("../images/background/select2.jpeg") no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
 .selectitem-text:hover {
   top: 30%;
   left: 30%;
@@ -197,10 +220,10 @@
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  z-index: 2;
 }
 .selectitem-text:hover span {
   position: relative;
-
   left: 5%;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -209,11 +232,10 @@
   transition: all 0.3s ease;
 }
 
-
 /* log menu */
 
-@media only screen and (max-width: 991px){
-  .flex .logout-menu{
+@media only screen and (max-width: 991px) {
+  .flex .logout-menu {
     position: relative !important;
     left: 0;
     width: 100%;
@@ -221,7 +243,7 @@
     transform: translateX(0px);
     background: none !important;
   }
-  .flex .logout-menu .menu-item{
+  .flex .logout-menu .menu-item {
     border: none;
   }
 }

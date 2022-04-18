@@ -94,12 +94,12 @@ const Contact = () => {
                 <div className="col-md-12">
                     <div className="page-title-inner flex">
                         <div className="page-title-heading">
-                            <h2 className="heading">Contact</h2>
+                            <h2 className="heading">CONTACT</h2>
                         </div>
                         <div className="breadcrumbs">
                             <ul>
-                                <li><Link to="/">Home</Link></li>
-                                <li>Contact</li>
+                                <li><Link to="/">HOME</Link></li>
+                                <li>CONTACT</li>
                             </ul>
                         </div>
                     </div>

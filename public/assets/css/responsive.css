@@ -30,7 +30,7 @@
 @media only screen and (max-width: 1540px) {
   .main-nav > ul > li {
     float: left;
-    padding: 26px 10px;
+    padding: 26px 30px;
   }
   .swiper-container.latest-coll.style-2 {
     width: 100%;
@@ -197,7 +197,8 @@
   }
 
   .slider-inner .slider-content {
-    width: 100%;
+    /* width: 100%; */
+    display: inline-block;
     padding-top: 0;
   }
   .sc-author.style-2 {
@@ -338,6 +339,7 @@
   .slider-inner .slider-content .heading,
   .heading {
     font-size: 60px;
+    letter-spacing: normal !important;
   }
   .slider-inner .slider-content .sub-heading {
     font-size: 16px;
@@ -430,6 +432,11 @@
   .page-title-heading .heading {
     margin-bottom: 30px;
   }
+  .slider-inner .slider-content .heading span {
+    font-weight: 900;
+    font-size: 10rem;
+  }
+
   .widget.item.wg-tags {
     margin-bottom: 0;
   }
@@ -568,6 +575,16 @@
   /* myswiper */
   .mySwiper {
     display: none;
+  }
+  .tf-slider {
+    background: var(--bg-slider);
+    position: relative;
+    z-index: 2;
+    background: url("../images/background/classic2.jpg") no-repeat;
+    /* background-size: 100% 100%; */
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
   }
 }
 
