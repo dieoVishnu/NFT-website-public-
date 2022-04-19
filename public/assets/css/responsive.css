@@ -264,6 +264,7 @@
   }
   .header_1 #site-header-inner {
     /* justify-content: left; */
+    padding: 10px;
   }
   .header_1 #site-logo {
     width: 50%;
@@ -287,6 +288,13 @@
   .tf-col-itemx2,
   .home-2 .tf-col-itemx2 {
     width: 65% !important;
+  }
+  .slider-inner .slider-content .heading span {
+    font-weight: 900;
+    font-size: 9rem;
+  }
+  .slider-inner .slider-content .sub-heading {
+    font-size: 1.6rem !important;
   }
 
   .sc-heading.style-2 .content-left {
@@ -343,6 +351,7 @@
   }
   .slider-inner .slider-content .sub-heading {
     font-size: 16px;
+    font-weight: 300 !important;
   }
   .slider-inner.style-2 .slider-content {
     width: 75%;
@@ -402,6 +411,13 @@
   }
   .sc-heading.style-2 .content-left .inner p {
     margin: 0;
+  }
+  .slider-inner .slider-content .heading span {
+    font-weight: 900;
+    font-size: 7rem;
+  }
+  .slider-inner .slider-content .sub-heading {
+    font-size: 1.6rem !important;
   }
   .item-details-page .content-item {
     padding-left: 0;

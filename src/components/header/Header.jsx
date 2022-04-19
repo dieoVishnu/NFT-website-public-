@@ -124,7 +124,7 @@ const Header = () => {
                                     <>
                                         <Link to="/login" className="wallet  style-2">
                                             <i className="fa fa-user"></i>
-                                            <span className='pl-3 login-text'>Log in</span>
+                                            <span className='pl-3 login-text'>LOGIN</span>
                                         </Link>
                                     </>
                                     :

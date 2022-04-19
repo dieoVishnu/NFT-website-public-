@@ -95,12 +95,12 @@ const Login = () => {
                     <div className="col-md-12">
                         <div className="page-title-inner flex">
                             <div className="page-title-heading">
-                                <h2 className="heading">Log In</h2>
+                                <h2 className="heading">LOGIN</h2>
                             </div>
                             <div className="breadcrumbs">
                                 <ul>
-                                    <li><Link to="/">Home</Link></li>
-                                    <li>Log In</li>
+                                    {/* <li><Link to="/">HOME</Link></li> */}
+                                    {/* <li>LOGIN</li> */}
                                 </ul>
                             </div>
                         </div>
@@ -117,7 +117,6 @@ const Login = () => {
                             <div className="form-create-item">
                                 <div className="sc-heading">
                                     <h3>Login Your Account</h3>
-                                    <p className="desc">Most popular gaming digital nft market place </p>
                                 </div>
                                 <form id="create-item-1" onSubmit={e => handeleFentch(e)}>
                                     <input name="user" type="text" placeholder="User Name/Email Address"

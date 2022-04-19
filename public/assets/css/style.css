@@ -2183,7 +2183,7 @@ a:focus {
 .fl-page-title {
   padding: 83px 0;
   position: relative;
-  background: url(../images/background/bg-page-title.png) center center
+  background: url(../images/background/bg-page-title1.jpeg) center center
     no-repeat;
   background-size: cover;
 }
@@ -2698,7 +2698,7 @@ a:focus {
   color: var(--primary-color4);
 }
 .wg-category ul li a:hover {
-  color: var(--primary-color3);
+  color: var(--primary-color);
 }
 /* widget tags */
 .wg-tags ul {

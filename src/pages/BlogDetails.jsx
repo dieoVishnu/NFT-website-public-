@@ -356,14 +356,12 @@ const BlogDetails = () => {
                         </div>
                         <div className="widget item widget-post style-3">
                             <div className="wg-title">
-                                Recent News
+                                {/* Recent News */}
                             </div>
                             <ul className="post-new">
                         
-                                <li>
-                                    <div className="avatar">
-                                        <img src={avt1} alt="Post New" />
-                                    </div>
+                                <li className='justify-content-center'>
+                                  
                                     <div className="post-content">
                                         <Link to="/blog-details" className="post-date">
                                             {/* <i className="fa fa-dot"></i> */}
@@ -373,11 +371,11 @@ const BlogDetails = () => {
                                 </li>
                                 
                                 
-                                <div className='pt-5'>
+                                <div className='flex justify-content-center'>
                                
-                                <Link to={`/contact/${imoodiniData.data.ad_id}/${imoodiniData.data.ad_title}`}
-                                    className="sc-button style letter style-2 style-item-details"><span>Contact us</span>
-                                </Link>
+                                    <Link to={`/contact/${imoodiniData.data.ad_id}/${imoodiniData.data.ad_title}`}
+                                        className="sc-button style letter style-2 style-item-details"><span>Contact us</span>
+                                    </Link>
                                 </div>
                                 
                             </ul>

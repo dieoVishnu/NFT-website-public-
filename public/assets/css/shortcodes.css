@@ -1079,11 +1079,11 @@ blockquote .author::before {
 /* Product Item 
 ---------------------------------- */
 .sc-product-item {
-  /* background-color: var(--color-3); */
+  background-color: var(--new-color);
   padding: 49px 23px 37px;
   /* border          : 1px solid var(--border-color-1); */
   box-sizing: border-box;
-  border-radius: 20px;
+  /* border-radius: 20px; */
 }
 
 .sc-product-item .product-img {
@@ -2512,9 +2512,10 @@ blockquote .author::before {
   z-index: 2;
   background: url("../images/background/classic2.jpg") no-repeat;
   background-size: 100% 100%;
+  background-position: bottom center;
   /* background-size: cover; */
-  /* height: 100; */
-  /* overflow: hidden; */
+  /* height: 100vh; */
+  overflow: hidden;
 }
 .tf-slider .overlay {
   position: absolute;
@@ -2571,17 +2572,18 @@ blockquote .author::before {
 }
 .slider-inner .slider-content .heading span {
   font-weight: 900;
-  font-size: 14rem;
+  font-size: 15rem;
 }
 .slider-inner .slider-content .heading {
-  letter-spacing: 1rem !important;
+  /* letter-spacing: 1rem !important; */
 }
 .slider-inner .slider-content .sub-heading {
   color: #dadada;
-  /* display: inline-block; */
   background-color: #0d0d0ea1;
-  /* position: absolute; */
-  /* top: 0; */
+  /* letter-spacing: 0.1rem; */
+  font-size: 2.6rem !important;
+  /* padding-left: 10px; */
+  font-weight: 300 !important;
 }
 
 .slider-inner .slider-content .heading {
@@ -2594,7 +2596,7 @@ blockquote .author::before {
   font-size: 20px;
   line-height: 1.6;
   font-weight: 500;
-  padding-right: 10%;
+  padding-left: 10px;
   margin-bottom: 40px;
 }
 
