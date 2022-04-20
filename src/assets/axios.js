@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-    baseURL: "https://imoodini.com"
+    baseURL: "http://localhost/imoodini"
 })

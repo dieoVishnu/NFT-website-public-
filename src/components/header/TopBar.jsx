@@ -30,28 +30,24 @@ const TopBar = () => {
                                     </Dropdown>
                                 </div>
                             </div>
-                            {/* <div className="english">
+                            <div className="english">
                                 <div id="english" className="dropdown">
                                     <Dropdown>
                                         <Dropdown.Toggle className="btn-selector nolink" id="dropdown-basic">
-                                            <span>English</span>
+                                            <span>BTC</span>
                                         </Dropdown.Toggle>
-
                                         <Dropdown.Menu>
                                         <Dropdown.Item href="#">
-                                            <span>English</span>
+                                            <span>ETH</span>
                                         </Dropdown.Item>
                                         <Dropdown.Item href="#">
-                                            <span>USA</span>
-                                        </Dropdown.Item>
-                                        <Dropdown.Item href="#">
-                                            <span>France</span>
+                                            <span>FTM</span>
                                         </Dropdown.Item>
 
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </div>
-                            </div> */}
+                            </div>
                         </div>
                         <div className="topbar-right flex">
                             {/* <span>New Product Coming Soon</span> */}

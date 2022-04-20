@@ -30,9 +30,9 @@ return <div>
             </div>
         </div>
     </section>
-    <TopSeller data={dataHotCollection2} />
+    {/* <TopSeller data={dataHotCollection2} /> */}
     <Create />
-    <Newsletters />
+    {/* <Newsletters /> */}
     <Footer />
   </div>;
 };

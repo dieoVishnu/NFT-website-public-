@@ -65,6 +65,11 @@ const Header = () => {
                     links: '/favourites'
                 },
                 {
+                    id: 3,
+                    sub: 'post',
+                    links: '/create-item'
+                },
+                {
                     id: 2,
                     sub: 'Logout',
                     links: '/login'
@@ -74,8 +79,7 @@ const Header = () => {
     ]
 
     return <div>
-
-        {/* <TopBar /> */}
+        <TopBar />
         <header id="header_main" className="header_1 js-header" ref={headerRef}>
             <div className="container-fluid">
                 <div className="row">

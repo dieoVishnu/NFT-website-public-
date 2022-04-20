@@ -1105,7 +1105,7 @@ a:focus {
 --------------------------------------------------------------*/
 
 .topbar {
-  background-color: var(--bg-slider);
+  /* background-color: var(--bg-slider); */
   padding: 6px 0;
 }
 .topbar-inner {
