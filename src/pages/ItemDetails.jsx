@@ -8,7 +8,6 @@ import LiveAution from '../components/layouts/home02/LiveAution';
 import dataLiveAution from '../assets/fake-data/dataLiveAution'
 import  Newsletters from '../components/layouts/Newsletters';
 import Footer from '../components/footer/Footer';
-
 import img1 from '../assets/images/avatar/avt-6.jpg'
 import img2 from '../assets/images/avatar/avt-2.jpg'
 import img3 from '../assets/images/avatar/avt-4.jpg'
@@ -100,8 +99,8 @@ const ItemDetails = () => {
                                         {/* <img src={avt1} alt="Bidzen" /> */}
                                     </div>
                                     <div className="infor">
-                                        <div className="create">Owner By</div>
-                                        <h6><Link to="/authors">{imoodiniData.data.user_name}</Link></h6>
+                                        <div className="create">Owned by</div>
+                                        <h6>{imoodiniData.data.user_name}</h6>
                                         {/* <div className="widget-social">
                                             <ul>
                                                 <li><Link to="#" className="active"><i className="fab fa-facebook-f"></i></Link>
@@ -232,7 +231,7 @@ const ItemDetails = () => {
         </>
         :
         <>
-        lodings
+        {/* lodings */}
         <div className="loading-section">
 
         </div>

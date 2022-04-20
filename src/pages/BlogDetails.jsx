@@ -365,7 +365,7 @@ const BlogDetails = () => {
                                     <div className="post-content">
                                         <Link to="/blog-details" className="post-date">
                                             {/* <i className="fa fa-dot"></i> */}
-                                            Owner By</Link>
+                                            Owned by</Link>
                                         <h6 className="title"><Link to="/blog-details">{imoodiniData.data.user_name}</Link></h6>
                                     </div>
                                 </li>
@@ -403,7 +403,7 @@ const BlogDetails = () => {
     </>
     :
     <>
-    lodding
+    {/* lodding */}
     </>
     }
 
