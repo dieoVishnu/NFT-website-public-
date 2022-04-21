@@ -16,6 +16,7 @@ import avt2 from '../assets/images/avatar/avt-14.jpg'
 import avt3 from '../assets/images/avatar/avt-15.jpg'
 import useSingelpost from '../customhook/useSingelpost';
 import Slider04 from '../components/slider/Slider04';
+import useCurrency from '../customhook/useCurreny';
 
 
 const BlogDetails = () => {
@@ -25,13 +26,13 @@ const BlogDetails = () => {
     const location = useLocation()
     const path1 = location.pathname.split("/")[2]
     const path2 = location.pathname.split("/")[3]
-    console.log(path2,path1)
     
-
     const imoodiniData = useSingelpost(path1,path2)
 
-    console.log(imoodiniData)
-
+    // currency converter data
+    const {info:currency,currencysign,currencyData} = useCurrency()
+ 
+    console.log(currency)
     const dataCategory = 
         [
             {
@@ -351,7 +352,7 @@ const BlogDetails = () => {
                                     ))
 
                                 }
-                                <li><Link to="#"><span>Price</span><span>$ {imoodiniData ? Number(imoodiniData.data.ad_price).toLocaleString(navigator.language, { minimumFractionDigits: 0 }): null}</span></Link></li>
+                                <li><Link to="#"><span>Price</span><span>{currencysign} {imoodiniData ? Number(imoodiniData.data.ad_price * currency[currencyData]).toLocaleString(navigator.language, { minimumFractionDigits: 0 }): null}</span></Link></li>
                             </ul>
                         </div>
                         <div className="widget item widget-post style-3">

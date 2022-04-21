@@ -1168,6 +1168,8 @@ a:focus {
   border-radius: 5px;
   padding: 9px 24px 9px 16px;
   border: none;
+  margin: 0;
+  text-transform: uppercase;
 }
 .topbar .dropdown > button:hover {
   background: var(--primary-color7);
@@ -1194,6 +1196,8 @@ a:focus {
   background: var(--color-4);
   border-radius: 10px;
   padding: 10px;
+  margin: 0;
+  text-transform: uppercase;
 }
 
 .dropdown .dropdown-menu a {

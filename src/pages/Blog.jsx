@@ -5,6 +5,7 @@ import dataBlog from '../assets/fake-data/dataBlog';
 import Newsletters from '../components/layouts/Newsletters';
 import Footer from '../components/footer/Footer';
 import useData from '../customhook/useData';
+import useCurrency from '../customhook/useCurreny';
 
 const Blog = () => {
 
@@ -74,6 +75,9 @@ const Blog = () => {
     }, [path1, imoodiniData])
 
 
+    // currency converter data
+    const {info:currency,currencysign,currencyData} = useCurrency()
+
 
     return <div>
         <Header />
@@ -119,7 +123,7 @@ const Blog = () => {
                                             <h5><Link to={`${changeLink.link}/${item.ad_slug}/${item.ad_category}`}>{item.ad_title}</Link></h5>
                                         </div>
                                         <Link to={`${changeLink.link}/${item.ad_slug}/${item.ad_category}`}
-                                            className="sc-button btn-bordered-white style letter"><span>${item.ad_price.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</span></Link>
+                                            className="sc-button btn-bordered-white style letter"><span>{currencysign+ " "}{Number(item.ad_price * currency[currencyData]).toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</span></Link>
                                     </div>
                                 </article>
                             </div>
