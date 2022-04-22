@@ -131,6 +131,8 @@ const Login = () => {
                                     </div>
                                     <button name="submit" type="submit"
                                         className="sc-button style letter style-2" ><span>Log In</span> </button>
+
+                                    <Link className='pl-5' to="/register" >need a account?</Link>
                                 </form>
                                 <div className="other-login">
                                     <div className="text">Or</div>
