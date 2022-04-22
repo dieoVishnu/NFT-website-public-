@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Link } from 'react-router-dom'
 import Header from '../components/header/Header';
 import Newsletters from '../components/layouts/Newsletters';
@@ -7,6 +7,114 @@ import Footer from '../components/footer/Footer';
 import img from '../assets/images/background/img-register.jpg'
 
 const Register = () => {
+
+
+    const initialvalues = {
+        email: "" ,
+        firstName: "",
+        lastName: "",
+        givenName: "" ,
+        googleId: "" ,
+        imageUrl: "" ,
+        password1: "",
+        password2: "",
+        name: "",
+    }
+    const [formvalues, setFormValues] = useState(initialvalues)
+    // password error check
+    const [PassErrorCheck,setPassErrorCheck] = useState()
+
+    const handelChange = (e)=>{
+        const {name,value} = e.target
+        setFormValues({...formvalues,[name]:value})
+        console.log(formvalues)
+    }
+    const handelSubmit = (e)=>{
+        e.preventDefault()
+        const passWordValidation = ()=>{
+                if(formvalues.password1 === formvalues.password2){
+            
+                    const uppercaseRegExp   = /(?=.*?[A-Z])/;
+                    const lowercaseRegExp   = /(?=.*?[a-z])/;
+                    const digitsRegExp      = /(?=.*?[0-9])/;
+                    const specialCharRegExp = /(?=.*?[#?!@$%^&*-])/;
+                    const minLengthRegExp   = /.{8,}/;
+
+                    const uppercasePassword =   uppercaseRegExp.test(formvalues.password1);
+                    const lowercasePassword =   lowercaseRegExp.test(formvalues.password1);
+                    const digitsPassword =      digitsRegExp.test(formvalues.password1);
+                    const specialCharPassword = specialCharRegExp.test(formvalues.password1);
+                    const minLengthPassword =   minLengthRegExp.test(formvalues.password1);
+                    let errMsg ="";
+                    if(formvalues.password1===0){
+                            errMsg="Password is empty";
+                    }else if(!uppercasePassword){
+                            errMsg="At least one Uppercase";
+                    }else if(!lowercasePassword){
+                            errMsg="At least one Lowercase";
+                    }else if(!digitsPassword){
+                            errMsg="At least one digit";
+                    }else if(!specialCharPassword){
+                            errMsg="At least one Special Characters";
+                    }else if(!minLengthPassword){
+                            errMsg="At least minumum 8 characters";
+                    }else{
+                        errMsg="";
+                    }
+                    setPassErrorCheck(errMsg);
+                    return true;
+                    
+                }else{
+                    setPassErrorCheck("Confirm password is not matched");
+                    return false;
+                }
+            }
+            const result = passWordValidation()
+
+            if(result === true){
+                const PostLogin = async () => {
+                    try {
+                        const res = await axios.post('imi_api/gooleAuth/signup', {
+                            email: goole.profileObj.email,
+                            familyName: goole.profileObj.familyName,
+                            givenName: goole.profileObj.givenName,
+                            googleId: goole.profileObj.googleId,
+                            imageUrl: goole.profileObj.imageUrl,
+                            name: goole.profileObj.name,
+                        })
+                        if (res.data.data === null || res.data.data === "null") {
+                            // dispatch(loginFaild(res.data.data))
+                            console.log('faild')
+                        }
+                        else {
+                            dispatch(loginSuccess({
+                                email: goole.profileObj.email,
+                                familyName: goole.profileObj.familyName,
+                                user_Name: goole.profileObj.givenName,
+                                googleId: goole.profileObj.googleId,
+                                imageUrl: goole.profileObj.imageUrl,
+                                name: goole.profileObj.name
+                            }))
+                            // setData(res.data.data)
+                            console.log(res)
+                            res.data && window.location.replace('/')
+                        }
+        
+                    }
+                    catch (error) {
+                        console.log('this is error', error)
+                    }
+                }
+            }
+
+
+
+
+        }
+
+
+    
+
     return <div>
         <Header />
         <section className="fl-page-title">
@@ -14,7 +122,7 @@ const Register = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="page-title-inner flex">
+                        {/* <div className="page-title-inner flex">
                             <div className="page-title-heading">
                                 <h2 className="heading">Register</h2>
                             </div>
@@ -24,7 +132,7 @@ const Register = () => {
                                     <li>Register</li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
@@ -32,37 +140,42 @@ const Register = () => {
 
         <section className="tf-section login-page register-page">
             <div className="container">
-                <div className="row">
-                    <div className="col-md-12">
+                <div className="row justify-content-center">
+                    <div className="col-md-8">
                         <div className="form-create-item-content">
                             <div className="form-create-item">
                                 <div className="sc-heading">
                                     <h3>Create An Account</h3>
                                 </div>
-                                <form id="create-item-1" action="#" method="GET" acceptCharset="utf-8">
+                                <form id="create-item-1" onSubmit={handelSubmit}>
                                     <div className="input-group">
-                                        <input name="name" type="text" placeholder="First Name"
-                                            required />
-                                        <input name="name" type="text" placeholder="Last Name" required />
+                                        <input name="firstName" type="text" placeholder="First Name"
+                                            required value={formvalues.firstName} onChange={handelChange}/>
+                                        <input name="lastName" type="text" placeholder="Last Name" value={formvalues.lastName} required onChange={handelChange} />
                                     </div>
                                     <div className="input-group">
                                         <input name="phone" type="text" placeholder="Phone Number"
                                             required />
-                                        <input name="name" type="text" placeholder="User Name" required />
+                                        <input name="givenName" type="text" placeholder="User Name" value={formvalues.givenName} required onChange={handelChange} />
                                     </div>
-                                    <input name="email" type="email" placeholder="Email Address"
-                                        required />
+                                    <input name="email" type="email" placeholder="Email Address" value={formvalues.email}
+                                        required onChange={handelChange}/>
                                     <div className="input-group">
-                                        <input name="password" type="password" placeholder="Password"
-                                            required />
-                                        <input name="password" type="password" placeholder="Re-Password"
-                                            required />
+                                        <input name="password1" type="password" placeholder="Password" value={formvalues.password1}
+                                            required onChange={handelChange}/>
+                                        <input name="password2" type="password" placeholder="Re-Password" value={formvalues.password2}
+                                            required onChange={handelChange}/>
+                                        
+                                    </div>
+
+                                    <div>
+                                        <p className='ml-5' style={{color:"orange"}}>{PassErrorCheck}</p>
                                     </div>
                                     <div className="input-group style-2 ">
                                         <div className="btn-check">
                                             <input type="radio" id="html" name="fav_language" className="mg-bt-0"
                                                 value="HTML" />
-                                            <label htmlFor="html">Remember Me</label>
+                                            <label htmlFor="html">agree</label>
                                         </div>
                                     </div>
                                     <button name="submit" type="submit"
@@ -70,28 +183,16 @@ const Register = () => {
                                 </form>
                                 <div className="other-login flex justify-content-center">
                                     <div className="text">Or</div>
-                                    {/* <div className="widget-social">
-                                        <ul>
-                                            <li><Link to="#" className="active"><i className="fab fa-facebook-f"></i></Link>
-                                            </li>
-                                            <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>
-                                            <li><Link to="#"><i className="fab fa-google-plus-g"></i></Link></li>
-                                        </ul>
-                                    </div> */}
                                     <button className='m-5 sc-button style letter style-2'>
-                                        <Link to="#" ></Link>
+                                        <Link to="/login" >Log In</Link>
                                     </button>
                                 </div>
-                            </div>
-                            <div className="form-background">
-                                <img src={img} alt="Bidzen" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <Newsletters />
         <Footer />
     </div>;
 };
