@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom'
 import Header from '../components/header/Header';
 import Newsletters from '../components/layouts/Newsletters';
 import Footer from '../components/footer/Footer';
-
+import axios from '../assets/axios';
 import img from '../assets/images/background/img-register.jpg'
+import { useDispatch } from "react-redux";
+import { loginFaild, loginSuccess } from '../redux/auth';
 
 const Register = () => {
 
-
+    const dispatch = useDispatch()
     const initialvalues = {
         email: "" ,
         firstName: "",
@@ -31,7 +33,7 @@ const Register = () => {
     }
     const handelSubmit = (e)=>{
         e.preventDefault()
-        const passWordValidation = ()=>{
+            const passWordValidation = ()=>{
                 if(formvalues.password1 === formvalues.password2){
             
                     const uppercaseRegExp   = /(?=.*?[A-Z])/;
@@ -69,35 +71,32 @@ const Register = () => {
                     return false;
                 }
             }
-            const result = passWordValidation()
+            passWordValidation()
 
-            if(result === true){
+            if(PassErrorCheck === ''){
+                console.log('post requset')
                 const PostLogin = async () => {
                     try {
                         const res = await axios.post('imi_api/gooleAuth/signup', {
-                            email: goole.profileObj.email,
-                            familyName: goole.profileObj.familyName,
-                            givenName: goole.profileObj.givenName,
-                            googleId: goole.profileObj.googleId,
-                            imageUrl: goole.profileObj.imageUrl,
-                            name: goole.profileObj.name,
+                            familyName:formvalues.givenName,
+                            givenName:formvalues.givenName,
+                            passph:formvalues.password1,
+                            email:formvalues.email
+                          
                         })
                         if (res.data.data === null || res.data.data === "null") {
                             // dispatch(loginFaild(res.data.data))
                             console.log('faild')
                         }
+                        else if(res.data['account'] !== undefined){
+                            if (res.data.data['account']){
+                                setPassErrorCheck("account already exist")
+                            }
+                        }
                         else {
-                            dispatch(loginSuccess({
-                                email: goole.profileObj.email,
-                                familyName: goole.profileObj.familyName,
-                                user_Name: goole.profileObj.givenName,
-                                googleId: goole.profileObj.googleId,
-                                imageUrl: goole.profileObj.imageUrl,
-                                name: goole.profileObj.name
-                            }))
-                            // setData(res.data.data)
+                            // dispatch(loginSuccess(res.data.data))
                             console.log(res)
-                            res.data && window.location.replace('/')
+                            // res.data && window.location.replace('/')
                         }
         
                     }
@@ -105,12 +104,13 @@ const Register = () => {
                         console.log('this is error', error)
                     }
                 }
+                PostLogin()
             }
 
 
 
 
-        }
+    }
 
 
     

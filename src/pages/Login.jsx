@@ -26,7 +26,7 @@ const Login = () => {
             })
             if (res.data.data === null || res.data.data === "null") {
                 dispatch(loginFaild(res.data.data))
-                console.log('faild')
+                console.log('faild', res.data)
             }
             else {
                 dispatch(loginSuccess(res.data.data))
@@ -79,7 +79,7 @@ const Login = () => {
                 console.log('this is error', error)
             }
         }
-        PostLogin()
+        // PostLogin()
 
     }
     const handelError = (goole) => {
