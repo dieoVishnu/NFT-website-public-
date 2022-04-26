@@ -6,6 +6,7 @@ import TopSeller from '../components/layouts/creacte-item/TopSeller';
 import Create from '../components/layouts/creacte-item/Create';
 import  Newsletters from '../components/layouts/Newsletters';
 import Footer from '../components/footer/Footer';
+import Addcar from '../components/layouts/creacte-item/Addcar';
 
 const CreateItem = () => {
 return <div>
@@ -31,7 +32,8 @@ return <div>
         </div>
     </section>
     {/* <TopSeller data={dataHotCollection2} /> */}
-    <Create />
+    {/* <Create /> */}
+    <Addcar />
     {/* <Newsletters /> */}
     <Footer />
   </div>;

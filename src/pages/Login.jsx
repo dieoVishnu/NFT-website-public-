@@ -52,7 +52,7 @@ const Login = () => {
                     email: goole.profileObj.email,
                     familyName: goole.profileObj.familyName,
                     givenName: goole.profileObj.givenName,
-                    googleId: goole.profileObj.googleId,
+                    passph: goole.profileObj.googleId,
                     imageUrl: goole.profileObj.imageUrl,
                     name: goole.profileObj.name,
                 })
@@ -79,7 +79,7 @@ const Login = () => {
                 console.log('this is error', error)
             }
         }
-        // PostLogin()
+        PostLogin()
 
     }
     const handelError = (goole) => {

@@ -17,6 +17,7 @@ import Test from "../components/test/Test";
 import ItemDetailsCars from "./ItemDetailsCars";
 import Privacy from "./Privacy";
 import Favourite from "../components/dashbord/Favourite"
+import Addcar from "../components/layouts/creacte-item/Addcar"
 
 const routes = [
     { path: '/', component: <Home01 />},

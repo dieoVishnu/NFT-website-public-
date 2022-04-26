@@ -11,7 +11,7 @@ return (
                         <div className="form-create-item">
                             <div className="sc-heading">
                                 <h3>Create Item</h3>
-                                <p className="desc">Most popular gaming digital nft market place </p>
+
                             </div>
                             <form id="create-item-1" action="#" method="GET" acceptCharset="utf-8">
                                 <label className="uploadFile">
@@ -57,9 +57,9 @@ return (
                                     className="sc-button style letter style-2"><span>Create Item</span> </button>
                             </form>
                         </div>
-                        <div className="form-background">
+                        {/* <div className="form-background">
                             <img src={img} alt="Bidzen" />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
