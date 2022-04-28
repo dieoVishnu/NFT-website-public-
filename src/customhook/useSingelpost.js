@@ -9,8 +9,8 @@ const useSingelpost = (id,category)=>{
     useEffect(()=>{
 
     const handeleFentch = async (e)=>{
-        let catid 
-        if (category == 'Limited'){
+        let catid
+        if (category === 'Limited'){
              catid = 2
         }else {
              catid = 1

@@ -60,6 +60,11 @@ const Header = () => {
             tag: '2',
             namesub: [
                 {
+                    id: 4,
+                    sub: 'admin',
+                    links: '/dash'
+                },
+                {
                     id: 1,
                     sub: 'Favourite',
                     links: '/favourites'

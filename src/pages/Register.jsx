@@ -25,7 +25,7 @@ const Register = () => {
     const [formvalues, setFormValues] = useState(initialvalues)
     // password error check
     const [PassErrorCheck,setPassErrorCheck] = useState()
-
+    
     const handelChange = (e)=>{
         const {name,value} = e.target
         setFormValues({...formvalues,[name]:value})
