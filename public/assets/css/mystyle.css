@@ -19,9 +19,11 @@
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #555;
 }
+
 .bg-section {
   position: relative;
 }
+
 .bg-section .bg-section-inside {
   position: absolute;
   width: 100%;
@@ -35,6 +37,7 @@
   font-size: 18px;
   font-weight: 800;
 }
+
 .wallet:hover {
   color: var(--primary-color7);
 }
@@ -44,9 +47,11 @@
 .button-link-purchase .style-3 {
   height: 9rem;
 }
+
 #center {
   justify-content: center;
 }
+
 .stroke {
   /* font-size: 2rem;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
@@ -56,6 +61,7 @@
   font-size: 2rem;
   color: var(--primary-color) !important;
 }
+
 .stroke-heading {
   -webkit-text-fill-color: rgb(3, 3, 3);
   -webkit-text-stroke-width: 1px;
@@ -82,10 +88,12 @@
   /* overflow: hidden; */
   height: 100%;
 }
+
 .selectItem-card1:hover {
   /* filter: blur(8px);
   -webkit-filter: blur(8px); */
 }
+
 .selectItem-card2 {
   /* background: var(--bg-slider); */
   /* background-size: cover; */
@@ -98,36 +106,40 @@
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
 }
+
 .selectItem-card1 .card {
   overflow: hidden;
 }
+
 .iterm {
   /* width: 100%; */
   height: 600px;
 }
+
 .pr-section {
   padding: 200px 0;
 }
+
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    130.35deg,
-    rgba(8, 8, 8, 0.35) 77.35%,
-    rgba(8, 6, 1, 0.35) 78.23%
-  ) !important;
+  background: linear-gradient(130.35deg,
+      rgba(8, 8, 8, 0.35) 77.35%,
+      rgba(8, 6, 1, 0.35) 78.23%) !important;
 }
 
 .viewHight-90 {
   height: 100vh;
   transition: opacity 1.2s;
 }
+
 .active-opacity {
   opacity: 0.1;
 }
+
 .selectItem-card1:hover,
 .selectItem-card2:hover {
   /* transform: scale(0.9); */
@@ -189,11 +201,13 @@
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
 .selectitem-img::after {
   background: url("../images/background/select1.jpeg") no-repeat;
   background-size: cover;
   z-index: 1;
 }
+
 .selectitem-img1::after {
   background: url("../images/background/select2.jpeg") no-repeat;
   background-size: cover;
@@ -212,6 +226,7 @@
   -o-transition: all 0.3s ease;
   transition: all 0.1s ease;
 }
+
 .selectitem-text span {
   position: relative;
   top: 30%;
@@ -224,6 +239,7 @@
   z-index: 10;
   opacity: 0;
 }
+
 .selectitem-text:hover span {
   position: relative;
   left: 5%;
@@ -246,6 +262,7 @@
     transform: translateX(0px);
     background: none !important;
   }
+
   .flex .logout-menu .menu-item {
     border: none;
   }
@@ -254,12 +271,12 @@
 
 /* dash  */
 
-.dashbord{
+.dashbord {
   background-color: var(--new-color);
   height: 100vh;
 }
 
-.dashbord .dash-nav-head{
+.dashbord .dash-nav-head {
   background-color: var(--primary-gray);
   width: 260px;
   height: 100vh;
@@ -268,7 +285,7 @@
   z-index: 2;
 }
 
-.dashbord .dash-nav-head .dash-heading{
+.dashbord .dash-nav-head .dash-heading {
   height: 64px;
   display: flex;
   align-items: center;
@@ -280,7 +297,7 @@
   text-transform: uppercase;
 }
 
-.dashbord .dash-nav-head .dash-nav{
+.dashbord .dash-nav-head .dash-nav {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -288,31 +305,53 @@
 
 }
 
-.dashbord .dash-nav-head .dash-nav ul li{
+.dashbord .dash-nav-head .dash-nav ul li {
   padding: 20px 0;
   text-transform: uppercase;
 
 }
 
-.dashbord .dash-main{
+.dashbord .dash-main {
   margin-left: 260px;
   margin-top: 65px;
   overflow: hidden;
 }
-.dash-top{
+
+.dash-top {
   position: fixed;
   width: 100%;
   height: 64px;
-  padding-left: 260px;
+  /* padding-left: 260px; */
   background-color: var(--primary-gray);
   z-index: 2;
 }
-.dash-top .dash-nav-top{
+
+.dash-top .dash-nav-top {
   display: flex;
   align-items: center;
   justify-content: right;
   height: 64px;
   padding: 20px;
   background: rgba(0, 0, 0, 0.24);
-  
+
+}
+
+/* tabel */
+.product-section {
+  padding-top: 20px;
+}
+
+@media (max-width:991px) {
+  .dashbord .dash-nav-head {
+    position: fixed;
+    left: -260px;
+  }
+
+  .dashbord .dash-main {
+    margin-left: 0;
+  }
+
+  .dashbord .dash-nav-head.active {
+    left: 0;
+  }
 }
