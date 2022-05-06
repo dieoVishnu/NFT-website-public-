@@ -29,7 +29,7 @@ const Register = () => {
     const handelChange = (e)=>{
         const {name,value} = e.target
         setFormValues({...formvalues,[name]:value})
-        console.log(formvalues)
+        // console.log(formvalues)
     }
     const handelSubmit = (e)=>{
         e.preventDefault()
@@ -84,19 +84,19 @@ const Register = () => {
                             email:formvalues.email
                           
                         })
+                        console.log(res.data.email)
                         if (res.data.data === null || res.data.data === "null") {
                             // dispatch(loginFaild(res.data.data))
                             console.log('faild')
                         }
-                        else if(res.data['account'] !== undefined){
-                            if (res.data.data['account']){
-                                setPassErrorCheck("account already exist")
-                            }
+                        else if(res.data.email === true){
+                            setPassErrorCheck("Email already exist")
+                            
                         }
                         else {
-                            // dispatch(loginSuccess(res.data.data))
-                            console.log(res)
-                            // res.data && window.location.replace('/')
+                            dispatch(loginSuccess(res.data))
+                            console.log(res,"this else")
+                            res.data && window.location.replace('/')
                         }
         
                     }

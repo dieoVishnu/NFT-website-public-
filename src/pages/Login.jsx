@@ -44,7 +44,8 @@ const Login = () => {
     // google auth
 
     const handelLogin = (goole) => {
-        console.log(goole.profileObj.name)
+        console.log(goole.profileObj)
+        console.log(goole)
 
         const PostLogin = async () => {
             try {
@@ -55,6 +56,7 @@ const Login = () => {
                     passph: goole.profileObj.googleId,
                     imageUrl: goole.profileObj.imageUrl,
                     name: goole.profileObj.name,
+                    // token: goole.tokenObj.access_token,
                 })
                 if (res.data.data === null || res.data.data === "null") {
                     // dispatch(loginFaild(res.data.data))
@@ -67,7 +69,9 @@ const Login = () => {
                         user_Name: goole.profileObj.givenName,
                         googleId: goole.profileObj.googleId,
                         imageUrl: goole.profileObj.imageUrl,
-                        name: goole.profileObj.name
+                        name: goole.profileObj.name,
+                        token: res.data.token_splat
+
                     }))
                     // setData(res.data.data)
                     console.log(res)
