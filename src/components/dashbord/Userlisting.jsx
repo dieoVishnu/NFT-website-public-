@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from '../../assets/axios';
 import {Link} from 'react-router-dom'
+import { useSelector } from "react-redux"
 
 function Userlisting() {
 
+
+    const user = useSelector(state => state.user.token)
 
     const [data, setData] = useState()
 
@@ -12,7 +15,7 @@ function Userlisting() {
         const handeleFentch = async () => {
             
             const formData = new FormData();
-            formData.append("user", '2b18c09c335593d61deccef115784d5c')
+            formData.append("user", user.user_ID)
             try {
                 const res = await axios({
                     method: "post",

@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import TopBar from "../header/TopBar";
 import { Link, Outlet } from "react-router-dom";
 import Topdash from "./dashTop/Topdash";
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 
 const Dashbord = () => {
 
