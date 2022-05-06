@@ -32,7 +32,7 @@ const BlogDetails = () => {
     // currency converter data
     const {info:currency,currencysign,currencyData} = useCurrency()
  
-    console.log(currency)
+    console.log(imoodiniData,"this is currency")
     const dataCategory = 
         [
             {
@@ -67,6 +67,16 @@ const BlogDetails = () => {
                 name: 'condition',
                 count: 'adcondition' 
             },
+            {
+                name: 'Body Type',
+                count: 'ad_cartype' 
+            },
+            {
+                name: 'Regional Specs',
+                count: 'ad_dirve' 
+            },
+            
+            
         ]
 
     const [dataRecent] = useState(
@@ -154,7 +164,7 @@ const BlogDetails = () => {
 
   return <div>
     <Header />
-    {imoodiniData ? 
+    {imoodiniData && currency ? 
     <>
         <section className="fl-page-title">
         <div className="overlay"></div>

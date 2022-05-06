@@ -1,10 +1,12 @@
-import react,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import axios from "../../../assets/axios";
 
-const Addcar = ()=>{
+const Addcar = (props)=>{
     // loading
+    const initialData = props.data
     const [loading, setLoading] = useState(false)
-    const initialvalues = {
+    let initialvalues = {
+        postLink: "carproductadd",
         imgfile: "",
         uploadPhoto: "1" ,
         list_title: "" ,
@@ -23,8 +25,35 @@ const Addcar = ()=>{
         car_specs: "",
         car_doors: "2",
     }
+    
+    if (initialData !==null && initialData !== undefined){
+        initialvalues = {
+        postLink: "updateproduct",
+        imgfile: "",
+        uploadPhoto: "1",
+        list_title: initialData.ad_title,
+        list_price: initialData.ad_price,
+        list_location: initialData.adlocation,
+        list_contact: initialData.ad_price ,
+        list_details: initialData.ad_details ,
+        car_make: initialData.ad_make,
+        car_year: initialData.adyear,
+        car_kilometers: initialData.ad_kms,
+        car_condition: initialData.adcondition,
+        car_transmission: initialData.ad_transmission,
+        car_color: initialData.ad_color,
+        car_bodytype: initialData.ad_cartype,
+        car_fueltype: initialData.ad_fuel,
+        car_specs: initialData.ad_dirve,
+        car_doors: "2",
+        }
+   
+    }
+    
     const [formvalues, setFormValues] = useState(initialvalues)
 
+
+  
     const handelChange = (e)=>{
         const {name,value} = e.target
         setFormValues({...formvalues,[name]:value})
@@ -43,7 +72,7 @@ const Addcar = ()=>{
 
         for (let i = 0; i < formvalues.imgfile.length; i++) {
             formData.append("upload[]", formvalues.imgfile[i]);
-          }
+        }
         formData.append("list_title",formvalues.list_title);
         formData.append("upload",formvalues.imgfile);
         formData.append("uploadPhoto",formvalues.uploadPhoto);
@@ -66,7 +95,7 @@ const Addcar = ()=>{
             try {
                 const res = await axios({
                     method: "post",
-                    url: "imi_api/carproductadd",
+                    url: `imi_api/${formvalues.postLink}`,
                     data: formData,
                     headers: { "Content-Type": "multipart/form-data" },
                   
@@ -90,6 +119,7 @@ const Addcar = ()=>{
         }
         PostLogin()
     }
+    
     return <div>
 
         <section>
@@ -110,16 +140,18 @@ const Addcar = ()=>{
                                     <input name="list_title" onChange={handelChange} value={formvalues.list_title} className="m-0" type="text" placeholder="Item Name" required />
                                 </div>
                                 <div className="input-group">
-                                    <input name="list_price" onChange={handelChange} type="text" placeholder="price" required />
-                                    <input name="car_kilometers" onChange={handelChange} type="text" placeholder="killometer" required />
+                                    <input name="list_price" onChange={handelChange} value={formvalues.list_price} type="text" placeholder="price" required />
+                                    <input name="car_kilometers" onChange={handelChange} value={formvalues.car_kilometers} type="text" placeholder="killometer" required />
                                 </div>
                                 <div className="input-group">
-                                    <input name="car_make" onChange={handelChange} type="text" placeholder="brand" required />
-                                    <input name="list_location" onChange={handelChange} type="text" placeholder="location" required />
+                                
+                                    <input name="car_make" onChange={handelChange} value={formvalues.car_make} type="text" placeholder="brand" required />
+                                    <input name="list_location" onChange={handelChange} value={formvalues.list_location} type="text" placeholder="location" required />
                                 </div>
                                 <div className="input-group">
-                                    <input name="car_year" onChange={handelChange} type="year" placeholder="Year" required />
-                                    <select onChange={handelChange} className="form-control custom-select rounded-0 mb-0" id="exampleFormControlSelect1" name="car_color" required>
+                                    
+                                    <input name="car_year" onChange={handelChange} value={formvalues.car_year} type="year" placeholder="Year" required />
+                                    <select onChange={handelChange}  value={formvalues.car_color} className="form-control custom-select rounded-0 mb-0" id="exampleFormControlSelect1" name="car_color" required>
                                         <option >Select a Color</option>
                                         <option value="Black">Black</option>
                                         <option value="Blue">Blue</option>
@@ -141,7 +173,7 @@ const Addcar = ()=>{
                                     
                                 </div>
                                 <div className="input-group">
-                                <select onChange={handelChange} className="form-control custom-select rounded-0 mr-4 mb-0" id="exampleFormControlSelect1" name="car_bodytype" required>
+                                <select onChange={handelChange} value={formvalues.car_bodytype} className="form-control custom-select rounded-0 mr-4 mb-0" id="exampleFormControlSelect1" name="car_bodytype" required>
                                         <option value="">Body Type</option>
                                         <option value="Coupe">Coupe</option>
                                         <option value="Crossover">Crossover</option>
@@ -157,7 +189,7 @@ const Addcar = ()=>{
                                         <option value="Wagon">Wagon</option>
                                         <option value="Other">Other</option>
                                     </select>
-                                    <select onChange={handelChange} className="form-control custom-select rounded-0 mb-0" id="exampleFormControlSelect1" name="car_fueltype" required>
+                                    <select onChange={handelChange} value={formvalues.car_fueltype} className="form-control custom-select rounded-0 mb-0" id="exampleFormControlSelect1" name="car_fueltype" required>
                                         <option value="">Fuel Type</option>
                                         <option value="Gasoline">Gasoline</option>
                                         <option value="Diesel">Diesel</option>
@@ -168,20 +200,20 @@ const Addcar = ()=>{
                                 </div>
                          
                                 <div className="input-group">
-                                    <select onChange={handelChange}  className="form-control custom-select rounded-0 mr-4 mb-0" id="exampleFormControlSelect1" name="car_condition" required>
+                                    <select onChange={handelChange}  value={formvalues.car_condition}  className="form-control custom-select rounded-0 mr-4 mb-0" id="exampleFormControlSelect1" name="car_condition" required>
                                         <option value="">Select a Condition</option>
                                         <option value="Perfect">Perfect</option>
                                         <option value="Slightly used">Slightly used</option>
                                         <option value="Part out">Part out</option>
                                     </select>
-                                    <select onChange={handelChange} className="form-control custom-select rounded-0 mb-0" id="exampleFormControlSelect1" name="car_transmission" required>
+                                    <select onChange={handelChange} value={formvalues.car_transmission} className="form-control custom-select rounded-0 mb-0" id="exampleFormControlSelect1" name="car_transmission" required>
                                         <option value="">Select Transmission</option>
                                         <option value="Manual">Manual Transmission</option>
                                         <option value="Automatic">Automatic Transmission</option>
                                     </select>
                                 </div>
                                 <div className="input-group">
-                                <select onChange={handelChange} className="form-control custom-select rounded-0 mr-4 mb-0" id="exampleFormControlSelect1" name="car_specs" required>
+                                <select onChange={handelChange} value={formvalues.car_specs} className="form-control custom-select rounded-0 mr-4 mb-0" id="exampleFormControlSelect1" name="car_specs" required>
                                         <option  value="">Regional Specs</option>
                                         <option value="European">European Specs</option>
                                         <option value="GCC">GCC Specs</option>
@@ -189,11 +221,11 @@ const Addcar = ()=>{
                                         <option value="North American">North American Specs</option>
                                         <option value="Other">Other</option>
                                     </select>
-                                    <input onChange={handelChange} name="list_contact" type="text" placeholder="Contact" required />
+                                    <input onChange={handelChange} value={formvalues.list_contact} name="list_contact" type="text" placeholder="Contact" required />
                                 </div>
                                
                                
-                                <textarea onChange={handelChange} id="comment-message" name="list_details" tabIndex="4"
+                                <textarea onChange={handelChange} value={formvalues.list_details} id="comment-message" name="list_details" tabIndex="4"
                                     placeholder="Description" aria-required="true"></textarea>
                                 <div className="input-group style-2 ">
                                     <div className="btn-check">

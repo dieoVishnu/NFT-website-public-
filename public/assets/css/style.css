@@ -386,11 +386,12 @@ del,
 table,
 th,
 td {
-  border: 1px solid #343444;
+  /* border: 1px solid #343444; */
+  border-bottom: 1px solid #343444;
 }
 
 table {
-  border-collapse: separate;
+  border-collapse: collapse;
   border-spacing: 0;
   border-width: 1px 0 0 1px;
   margin: 0 0 30px;

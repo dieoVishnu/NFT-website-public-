@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from '../../assets/axios';
+import {Link} from 'react-router-dom'
 
 function Userlisting() {
 
@@ -8,8 +9,8 @@ function Userlisting() {
 
     useEffect(() => {
 
-        const handeleFentch = async (e) => {
-
+        const handeleFentch = async () => {
+            
             const formData = new FormData();
             formData.append("user", '2b18c09c335593d61deccef115784d5c')
             try {
@@ -21,7 +22,6 @@ function Userlisting() {
 
                 })
                 setData(res.data.data)
-                console.log(res.data.data)
             }
             catch (error) {
                 console.log(error)
@@ -37,22 +37,30 @@ function Userlisting() {
             <div className="container">
                 <div className='product-section'>
                     <table id="productlist">
+                        <tbody>
                         <tr>
-                            <th>title</th>
-                            <th>category</th>
-                            <th>status</th>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Status</th>
                         </tr>
                         {data && data.map((e, index) => (
                             <tr key={index}>
+                                <td> <img src={e.ad_cover_image} alt="a" /></td>
                                 <td>
-                                    <img src={e.ad_cover_image} alt="a" />
                                     {e.ad_title}
                                 </td>
                                 <td>{e.ad_category}</td>
-                                <td>{e.ad_verified === '0' ? 'deactive' : 'Active'}</td>
+                                <td>
+                                    <div>
+                                    {e.ad_verified === '0' ? 'deactive' : 'Active'}
+                                    </div>
+                                    <Link to={`${e.ad_slug}/${e.ad_category}` }>edit</Link>
+                                </td>
                             </tr>
                         ))}
 
+                        </tbody>
                     </table>
                 </div>
             </div>

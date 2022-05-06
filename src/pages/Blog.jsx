@@ -16,7 +16,7 @@ const Blog = () => {
 
     const location = useLocation()
     const path1 = location.pathname.split("/")[2]
-    const imoodiniData = useData(path1, 60)
+    const imoodiniData = useData(path1, 100)
     const [changeLink, setChangeLink] = useState({
         link: 's'
     })

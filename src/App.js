@@ -7,6 +7,8 @@ import Login from './pages/Login';
 import Addcar from './components/layouts/creacte-item/Addcar';
 import Selectitem from './components/layouts/creacte-item/Selectitem';
 import Userlisting from './components/dashbord/Userlisting';
+import Addlimited from './components/layouts/creacte-item/Addlimited';
+import Updateproduct from './components/dashbord/Updateproduct';
 
 function App() {
 
@@ -19,7 +21,11 @@ function App() {
                 ))
             }
             <Route path='dash' element={<Dashbord />}>
-                <Route path='addpost' element={<Addcar />} />
+                <Route path='addpost' element={<Selectitem />} />
+                {/* <Route path='addpost' element={<Selectitem />} /> */}
+                <Route path='mylisting/:id/:id' element={<Updateproduct />} />
+                <Route path='car' element={<Addcar />} />
+                <Route path='limited' element={<Addlimited />} />
                 <Route path='select' element={<Selectitem />} />
                 <Route path='mylisting' element={<Userlisting />} />
             </Route>
