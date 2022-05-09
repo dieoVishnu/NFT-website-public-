@@ -234,7 +234,7 @@ const Addcar = (props)=>{
                                 <textarea onChange={handelChange} value={formvalues.list_details} id="comment-message" name="list_details" tabIndex="4"
                                     placeholder="Description" aria-required="true"></textarea>
                                 <div className="input-group style-2 ">
-                                    <div className="btn-check">
+                                    {/* <div className="btn-check">
                                         <input type="radio" id="sale" name="fav_language" />
                                         <label htmlFor="sale">Put On Sale</label>
                                     </div>
@@ -249,7 +249,7 @@ const Addcar = (props)=>{
                                         <label htmlFor="purchase">
                                             Unlock Purchased
                                         </label>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <button name="submit" type="submit" id="submit"
                                     className="sc-button style letter style-2"><span>Create Item</span> </button>

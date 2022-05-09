@@ -2281,6 +2281,9 @@ blockquote .author::before {
 #create-item-1 .input-group input:first-child {
   margin-right: 20px;
 }
+#create-item-1 .input-group input {
+  text-transform: capitalize;
+}
 
 #create-item-1 textarea {
   padding-top: 18px;

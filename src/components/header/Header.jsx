@@ -61,7 +61,7 @@ const Header = () => {
             namesub: [
                 {
                     id: 4,
-                    sub: 'admin',
+                    sub: 'Dashbord',
                     links: '/dash'
                 },
                 {
