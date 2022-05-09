@@ -7,6 +7,7 @@ function Userlisting() {
 
 
     const user = useSelector(state => state.user.token)
+    console.log(user.userID)
 
 
     const [data, setData] = useState()

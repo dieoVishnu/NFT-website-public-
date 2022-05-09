@@ -32,11 +32,6 @@ const Dashbord = () => {
             path: "mylisting"
 
         },
-        {
-            name: "favorites",
-            path: "create-item"
-
-        },
     ]
 
     return <div>

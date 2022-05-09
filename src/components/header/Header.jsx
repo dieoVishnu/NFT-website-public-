@@ -65,16 +65,6 @@ const Header = () => {
                     links: '/dash'
                 },
                 {
-                    id: 1,
-                    sub: 'Favourite',
-                    links: '/favourites'
-                },
-                {
-                    id: 3,
-                    sub: 'post',
-                    links: '/create-item'
-                },
-                {
                     id: 2,
                     sub: 'Logout',
                     links: '/login'
