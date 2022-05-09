@@ -1,7 +1,11 @@
 import React,{useState,useEffect} from "react";
 import axios from "../../../assets/axios";
+import { useSelector } from "react-redux";
 
 const Addcar = (props)=>{
+
+    // user
+    const user = useSelector(state => state.user.token)
     // loading
     const initialData = props.data
     const [loading, setLoading] = useState(false)
@@ -90,6 +94,8 @@ const Addcar = (props)=>{
         formData.append("car_fueltype",formvalues.car_fueltype);
         formData.append("car_specs",formvalues.car_specs);
         formData.append("car_doors",formvalues.car_doors);
+        formData.append("user",user.userID);
+
 
         const PostLogin = async () => {
             try {

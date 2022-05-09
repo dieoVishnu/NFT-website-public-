@@ -8,6 +8,7 @@ function Userlisting() {
 
     const user = useSelector(state => state.user.token)
 
+
     const [data, setData] = useState()
 
     useEffect(() => {
@@ -15,7 +16,7 @@ function Userlisting() {
         const handeleFentch = async () => {
             
             const formData = new FormData();
-            formData.append("user", user.user_ID)
+            formData.append("user", user.userID)
             try {
                 const res = await axios({
                     method: "post",
@@ -25,6 +26,7 @@ function Userlisting() {
 
                 })
                 setData(res.data.data)
+                console.log(res.data)
             }
             catch (error) {
                 console.log(error)

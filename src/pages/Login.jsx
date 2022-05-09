@@ -70,7 +70,8 @@ const Login = () => {
                         googleId: goole.profileObj.googleId,
                         imageUrl: goole.profileObj.imageUrl,
                         name: goole.profileObj.name,
-                        token: res.data.token_splat
+                        token: res.data.token_splat,
+                        userID:res.data.usersid
 
                     }))
                     // setData(res.data.data)
