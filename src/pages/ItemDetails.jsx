@@ -88,6 +88,8 @@ const ItemDetails = () => {
         e.preventDefault()
         const transfer = async (val)=>{
             try {
+                if(!window.ethereum)
+                    throw new Error('metmask not found..');
                 const tx = await window.ethereum.request({
                     method: 'eth_sendTransaction',
                     params:[
@@ -215,7 +217,7 @@ const ItemDetails = () => {
                                 <Link to={`/contact/${imoodiniData.data.ad_id}/${imoodiniData.data.ad_title}`}
                                     className="sc-button style letter style-2 style-item-details"><span>Contact us</span>
                                 </Link>
-                                <Link to='/cheko'
+                                <Link to={`/cheko/${path1}/${path2}`}
                                     className="sc-button style letter style-2 style-item-details"><span>Buy Now</span>
                                 </Link>
                                 {metaWallet ? (

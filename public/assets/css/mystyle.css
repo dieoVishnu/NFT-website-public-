@@ -400,5 +400,22 @@
 }
 
 .box{
-  border: 1px solid white;
+  /* border: 1px solid white; */
+}
+.paym{
+  display: none;
+}
+.active .paym{
+  display: block;
+  height: 75vh;
+  width: 50%;
+  background: rgb(221,160,221);
+  background: linear-gradient(90deg, rgba(221,160,221,1) 0%, rgba(221,160,221,1) 50%, rgba(160,213,221,1) 100%);
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  z-index: 10;
+}
+.active .hero-box{
+  opacity: 0.1;
 }

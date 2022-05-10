@@ -42,7 +42,7 @@ const routes = [
     { path: '/test', component: <Test />},
     { path: '/privacy', component: <Privacy />},
     { path: '/favourites', component: <Favourite />},
-    { path: '/cheko', component: <Chekout />},
+    { path: '/cheko/:id/:id', component: <Chekout />},
 ]
 
 export default routes;

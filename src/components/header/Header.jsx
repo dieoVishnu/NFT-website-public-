@@ -121,9 +121,9 @@ const Header = () => {
                             <div className="flex">
                                 {user === 'null' || user === null ?
                                     <>
-                                        <Link to="/login" className="wallet  style-2">
+                                        <Link to="/login" className="wallet pt-2 pr-3 style-2">
                                             <i className="fa fa-user"></i>
-                                            <span className='pl-3 login-text'>LOGIN</span>
+                                            <span className='pl-2 login-text'>LOGIN</span>
                                         </Link>
                                     </>
                                     :
@@ -133,7 +133,7 @@ const Header = () => {
                                                 {
                                                     userMenu.map((data, index) => (
                                                         <li key={index} onClick={() => handleOnClick(index)} className="menu-item menu-item-has-children"   >
-                                                            <Link to="#"><i className="fa fa-user"></i>&nbsp;Hello, {user.user_Name}</Link>
+                                                            <Link to="/dash"><i className="fa fa-user"></i>&nbsp;Hello, {user.user_Name}</Link>
                                                             {/* submenu */}
                                                             <ul className="sub-menu" >
                                                                 {data.namesub.map((submenu, index) => (
