@@ -383,9 +383,8 @@ const BlogDetails = () => {
                                 
                                 
                                 <div className='flex justify-content-center'>
-                               
                                     <Link to={`/contact/${imoodiniData.data.ad_id}/${imoodiniData.data.ad_title}`}
-                                        className="sc-button style letter style-2 style-item-details"><span>Contact us</span>
+                                        className="sc-button style letter style-2 style-item-details"><span>Contact</span>
                                     </Link>
                                 </div>
                                 

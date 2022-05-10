@@ -6,10 +6,13 @@ import ScrollToTop from './ScrollToTop';
 import {configureStore} from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import userReducer from "./redux/auth"
+import walletReducer from "./redux/metaWallet"
 
 const store = configureStore({
   reducer:{
     user: userReducer,
+    wallet: walletReducer,
+
   },
 });
 

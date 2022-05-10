@@ -8,7 +8,9 @@ import axios from '../assets/axios';
 import img1 from '../assets/images/background/img-login.png'
 import { useDispatch } from "react-redux";
 import { loginFaild, loginSuccess } from '../redux/auth';
-import GoogleLogin from 'react-google-login'
+import GoogleLogin from 'react-google-login';
+import {FaWallet} from 'react-icons/fa'
+
 
 const Login = () => {
     const [data, setData] = useState()
@@ -91,6 +93,23 @@ const Login = () => {
         console.log(goole)
     }
 
+    // metamask wallet connect
+    const handelMetamask = async (e)=>{
+        e.preventDefault()
+        try {
+            if(!window.ethereum)
+                throw new Error('metmask not found..');
+            const result = await window.ethereum.request({method: 'eth_requestAccounts'})
+            if (result){
+                console.log(result)
+               window.location.replace('/')
+
+            }
+        } catch (error) {
+            console.log('error mettamask', error)
+        }
+    }
+
     return <div>
         <Header />
         <section className="fl-page-title">
@@ -143,23 +162,25 @@ const Login = () => {
                                 <div className="other-login">
                                     <div className="text">Or</div>
                                     <div className="widget-social flex " id='center'>
-                                        {/* <ul>
-                                        <li><Link to="#" className="active"><i className="fab fa-facebook-f"></i></Link>
-                                        </li>
-                                        <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>
-                                        
-                                        <li><Link to="#"><i className="fab fa-google-plus-g"></i></Link></li>
-                                    </ul> */}
-                                        <div>
-                                            <GoogleLogin
+                                        <ul>
+                                        <li><Link to="#"><i className="fab fa-facebook-f"></i></Link></li>
+                                        <li>
+                                        <GoogleLogin
                                                 clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                                                render={renderProps => (
+                                                    <Link to="#" onClick={renderProps.onClick}><i className="fab fa-google-plus-g">
+                                                        </i></Link>
+                                                    
+                                                  )}
                                                 onSuccess={handelLogin}
                                                 onFailure={handelError}
                                                 cookiePolicy={'single_host_origin'}
                                             >
-
                                             </GoogleLogin>
-                                        </div>
+                                        </li>
+                                        <li><Link to="#" onClick={e=>handelMetamask(e)}><FaWallet  /></Link></li>
+                                    </ul>
+                                      
 
                                     </div>
                                 </div>

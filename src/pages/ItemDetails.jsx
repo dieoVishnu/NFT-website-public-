@@ -16,8 +16,17 @@ import avt1 from '../assets/images/avatar/avt-4.jpg'
 import avt2 from '../assets/images/avatar/avt-6.jpg'
 import avt3 from '../assets/images/avatar/avt-3.jpg'
 import useSingelpost from '../customhook/useSingelpost';
+import { useDispatch, useSelector } from 'react-redux';
+import { walletconnect, walletremove } from '../redux/metaWallet';
+import {ethers} from 'ethers'
+import useCurrency from '../customhook/useCurreny';
+import { Form } from 'react-bootstrap';
 
 const ItemDetails = () => {
+
+    // currency converter
+    const {info:currency,currencysign,currencyData} = useCurrency()
+
     const [dataHistory] = useState(
         [
             {
@@ -41,20 +50,77 @@ const ItemDetails = () => {
         ]
     )
 
+
     // const [path,setPath] = useState()
     const location = useLocation()
     const path1 = location.pathname.split("/")[2]
     const path2 = location.pathname.split("/")[3]
-    console.log(path2,path1)
     
 
     const imoodiniData = useSingelpost(path1,path2)
     // const imoodiniData = false
+
+
+
+     // metamask wallet connect
+
+    //  redux
+    const dispatch = useDispatch();
+    const metaWallet = useSelector(state => state.wallet.walletid);
+     const handelMetamask = async (e)=>{
+        e.preventDefault()
+            try {
+                if(!window.ethereum)
+                    throw new Error('metmask not found..');
+                const result = await window.ethereum.request({method: 'eth_requestAccounts'})
+                if (result){
+                    dispatch(walletconnect(result[0]))
+                    alert(result)
+                }
+            } catch (error) {
+                console.log('error mettamask', error)
+            }
+        
+        
+    }
+
+    const handelwallettransfer =  (e)=>{
+        e.preventDefault()
+        const transfer = async (val)=>{
+            try {
+                const tx = await window.ethereum.request({
+                    method: 'eth_sendTransaction',
+                    params:[
+                        {
+                            from: metaWallet,
+                            to: '0xf80CCa0450F5026FE105349B2E8Fe4F5Fe1B9190',
+                            value: val,
+                            gasPrice: '0x09184e72a000',
+                            gas: '0x2710',
+                        },
+                    ],
+                })
+                if (tx)
+                    console.log(tx)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        const priceToEth = ()=>{
+            const eth = Number(imoodiniData.data.ad_price * currency[currencyData]).toLocaleString()
+            const result  = ethers.utils.parseEther(eth)
+            // console.log(result, metaWallet)
+            transfer(result._hex)
+        }
+        priceToEth()
+        
+
+    }
         
   return <div className='item-details'>
         <Header />
         {
-            imoodiniData ?
+            imoodiniData && currency ?
             
             <>
         <section className="fl-page-title">
@@ -114,7 +180,7 @@ const ItemDetails = () => {
                                 </div>
                                 <ul className="list-details-item">
                                     <li><span className="name">Current Price</span><span
-                                            className="price">${Number(imoodiniData.data.ad_price).toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</span> <span className="pagi"></span> </li>
+                                            className="price">{currencysign} {Number(imoodiniData.data.ad_price * currency[currencyData]).toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</span> <span className="pagi"></span> </li>
                                     {/* <li>Size 14000 x 14000 px</li> */}
                                     {/* <li> Volume Traded 64.1</li> */}
                                 </ul>
@@ -149,6 +215,23 @@ const ItemDetails = () => {
                                 <Link to={`/contact/${imoodiniData.data.ad_id}/${imoodiniData.data.ad_title}`}
                                     className="sc-button style letter style-2 style-item-details"><span>Contact us</span>
                                 </Link>
+                                <Link to='/cheko'
+                                    className="sc-button style letter style-2 style-item-details"><span>Buy Now</span>
+                                </Link>
+                                {metaWallet ? (
+                                     <Link to='#' onClick={e=>handelwallettransfer(e)}
+                                     className="ml-2 sc-button style letter style-2 style-item-details">
+                                         <span>Buy</span>
+                                 </Link>
+                                           ):(  
+                                            <Link to='#' onClick={e=>handelMetamask(e)}
+                                            className="ml-2 sc-button style letter style-2 style-item-details">
+                                                <span>Wallet-Connect</span>
+                                        </Link>
+                                            
+                                       )}
+                               
+                                
                                 <div className="flat-tabs themesflat-tabs">
                                 <Tabs>
                                         <TabList>

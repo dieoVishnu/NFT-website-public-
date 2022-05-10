@@ -19,6 +19,7 @@ import Privacy from "./Privacy";
 import Favourite from "../components/dashbord/Favourite"
 import Addcar from "../components/layouts/creacte-item/Addcar"
 import Dashbord from "../components/dashbord/Dashbord"
+import Chekout from "../components/chekout/Chekout"
 
 const routes = [
     { path: '/', component: <Home01 />},
@@ -41,6 +42,7 @@ const routes = [
     { path: '/test', component: <Test />},
     { path: '/privacy', component: <Privacy />},
     { path: '/favourites', component: <Favourite />},
+    { path: '/cheko', component: <Chekout />},
 ]
 
 export default routes;
