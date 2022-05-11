@@ -7,25 +7,28 @@ import { useLocation } from 'react-router-dom'
 import useCurrency from '../../customhook/useCurreny'
 import { walletconnect } from '../../redux/metaWallet'
 import useSingelpost from '../../customhook/useSingelpost'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Pyment from './Pyment'
 
 function Chekout() {
 
-    const [paymetn,setPayment] = useState(true)
+    const [paymetn,setPayment] = useState(false)
 
     let initialvalues = {
-        imgfile: "",
-        uploadPhoto: "4" ,
-        list_title: "" ,
+        id: "",
+        first_name: "" ,
+        list_name: "",
         list_price: "",
         list_location: "",
         list_contact: "" ,
-        list_details: "" ,
-        limited_age: "",
-        limited_condition: "",
-        limited_category: "Memorabilia"
-        
+        email: "" ,
+        city: "",
+        contry: "",
+        limited_category: "Memorabilia",
+        user: "",
+        setPayment:setPayment
     }
+
+
     const [formvalues, setFormValues] = useState(initialvalues)
 
       // const [path,setPath] = useState()
@@ -34,14 +37,14 @@ function Chekout() {
       const path2 = location.pathname.split("/")[3]
       
   
-      const imoodiniData = useSingelpost(path1,path2)
+    const imoodiniData = useSingelpost(path1,path2)
       // currency converter
     const {info:currency,currencysign,currencyData} = useCurrency()
 
     const handelChange = (e)=>{
         const {name,value} = e.target
         setFormValues({...formvalues,[name]:value})
-        console.log(formvalues)
+        console.log(imoodiniData.data)
     }
 
      // metamask wallet connect
@@ -49,6 +52,7 @@ function Chekout() {
     //  redux
     const dispatch = useDispatch();
     const metaWallet = useSelector(state => state.wallet.walletid);
+    const user = useSelector(state => state.user.token)
      const handelMetamask = async (e)=>{
         e.preventDefault()
             try {
@@ -102,7 +106,14 @@ function Chekout() {
 
     const handelSubmit = (e)=>{
         e.preventDefault()
+        setFormValues({...formvalues,
+            ['list_name']:imoodiniData.data.ad_price,
+            ['list_name']: imoodiniData.data.ad_title,
+            ['id']: imoodiniData.data.ad_id,
+            ['userid']: user.usersid
+        })
         setPayment(!paymetn)
+
     }
   return (
     <div>
@@ -175,33 +186,10 @@ function Chekout() {
                     </div>
                 </div>
             </div>
-            <div className="paym">
-                <h3>Payment Method</h3>
-               
-                <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-  <Row>
-    <Col sm={3}>
-      <Nav variant="pills" className="flex-column">
-        <Nav.Item>
-          <Nav.Link eventKey="first">Tab 1</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="second">Tab 2</Nav.Link>
-        </Nav.Item>
-      </Nav>
-    </Col>
-    <Col sm={9}>
-      <Tab.Content>
-        <Tab.Pane eventKey="first">
-          <Sonnet />
-        </Tab.Pane>
-        <Tab.Pane eventKey="second">
-          <Sonnet />
-        </Tab.Pane>
-      </Tab.Content>
-    </Col>
-  </Row>
-</Tab.Container>
+            <div>
+                {paymetn ? (
+                    <Pyment data={formvalues} />
+                    ) : ("")}
             </div>
         </section>
        

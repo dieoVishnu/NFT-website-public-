@@ -407,15 +407,34 @@
 }
 .active .paym{
   display: block;
-  height: 75vh;
+  height: 100%;
   width: 50%;
   background: rgb(221,160,221);
   background: linear-gradient(90deg, rgba(221,160,221,1) 0%, rgba(221,160,221,1) 50%, rgba(160,213,221,1) 100%);
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 25%;
   z-index: 10;
+  padding: 20px;
+  overflow: scroll;
 }
 .active .hero-box{
   opacity: 0.1;
+}
+
+.active .paym .nav-link.active{
+  background-color: transparent;
+  border: 1px solid blue;
+
+}
+.active .paym .nav-link{
+  border: 1px solid rgb(18, 18, 19);
+  margin-bottom: 5px;
+}
+.box-small{
+  width: 100%;
+  height: 50px;
+}
+.box-small img{
+  object-fit: contain;
 }

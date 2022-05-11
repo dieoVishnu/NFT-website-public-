@@ -46,19 +46,20 @@ const Login = () => {
     // google auth
 
     const handelLogin = (goole) => {
-        console.log(goole.profileObj)
-        console.log(goole)
 
+        console.log(goole.tokenObj.id_token)
+        const formData = new FormData();
+        formData.append("token",goole.tokenObj.id_token);
+        
         const PostLogin = async () => {
+            
             try {
-                const res = await axios.post('imi_api/gooleAuth/signup', {
-                    email: goole.profileObj.email,
-                    familyName: goole.profileObj.familyName,
-                    givenName: goole.profileObj.givenName,
-                    passph: goole.profileObj.googleId,
-                    imageUrl: goole.profileObj.imageUrl,
-                    name: goole.profileObj.name,
-                    // token: goole.tokenObj.access_token,
+                const res = await axios({
+                    method: "post",
+                    url: 'imi_api/gooleAuth/googleconfig',
+                    data: formData,
+                    headers: { "Content-Type": "form-data" },
+                  
                 })
                 if (res.data.data === null || res.data.data === "null") {
                     // dispatch(loginFaild(res.data.data))
@@ -68,13 +69,13 @@ const Login = () => {
                     dispatch(loginSuccess({
                         email: goole.profileObj.email,
                         familyName: goole.profileObj.familyName,
-                        user_Name: goole.profileObj.givenName,
                         googleId: goole.profileObj.googleId,
                         imageUrl: goole.profileObj.imageUrl,
                         name: goole.profileObj.name,
-                        token: res.data.token_splat,
-                        userID:res.data.usersid
-
+                        // response from API
+                        user_Name: res.data.user_Name,
+                        token: res.data.token,
+                        usersid:res.data.usersid
                     }))
                     // setData(res.data.data)
                     console.log(res)
