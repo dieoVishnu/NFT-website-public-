@@ -106,10 +106,6 @@ const Register = () => {
                 }
                 PostLogin()
             }
-
-
-
-
     }
 
 

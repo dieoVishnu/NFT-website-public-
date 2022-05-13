@@ -18,6 +18,7 @@ function Chekout() {
         first_name: "" ,
         list_name: "",
         list_price: "",
+        list_id: "",
         list_location: "",
         list_contact: "" ,
         email: "" ,
@@ -107,7 +108,7 @@ function Chekout() {
     const handelSubmit = (e)=>{
         e.preventDefault()
         setFormValues({...formvalues,
-            ['list_name']:imoodiniData.data.ad_price,
+            ['list_price']:imoodiniData.data.ad_price,
             ['list_name']: imoodiniData.data.ad_title,
             ['id']: imoodiniData.data.ad_id,
             ['userid']: user.usersid
@@ -158,21 +159,21 @@ function Chekout() {
                             {/* form */}
                             <form id="create-item-1" acceptCharset="utf-8" onSubmit={handelSubmit}>
                             <div className="input-group">
-                                    <input name="list_price" required onChange={handelChange} value={formvalues.list_price} type="text" placeholder="First Name" />
-                                    <input name="list_location" onChange={handelChange} value={formvalues.list_location} type="text" placeholder="Last Name" required />
+                                    <input name="first_name" required onChange={handelChange} value={formvalues.first_name} type="text" placeholder="First Name" />
+                                    <input name="list_name" onChange={handelChange} value={formvalues.list_name} type="text" placeholder="Last Name" required />
                                 </div>
                                 <div className="input-group">
-                                    <input name="list_title" onChange={handelChange} value={formvalues.list_title} className="m-0" type="text" placeholder="Email" required />
+                                    <input name="email" onChange={handelChange} value={formvalues.email} className="m-0" type="email" placeholder="Email" required />
                                 </div>
                                 <div className="input-group">
-                                    <input name="list_title" onChange={handelChange} value={formvalues.list_title} className="m-0" type="text" placeholder="Address" required />
+                                    <input name="list_location" onChange={handelChange} value={formvalues.list_location} className="m-0" type="text" placeholder="Address" required />
                                 </div>
                                 <div className="input-group">
-                                    <input name="list_price" onChange={handelChange} value={formvalues.list_price} type="text" placeholder="City" required />
-                                    <input name="list_location" onChange={handelChange} value={formvalues.list_location} type="text" placeholder="Emirate" required />
+                                    <input name="city" onChange={handelChange} value={formvalues.city} type="text" placeholder="City" required />
+                                    <input name="contry" onChange={handelChange} value={formvalues.contry} type="text" placeholder="Emirate" required />
                                 </div>
                                 <div className="input-group">
-                                    <input name="list_title" onChange={handelChange} value={formvalues.list_title} className="m-0" type="text" placeholder="Contact Number" required />
+                                    <input name="list_contact" onChange={handelChange} value={formvalues.list_contact} className="m-0" type="phone" placeholder="Contact Number" required />
                                 </div>
                                 
                                 <div className="input-group style-2 ">

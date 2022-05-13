@@ -72,13 +72,12 @@ const Login = () => {
                         googleId: goole.profileObj.googleId,
                         imageUrl: goole.profileObj.imageUrl,
                         name: goole.profileObj.name,
-                        // response from API
                         user_Name: res.data.user_Name,
                         token: res.data.token,
                         usersid:res.data.usersid
                     }))
                     // setData(res.data.data)
-                    console.log(res)
+                    // console.log(res)
                     res.data && window.location.replace('/')
                 }
 
